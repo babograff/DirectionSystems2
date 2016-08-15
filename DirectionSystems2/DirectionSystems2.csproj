@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{032AB489-C10A-4FED-AE87-BD80EDC379B5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DirectionSystems2</RootNamespace>
+    <AssemblyName>DirectionSystems2</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\ClassArquivoIni.cs" />
+    <Compile Include="Classes\ClassConexao.cs" />
+    <Compile Include="Classes\ClassCriptoArq.cs" />
+    <Compile Include="Classes\ClassUtilidades.cs" />
+    <Compile Include="Componentes\MenuCadastro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Componentes\MenuCadastro.Designer.cs">
+      <DependentUpon>MenuCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes\Rodape.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Componentes\Rodape.Designer.cs">
+      <DependentUpon>Rodape.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBoasVindas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBoasVindas.Designer.cs">
+      <DependentUpon>FrmBoasVindas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConfiguracaoBanco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConfiguracaoBanco.Designer.cs">
+      <DependentUpon>FrmConfiguracaoBanco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLoginErro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLoginErro.Designer.cs">
+      <DependentUpon>FrmLoginErro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLoginSucesso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLoginSucesso.Designer.cs">
+      <DependentUpon>FrmLoginSucesso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMenu.Designer.cs">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSelecaoClienteFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSelecaoClienteFornecedor.Designer.cs">
+      <DependentUpon>FrmSelecaoClienteFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSelecaoFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSelecaoFuncionario.Designer.cs">
+      <DependentUpon>FrmSelecaoFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSelecaoProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSelecaoProduto.Designer.cs">
+      <DependentUpon>FrmSelecaoProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSelecaoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSelecaoUsuario.Designer.cs">
+      <DependentUpon>FrmSelecaoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Componentes\MenuCadastro.resx">
+      <DependentUpon>MenuCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Componentes\Rodape.resx">
+      <DependentUpon>Rodape.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBoasVindas.resx">
+      <DependentUpon>FrmBoasVindas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConfiguracaoBanco.resx">
+      <DependentUpon>FrmConfiguracaoBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLoginErro.resx">
+      <DependentUpon>FrmLoginErro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLoginSucesso.resx">
+      <DependentUpon>FrmLoginSucesso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMenu.resx">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSelecaoClienteFornecedor.resx">
+      <DependentUpon>FrmSelecaoClienteFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSelecaoFuncionario.resx">
+      <DependentUpon>FrmSelecaoFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSelecaoProduto.resx">
+      <DependentUpon>FrmSelecaoProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSelecaoUsuario.resx">
+      <DependentUpon>FrmSelecaoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotaoSalvarMaior.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotãoLogar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotãoLogarAtivo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotaoCancelarLogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotaoCancelarLoginAtivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotaoSalvarMaiorAtivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuClienteFornecedor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuProdutoAtivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuProduto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuFuncionario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuFuncionarioAtivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuUsuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuUsuarioAtivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuClienteFornecedorAtivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotaoHomeAtivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotaoHome.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
