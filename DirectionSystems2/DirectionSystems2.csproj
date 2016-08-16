@@ -68,6 +68,12 @@
     <Compile Include="FrmBoasVindas.Designer.cs">
       <DependentUpon>FrmBoasVindas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCadastroClienteFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCadastroClienteFornecedor.Designer.cs">
+      <DependentUpon>FrmCadastroClienteFornecedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmConfiguracaoBanco.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBoasVindas.resx">
       <DependentUpon>FrmBoasVindas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCadastroClienteFornecedor.resx">
+      <DependentUpon>FrmCadastroClienteFornecedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConfiguracaoBanco.resx">
       <DependentUpon>FrmConfiguracaoBanco.cs</DependentUpon>
@@ -230,6 +239,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BotaoHome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Excluir.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
