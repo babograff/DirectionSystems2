@@ -143,5 +143,10 @@ namespace DirectionSystems2
         {
             BtnUsuario.Image = Resources.MenuUsuario;
         }
+
+        private void BtnAjuda_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -91,6 +91,7 @@
             this.BtnAjuda.Size = new System.Drawing.Size(16, 16);
             this.BtnAjuda.TabIndex = 26;
             this.BtnAjuda.TabStop = false;
+            this.BtnAjuda.Click += new System.EventHandler(this.BtnAjuda_Click);
             // 
             // BtnMaximizar
             // 

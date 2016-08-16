@@ -23,5 +23,53 @@ namespace DirectionSystems2
         {
 
         }
+
+        private void BtnMenu_Click(object sender, EventArgs e)
+        {
+            FrmMenu Menu = new FrmMenu();
+            Menu.Visible = true;
+            this.Close();
+        }
+
+        private void BtnClienteFornecedor_Click(object sender, EventArgs e)
+        {
+            FrmSelecaoClienteFornecedor ClienteFornecedor = new FrmSelecaoClienteFornecedor();
+            ClienteFornecedor.Visible = true;
+            this.Close();
+        }
+
+        private void BtnProduto_Click(object sender, EventArgs e)
+        {
+            FrmSelecaoProduto Produto = new FrmSelecaoProduto();
+            Produto.Visible = true;
+            this.Close();
+        }
+
+        private void BtnFuncionario_Click(object sender, EventArgs e)
+        {
+            FrmSelecaoFuncionario Funcionario = new FrmSelecaoFuncionario();
+            Funcionario.Visible = true;
+            this.Close();
+        }
+
+        private void BtnUsuario_Click(object sender, EventArgs e)
+        {
+            FrmSelecaoUsuario Usuario = new FrmSelecaoUsuario();
+            Usuario.Visible = true;
+            this.Close();
+        }
+
+        private void BtnMaximizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void BtnFexar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja realmente sair?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
 }
