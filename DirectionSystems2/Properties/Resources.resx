@@ -118,14 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="MenuUsuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MenuUsuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BotaoSalvarMaior" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BotaoSalvarMaior.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BotaoCancelarLoginAtivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotaoCancelarLoginAtivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BotaoCancelarLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BotaoCancelarLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuFuncionarioAtivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuFuncionarioAtivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BotaoLogarAtivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BotãoLogarAtivo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,17 +136,23 @@
   <data name="MenuProduto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MenuProduto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BotaoCancelarLoginAtivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BotaoCancelarLoginAtivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="BotaoLogar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BotãoLogar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MenuClienteFornecedorAtivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MenuClienteFornecedorAtivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BotaoSalvarMaior" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotaoSalvarMaior.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MenuFuncionario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MenuFuncionario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BotaoHome" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotaoHome.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BotaoHomeAtivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotaoHomeAtivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MenuProdutoAtivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MenuProdutoAtivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,13 +163,13 @@
   <data name="MenuUsuarioAtivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MenuUsuarioAtivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MenuFuncionarioAtivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MenuFuncionarioAtivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MenuUsuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuUsuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BotaoHomeAtivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BotaoHomeAtivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BotaoHome" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BotaoHome.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Excluir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Excluir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

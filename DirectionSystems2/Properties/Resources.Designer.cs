@@ -143,6 +143,26 @@ namespace DirectionSystems2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Editar {
+            get {
+                object obj = ResourceManager.GetObject("Editar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Excluir {
+            get {
+                object obj = ResourceManager.GetObject("Excluir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MenuClienteFornecedor {
             get {
                 object obj = ResourceManager.GetObject("MenuClienteFornecedor", resourceCulture);
