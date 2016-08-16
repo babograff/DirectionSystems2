@@ -23,5 +23,10 @@ namespace DirectionSystems2
         {
 
         }
+
+        private void BtnClienteFornecedor_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
