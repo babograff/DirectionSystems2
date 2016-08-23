@@ -12,9 +12,6 @@ namespace DirectionSystems2.Classes
             Variavel = Variavel + "=";
             List<String> GrupoVariavel;
 
-
-
-
             String iniFile = null;
             if (File.Exists(Arquivo))
             {
