@@ -143,17 +143,5 @@ namespace DirectionSystems2
         {
             BtnUsuario.Image = Resources.MenuUsuario;
         }
-
-        private void BtnSelecionar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnCadastrar_Click(object sender, EventArgs e)
-        {
-            FrmCadastroClienteFornecedor ClienteFornecedor = new FrmCadastroClienteFornecedor(0);
-            ClienteFornecedor.Show();
-            this.Visible = false;
-        }
     }
 }

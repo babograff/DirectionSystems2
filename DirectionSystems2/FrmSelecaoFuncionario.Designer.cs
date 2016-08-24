@@ -79,6 +79,9 @@
             this.BtnMenu.Size = new System.Drawing.Size(32, 32);
             this.BtnMenu.TabIndex = 27;
             this.BtnMenu.TabStop = false;
+            this.BtnMenu.Click += new System.EventHandler(this.BtnMenu_Click);
+            this.BtnMenu.MouseLeave += new System.EventHandler(this.BtnMenu_Click);
+            this.BtnMenu.MouseHover += new System.EventHandler(this.BtnMenu_Click);
             // 
             // BtnAjuda
             // 
@@ -97,6 +100,7 @@
             this.BtnMaximizar.Size = new System.Drawing.Size(16, 16);
             this.BtnMaximizar.TabIndex = 25;
             this.BtnMaximizar.TabStop = false;
+            this.BtnMaximizar.Click += new System.EventHandler(this.BtnMaximizar_Click);
             // 
             // BtnFexar
             // 
@@ -106,6 +110,7 @@
             this.BtnFexar.Size = new System.Drawing.Size(16, 16);
             this.BtnFexar.TabIndex = 24;
             this.BtnFexar.TabStop = false;
+            this.BtnFexar.Click += new System.EventHandler(this.BtnFexar_Click);
             // 
             // BtnUsuario
             // 
@@ -116,6 +121,9 @@
             this.BtnUsuario.Size = new System.Drawing.Size(53, 64);
             this.BtnUsuario.TabIndex = 19;
             this.BtnUsuario.TabStop = false;
+            this.BtnUsuario.Click += new System.EventHandler(this.BtnUsuario_Click);
+            this.BtnUsuario.MouseLeave += new System.EventHandler(this.BtnUsuario_Click);
+            this.BtnUsuario.MouseHover += new System.EventHandler(this.BtnUsuario_Click);
             // 
             // BtnFuncionario
             // 
@@ -126,6 +134,9 @@
             this.BtnFuncionario.Size = new System.Drawing.Size(80, 64);
             this.BtnFuncionario.TabIndex = 18;
             this.BtnFuncionario.TabStop = false;
+            this.BtnFuncionario.Click += new System.EventHandler(this.BtnFuncionario_Click);
+            this.BtnFuncionario.MouseLeave += new System.EventHandler(this.BtnFuncionario_Click);
+            this.BtnFuncionario.MouseHover += new System.EventHandler(this.BtnFuncionario_Click);
             // 
             // BtnProduto
             // 
@@ -136,6 +147,9 @@
             this.BtnProduto.Size = new System.Drawing.Size(54, 64);
             this.BtnProduto.TabIndex = 17;
             this.BtnProduto.TabStop = false;
+            this.BtnProduto.Click += new System.EventHandler(this.BtnProduto_Click);
+            this.BtnProduto.MouseLeave += new System.EventHandler(this.BtnProduto_Click);
+            this.BtnProduto.MouseHover += new System.EventHandler(this.BtnProduto_Click);
             // 
             // BtnClienteFornecedor
             // 
@@ -146,6 +160,9 @@
             this.BtnClienteFornecedor.Size = new System.Drawing.Size(138, 64);
             this.BtnClienteFornecedor.TabIndex = 16;
             this.BtnClienteFornecedor.TabStop = false;
+            this.BtnClienteFornecedor.Click += new System.EventHandler(this.BtnClienteFornecedor_Click);
+            this.BtnClienteFornecedor.MouseLeave += new System.EventHandler(this.BtnClienteFornecedor_Click);
+            this.BtnClienteFornecedor.MouseHover += new System.EventHandler(this.BtnClienteFornecedor_Click);
             // 
             // LblTitulo
             // 

@@ -146,7 +146,6 @@
             this.BtnClienteFornecedor.Size = new System.Drawing.Size(138, 64);
             this.BtnClienteFornecedor.TabIndex = 16;
             this.BtnClienteFornecedor.TabStop = false;
-            this.BtnClienteFornecedor.Click += new System.EventHandler(this.BtnClienteFornecedor_Click);
             // 
             // LblTitulo
             // 

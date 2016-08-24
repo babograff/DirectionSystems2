@@ -253,7 +253,6 @@
             this.BtnSelecionar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.BtnSelecionar.TabIndex = 20;
             this.BtnSelecionar.TabStop = false;
-            this.BtnSelecionar.Click += new System.EventHandler(this.BtnSelecionar_Click);
             // 
             // CboStatus
             // 
@@ -416,7 +415,6 @@
             this.BtnCadastrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.BtnCadastrar.TabIndex = 26;
             this.BtnCadastrar.TabStop = false;
-            this.BtnCadastrar.Click += new System.EventHandler(this.BtnCadastrar_Click);
             // 
             // FrmSelecaoClienteFornecedor
             // 
