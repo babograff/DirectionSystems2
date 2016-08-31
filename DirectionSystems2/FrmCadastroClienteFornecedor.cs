@@ -18,6 +18,7 @@ namespace DirectionSystems2
         public FrmCadastroClienteFornecedor(int Codigo)
         {
             InitializeComponent();
+            LblTitulo.Text = ClassUtilidades.VersaoSistema;
         }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -91,6 +92,51 @@ namespace DirectionSystems2
         private void BtnMaximizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void BtnClienteFornecedor_MouseHover(object sender, EventArgs e)
+        {
+            BtnClienteFornecedor.Image = Resources.MenuClienteFornecedorAtivo;
+        }
+
+        private void BtnClienteFornecedor_MouseLeave(object sender, EventArgs e)
+        {
+            BtnClienteFornecedor.Image = Resources.MenuClienteFornecedor;
+        }
+
+        private void BtnProduto_MouseHover(object sender, EventArgs e)
+        {
+            BtnProduto.Image = Resources.MenuProdutoAtivo;
+        }
+
+        private void BtnProduto_MouseLeave(object sender, EventArgs e)
+        {
+            BtnProduto.Image = Resources.MenuProduto;
+        }
+
+        private void BtnFuncionario_MouseHover(object sender, EventArgs e)
+        {
+            BtnFuncionario.Image = Resources.MenuFuncionarioAtivo;
+        }
+
+        private void BtnFuncionario_MouseLeave(object sender, EventArgs e)
+        {
+            BtnFuncionario.Image = Resources.MenuFuncionario;
+        }
+
+        private void BtnUsuario_MouseHover(object sender, EventArgs e)
+        {
+            BtnUsuario.Image = Resources.MenuUsuarioAtivo;
+        }
+
+        private void BtnUsuario_MouseLeave(object sender, EventArgs e)
+        {
+            BtnUsuario.Image = Resources.MenuUsuario;
+        }
+
+        private void BtnSalvar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

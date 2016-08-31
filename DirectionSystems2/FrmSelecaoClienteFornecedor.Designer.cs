@@ -49,7 +49,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.GridClienteFornecedor = new System.Windows.Forms.DataGridView();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Excluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,7 +72,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnClienteFornecedor)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnSelecionar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridClienteFornecedor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCadastrar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -253,6 +253,7 @@
             this.BtnSelecionar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.BtnSelecionar.TabIndex = 20;
             this.BtnSelecionar.TabStop = false;
+            this.BtnSelecionar.Click += new System.EventHandler(this.BtnSelecionar_Click);
             // 
             // CboStatus
             // 
@@ -302,12 +303,12 @@
             this.textBox2.Size = new System.Drawing.Size(281, 20);
             this.textBox2.TabIndex = 2;
             // 
-            // dataGridView1
+            // GridClienteFornecedor
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GridClienteFornecedor.AllowUserToAddRows = false;
+            this.GridClienteFornecedor.AllowUserToDeleteRows = false;
+            this.GridClienteFornecedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridClienteFornecedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar,
             this.Excluir,
             this.Código,
@@ -315,11 +316,12 @@
             this.Nome,
             this.Tipo,
             this.Status});
-            this.dataGridView1.Location = new System.Drawing.Point(45, 239);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(821, 421);
-            this.dataGridView1.TabIndex = 25;
+            this.GridClienteFornecedor.Location = new System.Drawing.Point(45, 239);
+            this.GridClienteFornecedor.Name = "GridClienteFornecedor";
+            this.GridClienteFornecedor.ReadOnly = true;
+            this.GridClienteFornecedor.Size = new System.Drawing.Size(821, 421);
+            this.GridClienteFornecedor.TabIndex = 25;
+            this.GridClienteFornecedor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridClienteFornecedor_CellClick);
             // 
             // Editar
             // 
@@ -415,6 +417,7 @@
             this.BtnCadastrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.BtnCadastrar.TabIndex = 26;
             this.BtnCadastrar.TabStop = false;
+            this.BtnCadastrar.Click += new System.EventHandler(this.BtnCadastrar_Click);
             // 
             // FrmSelecaoClienteFornecedor
             // 
@@ -423,7 +426,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(900, 700);
             this.Controls.Add(this.BtnCadastrar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.GridClienteFornecedor);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.rodape1);
@@ -446,7 +449,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnSelecionar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridClienteFornecedor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCadastrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -475,7 +478,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView GridClienteFornecedor;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Excluir;
         private System.Windows.Forms.DataGridViewTextBoxColumn Código;

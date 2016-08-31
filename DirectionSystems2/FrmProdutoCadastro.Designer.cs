@@ -1,6 +1,6 @@
 ﻿namespace DirectionSystems2
 {
-    partial class FrmSelecaoFuncionario
+    partial class FrmCadastroProduto
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSelecaoFuncionario));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastroProduto));
+            this.rodape1 = new DirectionSystems2.Componentes.Rodape();
             this.panel2 = new System.Windows.Forms.Panel();
             this.BtnMenu = new System.Windows.Forms.PictureBox();
             this.BtnAjuda = new System.Windows.Forms.PictureBox();
@@ -39,21 +40,24 @@
             this.BtnProduto = new System.Windows.Forms.PictureBox();
             this.BtnClienteFornecedor = new System.Windows.Forms.PictureBox();
             this.LblTitulo = new System.Windows.Forms.Label();
-            this.rodape1 = new DirectionSystems2.Componentes.Rodape();
-            this.BtnCadastrar = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.TxtDescricao = new System.Windows.Forms.TextBox();
+            this.TxtValor = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.CbMedida = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TxtCodBarras = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtNomeFuncionario = new System.Windows.Forms.TextBox();
-            this.BtnPesquisar = new System.Windows.Forms.PictureBox();
+            this.TxtNomeProduto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.CboStatus = new System.Windows.Forms.ComboBox();
-            this.GridFuncionario = new System.Windows.Forms.DataGridView();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Excluir = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TxtCodigo = new System.Windows.Forms.TextBox();
+            this.BtnCancelar = new System.Windows.Forms.PictureBox();
+            this.BtnSalvar = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnAjuda)).BeginInit();
@@ -63,11 +67,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnFuncionario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClienteFornecedor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnCadastrar)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnPesquisar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridFuncionario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCancelar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnSalvar)).BeginInit();
             this.SuspendLayout();
+            // 
+            // rodape1
+            // 
+            this.rodape1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rodape1.Location = new System.Drawing.Point(-2, 678);
+            this.rodape1.Name = "rodape1";
+            this.rodape1.Size = new System.Drawing.Size(900, 22);
+            this.rodape1.TabIndex = 23;
             // 
             // panel2
             // 
@@ -86,8 +97,7 @@
             this.panel2.Location = new System.Drawing.Point(-2, -2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(900, 118);
-            this.panel2.TabIndex = 21;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.panel2.TabIndex = 24;
             // 
             // BtnMenu
             // 
@@ -183,74 +193,127 @@
             this.LblTitulo.TabIndex = 15;
             this.LblTitulo.Text = "DirectionSystems - versão";
             // 
-            // rodape1
-            // 
-            this.rodape1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rodape1.Location = new System.Drawing.Point(-2, 678);
-            this.rodape1.Name = "rodape1";
-            this.rodape1.Size = new System.Drawing.Size(900, 22);
-            this.rodape1.TabIndex = 22;
-            // 
-            // BtnCadastrar
-            // 
-            this.BtnCadastrar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnCadastrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BtnCadastrar.Image = ((System.Drawing.Image)(resources.GetObject("BtnCadastrar.Image")));
-            this.BtnCadastrar.Location = new System.Drawing.Point(45, 131);
-            this.BtnCadastrar.Name = "BtnCadastrar";
-            this.BtnCadastrar.Size = new System.Drawing.Size(120, 30);
-            this.BtnCadastrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.BtnCadastrar.TabIndex = 44;
-            this.BtnCadastrar.TabStop = false;
-            this.BtnCadastrar.Click += new System.EventHandler(this.BtnCadastrar_Click);
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.TxtDescricao);
+            this.groupBox1.Controls.Add(this.TxtValor);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.CbMedida);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.TxtCodBarras);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtNomeFuncionario);
-            this.groupBox1.Controls.Add(this.BtnPesquisar);
+            this.groupBox1.Controls.Add(this.TxtNomeProduto);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.CboStatus);
-            this.groupBox1.Location = new System.Drawing.Point(45, 167);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.TxtCodigo);
+            this.groupBox1.Location = new System.Drawing.Point(45, 133);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(821, 66);
-            this.groupBox1.TabIndex = 45;
+            this.groupBox1.Size = new System.Drawing.Size(821, 347);
+            this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtro";
+            this.groupBox1.Text = "Dados gerais";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(454, 129);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(21, 13);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "R$";
+            // 
+            // TxtDescricao
+            // 
+            this.TxtDescricao.BackColor = System.Drawing.Color.White;
+            this.TxtDescricao.Location = new System.Drawing.Point(8, 161);
+            this.TxtDescricao.Multiline = true;
+            this.TxtDescricao.Name = "TxtDescricao";
+            this.TxtDescricao.Size = new System.Drawing.Size(807, 124);
+            this.TxtDescricao.TabIndex = 5;
+            // 
+            // TxtValor
+            // 
+            this.TxtValor.Location = new System.Drawing.Point(481, 122);
+            this.TxtValor.Name = "TxtValor";
+            this.TxtValor.Size = new System.Drawing.Size(334, 20);
+            this.TxtValor.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(454, 106);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(31, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Valor";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(5, 295);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Medida";
+            // 
+            // CbMedida
+            // 
+            this.CbMedida.FormattingEnabled = true;
+            this.CbMedida.Location = new System.Drawing.Point(8, 309);
+            this.CbMedida.Name = "CbMedida";
+            this.CbMedida.Size = new System.Drawing.Size(121, 21);
+            this.CbMedida.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 145);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Descrição";
+            // 
+            // TxtCodBarras
+            // 
+            this.TxtCodBarras.Location = new System.Drawing.Point(9, 122);
+            this.TxtCodBarras.Name = "TxtCodBarras";
+            this.TxtCodBarras.Size = new System.Drawing.Size(439, 20);
+            this.TxtCodBarras.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 106);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(88, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Código de Barras";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 20);
+            this.label1.Location = new System.Drawing.Point(6, 67);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Nome";
+            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Nome Produto";
             // 
-            // txtNomeFuncionario
+            // TxtNomeProduto
             // 
-            this.txtNomeFuncionario.Location = new System.Drawing.Point(9, 36);
-            this.txtNomeFuncionario.Name = "txtNomeFuncionario";
-            this.txtNomeFuncionario.Size = new System.Drawing.Size(553, 20);
-            this.txtNomeFuncionario.TabIndex = 21;
-            // 
-            // BtnPesquisar
-            // 
-            this.BtnPesquisar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BtnPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("BtnPesquisar.Image")));
-            this.BtnPesquisar.Location = new System.Drawing.Point(695, 26);
-            this.BtnPesquisar.Name = "BtnPesquisar";
-            this.BtnPesquisar.Size = new System.Drawing.Size(120, 30);
-            this.BtnPesquisar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.BtnPesquisar.TabIndex = 20;
-            this.BtnPesquisar.TabStop = false;
-            this.BtnPesquisar.Click += new System.EventHandler(this.BtnPesquisar_Click);
+            this.TxtNomeProduto.BackColor = System.Drawing.Color.White;
+            this.TxtNomeProduto.Location = new System.Drawing.Point(9, 83);
+            this.TxtNomeProduto.Name = "TxtNomeProduto";
+            this.TxtNomeProduto.Size = new System.Drawing.Size(806, 20);
+            this.TxtNomeProduto.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(565, 16);
+            this.label3.Location = new System.Drawing.Point(691, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 5;
@@ -262,99 +325,72 @@
             this.CboStatus.Items.AddRange(new object[] {
             "Inativo",
             "Ativo"});
-            this.CboStatus.Location = new System.Drawing.Point(568, 35);
+            this.CboStatus.Location = new System.Drawing.Point(694, 35);
             this.CboStatus.Name = "CboStatus";
             this.CboStatus.Size = new System.Drawing.Size(121, 21);
-            this.CboStatus.TabIndex = 4;
+            this.CboStatus.TabIndex = 1;
             // 
-            // GridFuncionario
+            // label2
             // 
-            this.GridFuncionario.AllowUserToAddRows = false;
-            this.GridFuncionario.AllowUserToDeleteRows = false;
-            this.GridFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridFuncionario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Editar,
-            this.Excluir,
-            this.Código,
-            this.CPF,
-            this.Nome,
-            this.Status});
-            this.GridFuncionario.Location = new System.Drawing.Point(45, 239);
-            this.GridFuncionario.Name = "GridFuncionario";
-            this.GridFuncionario.ReadOnly = true;
-            this.GridFuncionario.Size = new System.Drawing.Size(821, 421);
-            this.GridFuncionario.TabIndex = 46;
-            this.GridFuncionario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridFuncionario_CellClick);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Código";
             // 
-            // Editar
+            // TxtCodigo
             // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::DirectionSystems2.Properties.Resources.Editar;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
+            this.TxtCodigo.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.TxtCodigo.Cursor = System.Windows.Forms.Cursors.No;
+            this.TxtCodigo.Enabled = false;
+            this.TxtCodigo.Location = new System.Drawing.Point(9, 36);
+            this.TxtCodigo.Name = "TxtCodigo";
+            this.TxtCodigo.Size = new System.Drawing.Size(106, 20);
+            this.TxtCodigo.TabIndex = 2;
             // 
-            // Excluir
+            // BtnCancelar
             // 
-            this.Excluir.HeaderText = "Excluir";
-            this.Excluir.Image = global::DirectionSystems2.Properties.Resources.Excluir;
-            this.Excluir.Name = "Excluir";
-            this.Excluir.ReadOnly = true;
+            this.BtnCancelar.BackColor = System.Drawing.Color.Transparent;
+            this.BtnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("BtnCancelar.Image")));
+            this.BtnCancelar.Location = new System.Drawing.Point(746, 642);
+            this.BtnCancelar.Name = "BtnCancelar";
+            this.BtnCancelar.Size = new System.Drawing.Size(120, 30);
+            this.BtnCancelar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.BtnCancelar.TabIndex = 51;
+            this.BtnCancelar.TabStop = false;
             // 
-            // Código
+            // BtnSalvar
             // 
-            this.Código.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Código.DataPropertyName = "CodFuncionario";
-            this.Código.HeaderText = "Código";
-            this.Código.Name = "Código";
-            this.Código.ReadOnly = true;
-            this.Código.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Código.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.BtnSalvar.BackColor = System.Drawing.Color.Transparent;
+            this.BtnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("BtnSalvar.Image")));
+            this.BtnSalvar.Location = new System.Drawing.Point(620, 642);
+            this.BtnSalvar.Name = "BtnSalvar";
+            this.BtnSalvar.Size = new System.Drawing.Size(120, 30);
+            this.BtnSalvar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.BtnSalvar.TabIndex = 50;
+            this.BtnSalvar.TabStop = false;
+            this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
-            // CPF
-            // 
-            this.CPF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CPF.DataPropertyName = "CPF";
-            this.CPF.HeaderText = "CPF";
-            this.CPF.Name = "CPF";
-            this.CPF.ReadOnly = true;
-            this.CPF.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.CPF.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Nome
-            // 
-            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            this.Nome.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Nome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Status
-            // 
-            this.Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Status.DataPropertyName = "Status";
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            // 
-            // FrmSelecaoFuncionario
+            // FrmCadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(900, 700);
-            this.Controls.Add(this.GridFuncionario);
-            this.Controls.Add(this.BtnCadastrar);
+            this.Controls.Add(this.BtnCancelar);
+            this.Controls.Add(this.BtnSalvar);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.rodape1);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.rodape1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FrmSelecaoFuncionario";
+            this.Name = "FrmCadastroProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmSelecaoFuncionario";
-            this.Load += new System.EventHandler(this.FrmSelecaoFuncionario_Load);
+            this.Text = "FrmCadastroProduto";
+            this.Load += new System.EventHandler(this.FrmCadastroProduto_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMenu)).EndInit();
@@ -365,11 +401,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnFuncionario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnProduto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClienteFornecedor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnCadastrar)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnPesquisar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridFuncionario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCancelar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnSalvar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -377,6 +412,7 @@
 
         #endregion
 
+        private Componentes.Rodape rodape1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox BtnMenu;
         private System.Windows.Forms.PictureBox BtnAjuda;
@@ -387,20 +423,23 @@
         private System.Windows.Forms.PictureBox BtnProduto;
         private System.Windows.Forms.PictureBox BtnClienteFornecedor;
         private System.Windows.Forms.Label LblTitulo;
-        private Componentes.Rodape rodape1;
-        private System.Windows.Forms.PictureBox BtnCadastrar;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox TxtDescricao;
+        private System.Windows.Forms.TextBox TxtValor;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox CbMedida;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox TxtCodBarras;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtNomeFuncionario;
-        private System.Windows.Forms.PictureBox BtnPesquisar;
+        private System.Windows.Forms.TextBox TxtNomeProduto;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox CboStatus;
-        private System.Windows.Forms.DataGridView GridFuncionario;
-        private System.Windows.Forms.DataGridViewImageColumn Editar;
-        private System.Windows.Forms.DataGridViewImageColumn Excluir;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Código;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TxtCodigo;
+        private System.Windows.Forms.PictureBox BtnCancelar;
+        private System.Windows.Forms.PictureBox BtnSalvar;
     }
 }

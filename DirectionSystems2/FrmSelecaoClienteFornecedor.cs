@@ -143,5 +143,22 @@ namespace DirectionSystems2
         {
             BtnUsuario.Image = Resources.MenuUsuario;
         }
+
+        private void BtnCadastrar_Click(object sender, EventArgs e)
+        {
+            FrmCadastroClienteFornecedor CadastroClienteFornecedor = new FrmCadastroClienteFornecedor(0);
+            CadastroClienteFornecedor.Visible = true;
+            this.Close();
+        }
+
+        private void BtnSelecionar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GridClienteFornecedor_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
