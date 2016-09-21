@@ -47,5 +47,10 @@ namespace DirectionSystems2
                 ConfiguracaoBanco.Visible = true;
             }
         }
+
+        private void FrmBoasVindas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

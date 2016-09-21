@@ -68,5 +68,12 @@ namespace DirectionSystems2
             FrmSelecaoClienteFornecedor ClienteFornecedor = new FrmSelecaoClienteFornecedor();
             ClienteFornecedor.Visible = true;
         }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            FrmImportacao Importacao = new FrmImportacao();
+            Importacao.Visible = true;
+        }
     }
 }

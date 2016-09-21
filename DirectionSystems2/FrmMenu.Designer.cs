@@ -33,6 +33,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.LblTitulo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,7 +50,6 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.BtnCadastro = new System.Windows.Forms.PictureBox();
-            this.LblTitulo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -89,6 +89,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(903, 118);
             this.panel2.TabIndex = 16;
+            // 
+            // LblTitulo
+            // 
+            this.LblTitulo.AutoSize = true;
+            this.LblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTitulo.Location = new System.Drawing.Point(323, 10);
+            this.LblTitulo.Name = "LblTitulo";
+            this.LblTitulo.Size = new System.Drawing.Size(263, 25);
+            this.LblTitulo.TabIndex = 16;
+            this.LblTitulo.Text = "DirectionSystems - versão";
             // 
             // label2
             // 
@@ -192,6 +202,7 @@
             this.pictureBox7.Size = new System.Drawing.Size(200, 200);
             this.pictureBox7.TabIndex = 7;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // BtnEncomendas
             // 
@@ -239,16 +250,6 @@
             this.BtnCadastro.TabIndex = 2;
             this.BtnCadastro.TabStop = false;
             this.BtnCadastro.Click += new System.EventHandler(this.BtnCadastro_Click);
-            // 
-            // LblTitulo
-            // 
-            this.LblTitulo.AutoSize = true;
-            this.LblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTitulo.Location = new System.Drawing.Point(323, 10);
-            this.LblTitulo.Name = "LblTitulo";
-            this.LblTitulo.Size = new System.Drawing.Size(263, 25);
-            this.LblTitulo.TabIndex = 16;
-            this.LblTitulo.Text = "DirectionSystems - versão";
             // 
             // FrmMenu
             // 

@@ -50,6 +50,7 @@
             this.Name = "FrmBoasVindas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FrmBoasVindas_Load);
             this.ResumeLayout(false);
 
         }

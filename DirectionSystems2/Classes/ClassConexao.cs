@@ -9,7 +9,8 @@ namespace DirectionSystems2.Classes
             ClassArquivoIni ini = new ClassArquivoIni();
             string Arquivo = (@"C:\DirectionSystems2\Configuracao.ini");
 
-            string Servidor = string.Concat(ini.PesquisaIni(Arquivo, "Servidor"), "\\", ini.PesquisaIni(Arquivo, "Instancia"));
+            //string Servidor = string.Concat(ini.PesquisaIni(Arquivo, "Servidor"), "\\", ini.PesquisaIni(Arquivo, "Instancia"));
+            string Servidor = string.Concat("192.168.0.102", "\\", ini.PesquisaIni(Arquivo, "Instancia"));
             string Banco = ini.PesquisaIni(Arquivo, "BancoDados");
             string Usuario = ini.PesquisaIni(Arquivo, "Usuario").ToLower();
             string Senha = ini.PesquisaIni(Arquivo, "Senha").ToLower();

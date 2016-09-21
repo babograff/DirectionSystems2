@@ -41,18 +41,18 @@
             this.LblTitulo = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtCPFCNPJ = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnSelecionar = new System.Windows.Forms.PictureBox();
             this.CboStatus = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CboTipo = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TxtNome = new System.Windows.Forms.TextBox();
             this.GridClienteFornecedor = new System.Windows.Forms.DataGridView();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Excluir = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodClienteFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CPFCNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -202,14 +202,14 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.TxtCPFCNPJ);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.BtnSelecionar);
             this.groupBox1.Controls.Add(this.CboStatus);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.CboTipo);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.TxtNome);
             this.groupBox1.Location = new System.Drawing.Point(45, 167);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(821, 66);
@@ -226,12 +226,15 @@
             this.label4.TabIndex = 28;
             this.label4.Text = "CPF / CNPJ";
             // 
-            // textBox1
+            // TxtCPFCNPJ
             // 
-            this.textBox1.Location = new System.Drawing.Point(9, 36);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(139, 20);
-            this.textBox1.TabIndex = 27;
+            this.TxtCPFCNPJ.Location = new System.Drawing.Point(9, 36);
+            this.TxtCPFCNPJ.Name = "TxtCPFCNPJ";
+            this.TxtCPFCNPJ.Size = new System.Drawing.Size(139, 20);
+            this.TxtCPFCNPJ.TabIndex = 27;
+            this.TxtCPFCNPJ.TextChanged += new System.EventHandler(this.TxtCPFCNPJ_TextChanged);
+            this.TxtCPFCNPJ.Enter += new System.EventHandler(this.TxtCPFCNPJ_Enter);
+            this.TxtCPFCNPJ.Leave += new System.EventHandler(this.TxtCPFCNPJ_Leave);
             // 
             // label1
             // 
@@ -275,17 +278,16 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Tipo";
             // 
-            // comboBox1
+            // CboTipo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Todos",
+            this.CboTipo.FormattingEnabled = true;
+            this.CboTipo.Items.AddRange(new object[] {
             "Cliente",
             "Fornecedor"});
-            this.comboBox1.Location = new System.Drawing.Point(441, 36);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 4;
+            this.CboTipo.Location = new System.Drawing.Point(441, 36);
+            this.CboTipo.Name = "CboTipo";
+            this.CboTipo.Size = new System.Drawing.Size(121, 21);
+            this.CboTipo.TabIndex = 4;
             // 
             // label2
             // 
@@ -296,12 +298,12 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Nome";
             // 
-            // textBox2
+            // TxtNome
             // 
-            this.textBox2.Location = new System.Drawing.Point(154, 36);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(281, 20);
-            this.textBox2.TabIndex = 2;
+            this.TxtNome.Location = new System.Drawing.Point(154, 36);
+            this.TxtNome.Name = "TxtNome";
+            this.TxtNome.Size = new System.Drawing.Size(281, 20);
+            this.TxtNome.TabIndex = 2;
             // 
             // GridClienteFornecedor
             // 
@@ -311,7 +313,7 @@
             this.GridClienteFornecedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar,
             this.Excluir,
-            this.Código,
+            this.CodClienteFornecedor,
             this.CPFCNPJ,
             this.Nome,
             this.Tipo,
@@ -339,18 +341,20 @@
             this.Excluir.Name = "Excluir";
             this.Excluir.ReadOnly = true;
             // 
-            // Código
+            // CodClienteFornecedor
             // 
-            this.Código.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Código.HeaderText = "Código";
-            this.Código.Name = "Código";
-            this.Código.ReadOnly = true;
-            this.Código.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Código.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.CodClienteFornecedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CodClienteFornecedor.DataPropertyName = "CodClienteFornecedor";
+            this.CodClienteFornecedor.HeaderText = "Código";
+            this.CodClienteFornecedor.Name = "CodClienteFornecedor";
+            this.CodClienteFornecedor.ReadOnly = true;
+            this.CodClienteFornecedor.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.CodClienteFornecedor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // CPFCNPJ
             // 
             this.CPFCNPJ.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CPFCNPJ.DataPropertyName = "CPFCNPJ";
             this.CPFCNPJ.HeaderText = "CPF / CNPJ";
             this.CPFCNPJ.Name = "CPFCNPJ";
             this.CPFCNPJ.ReadOnly = true;
@@ -360,6 +364,7 @@
             // Nome
             // 
             this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Nome.DataPropertyName = "Nome";
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
             this.Nome.ReadOnly = true;
@@ -369,6 +374,7 @@
             // Tipo
             // 
             this.Tipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Tipo.DataPropertyName = "Tipo";
             this.Tipo.HeaderText = "Tipo";
             this.Tipo.Name = "Tipo";
             this.Tipo.ReadOnly = true;
@@ -378,6 +384,7 @@
             // Status
             // 
             this.Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Status.DataPropertyName = "Status";
             this.Status.HeaderText = "Status";
             this.Status.Name = "Status";
             this.Status.ReadOnly = true;
@@ -470,24 +477,24 @@
         private System.Windows.Forms.Label LblTitulo;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtCPFCNPJ;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox BtnSelecionar;
         private System.Windows.Forms.ComboBox CboStatus;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CboTipo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TxtNome;
         private System.Windows.Forms.DataGridView GridClienteFornecedor;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.PictureBox BtnCadastrar;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Excluir;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Código;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodClienteFornecedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn CPFCNPJ;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private System.Windows.Forms.PictureBox BtnCadastrar;
     }
 }

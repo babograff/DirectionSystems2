@@ -36,7 +36,7 @@ namespace DirectionSystems2
                     {
                         TxtNome.Text = reader[1].ToString();
                         CboStatus.SelectedIndex = CboStatus.Items.IndexOf(reader[2].ToString());
-                        TxtUsuario.Text = reader[3].ToString();
+                      //  TxtUsuario.Text = reader[3].ToString();
                         TxtSenha.Text = reader[4].ToString();
                     }
                     else {
@@ -129,7 +129,7 @@ namespace DirectionSystems2
                 SqlConnection conn = Conexao.AbreConexao();
                 SqlCommand cmd = new SqlCommand("spUsuarioNovo", conn);
                 cmd.Parameters.AddWithValue("@CodUsuario", Codigo);
-                cmd.Parameters.AddWithValue("@Usuario ", TxtUsuario.Text);
+               // cmd.Parameters.AddWithValue("@Usuario ", TxtUsuario.Text);
                 cmd.Parameters.AddWithValue("@Senha", TxtSenha.Text);
                 cmd.Parameters.AddWithValue("@Nome", TxtNome.Text);
                 cmd.Parameters.AddWithValue("@Status", CboStatus.SelectedIndex);
@@ -176,12 +176,12 @@ namespace DirectionSystems2
                 TxtNome.Focus();
                 return false;
             }
-            else if (TxtUsuario.Text == string.Empty)
-            {
-                MessageBox.Show("Campo USUÁRIO vazio!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TxtUsuario.Focus();
-                return false;
-            }
+          //  else if (TxtUsuario.Text == string.Empty)
+          //  {
+           //     MessageBox.Show("Campo USUÁRIO vazio!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+          //      TxtUsuario.Focus();
+          //      return false;
+          //  }
             else if (TxtSenha.Text == string.Empty)
             {
                 MessageBox.Show("Campo SENHA vazio!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -199,6 +199,22 @@ namespace DirectionSystems2
                 Usuario.Show();
                 this.Close();
             }
+        }
+
+        private void ChbSelecionarTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            for (int i = 1; i < checkedListBox1.Items.Count; i++)
+                checkedListBox1.SetItemChecked(i, ChbSelecionarTodos.Checked);
+            for (int i = 1; i < checkedListBox2.Items.Count; i++)
+                checkedListBox2.SetItemChecked(i, ChbSelecionarTodos.Checked);
+            for (int i = 1; i < checkedListBox3.Items.Count; i++)
+                checkedListBox3.SetItemChecked(i, ChbSelecionarTodos.Checked);
+            for (int i = 1; i < checkedListBox4.Items.Count; i++)
+                checkedListBox4.SetItemChecked(i, ChbSelecionarTodos.Checked);
+            for (int i = 1; i < checkedListBox5.Items.Count; i++)
+                checkedListBox5.SetItemChecked(i, ChbSelecionarTodos.Checked);
+            for (int i = 1; i < checkedListBox6.Items.Count; i++)
+                checkedListBox6.SetItemChecked(i, ChbSelecionarTodos.Checked);
         }
     }
 }

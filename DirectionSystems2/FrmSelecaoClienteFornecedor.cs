@@ -1,24 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using DirectionSystems2.Properties;
 using DirectionSystems2.Classes;
+using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace DirectionSystems2
 {
     public partial class FrmSelecaoClienteFornecedor : Form
     {
+        ClassConexao Conexao = new ClassConexao();
         public FrmSelecaoClienteFornecedor()
         {
             InitializeComponent();
             LblTitulo.Text = ClassUtilidades.VersaoSistema;
+            CboStatus.SelectedIndex = 1;
+            CboTipo.SelectedIndex = 0;
         }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -43,7 +42,8 @@ namespace DirectionSystems2
 
         private void FrmSelecaoClienteFornecedor_Load(object sender, EventArgs e)
         {
-            
+            GridClienteFornecedor.AutoGenerateColumns = false;
+            Pesquisar();
         }
 
         private void BtnClienteFornecedor_Click(object sender, EventArgs e)
@@ -153,10 +153,108 @@ namespace DirectionSystems2
 
         private void BtnSelecionar_Click(object sender, EventArgs e)
         {
+            Pesquisar();
+        }
 
+        public static string MascaraCnpjCpf(string pCnpjCpf)
+        {
+            string result = "";
+            if (pCnpjCpf.Length == 14)
+            {
+                result = pCnpjCpf.Insert(2, ".").Insert(6, ".").Insert(10, "/").Insert(15, "-");
+            }
+            if (pCnpjCpf.Length == 11)
+            {
+                result = pCnpjCpf.Insert(3, ".").Insert(7, ".").Insert(11, "-");
+            }
+            if ((pCnpjCpf.Length != 11) && (pCnpjCpf.Length != 14))
+            {
+                result = pCnpjCpf;
+            }
+            return result;
+        }
+
+        private void Pesquisar()
+        {
+            SqlConnection conn = Conexao.AbreConexao();
+            SqlCommand cmd = new SqlCommand("spClienteFornecedorGrid", conn);
+            cmd.Parameters.AddWithValue("@Nome", TxtNome.Text);
+            cmd.Parameters.AddWithValue("@CPFCNPJ", TxtCPFCNPJ.Text);
+            cmd.Parameters.AddWithValue("@Tipo", CboTipo.SelectedIndex);
+            cmd.Parameters.AddWithValue("@Status", CboStatus.SelectedIndex);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            try
+            {
+                DataTable data = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(data);
+                GridClienteFornecedor.DataSource = data;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.ToString());
+            }
+            finally
+            {
+                Conexao.FechaConexao(conn);
+            }
         }
 
         private void GridClienteFornecedor_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == GridClienteFornecedor.Columns["Editar"].Index)
+            {
+                FrmCadastroClienteFornecedor CadastroClienteFornecedor = new FrmCadastroClienteFornecedor(Convert.ToInt32(GridClienteFornecedor["CodClienteFornecedor", e.RowIndex].Value));
+                CadastroClienteFornecedor.Show();
+                this.Visible = false;
+            }
+            else if (e.ColumnIndex == GridClienteFornecedor.Columns["Excluir"].Index)
+            {
+                if (MessageBox.Show("Deseja realmente excluir este registro?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    SqlConnection conn = Conexao.AbreConexao();
+                    SqlCommand cmd = new SqlCommand("spClienteFornecedorDelete", conn);
+                    cmd.Parameters.AddWithValue("@CodClienteFornecedor", GridClienteFornecedor["CodClienteFornecedor", e.RowIndex].Value.ToString());
+                    cmd.Parameters.AddWithValue("@ID", ClassUtilidades.CodUsuario);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    try
+                    {
+                        if (cmd.ExecuteNonQuery() > 0)
+                        {
+                            MessageBox.Show("Registro excluído com sucesso!");
+                            Pesquisar();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erro ao excluir registro!");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erro: " + ex.ToString());
+                    }
+                    finally
+                    {
+                        Conexao.FechaConexao(conn);
+                    }
+                }
+            }
+        }
+
+        private void TxtCPFCNPJ_Leave(object sender, EventArgs e)
+        {
+            TxtCPFCNPJ.Text = MascaraCnpjCpf(TxtCPFCNPJ.Text);
+        }
+
+        private void TxtCPFCNPJ_Enter(object sender, EventArgs e)
+        {
+            Regex rgx = new Regex("[^0-9a-zA-Z]+");
+            TxtCPFCNPJ.Text = rgx.Replace(TxtCPFCNPJ.Text, "");
+        }
+
+        private void TxtCPFCNPJ_TextChanged(object sender, EventArgs e)
         {
 
         }

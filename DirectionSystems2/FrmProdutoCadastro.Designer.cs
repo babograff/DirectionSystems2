@@ -40,7 +40,9 @@
             this.BtnProduto = new System.Windows.Forms.PictureBox();
             this.BtnClienteFornecedor = new System.Windows.Forms.PictureBox();
             this.LblTitulo = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TxtCodigoImportado = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.TxtCodProdutoImportado = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.TxtDescricao = new System.Windows.Forms.TextBox();
             this.TxtValor = new System.Windows.Forms.TextBox();
@@ -67,7 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnFuncionario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClienteFornecedor)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.TxtCodigoImportado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnSalvar)).BeginInit();
             this.SuspendLayout();
@@ -193,29 +195,50 @@
             this.LblTitulo.TabIndex = 15;
             this.LblTitulo.Text = "DirectionSystems - versão";
             // 
-            // groupBox1
+            // TxtCodigoImportado
             // 
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.TxtDescricao);
-            this.groupBox1.Controls.Add(this.TxtValor);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.CbMedida);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.TxtCodBarras);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.TxtNomeProduto);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.CboStatus);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.TxtCodigo);
-            this.groupBox1.Location = new System.Drawing.Point(45, 133);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(821, 347);
-            this.groupBox1.TabIndex = 41;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Dados gerais";
+            this.TxtCodigoImportado.Controls.Add(this.label9);
+            this.TxtCodigoImportado.Controls.Add(this.TxtCodProdutoImportado);
+            this.TxtCodigoImportado.Controls.Add(this.label8);
+            this.TxtCodigoImportado.Controls.Add(this.TxtDescricao);
+            this.TxtCodigoImportado.Controls.Add(this.TxtValor);
+            this.TxtCodigoImportado.Controls.Add(this.label7);
+            this.TxtCodigoImportado.Controls.Add(this.label6);
+            this.TxtCodigoImportado.Controls.Add(this.CbMedida);
+            this.TxtCodigoImportado.Controls.Add(this.label5);
+            this.TxtCodigoImportado.Controls.Add(this.TxtCodBarras);
+            this.TxtCodigoImportado.Controls.Add(this.label4);
+            this.TxtCodigoImportado.Controls.Add(this.label1);
+            this.TxtCodigoImportado.Controls.Add(this.TxtNomeProduto);
+            this.TxtCodigoImportado.Controls.Add(this.label3);
+            this.TxtCodigoImportado.Controls.Add(this.CboStatus);
+            this.TxtCodigoImportado.Controls.Add(this.label2);
+            this.TxtCodigoImportado.Controls.Add(this.TxtCodigo);
+            this.TxtCodigoImportado.Location = new System.Drawing.Point(45, 133);
+            this.TxtCodigoImportado.Name = "TxtCodigoImportado";
+            this.TxtCodigoImportado.Size = new System.Drawing.Size(821, 347);
+            this.TxtCodigoImportado.TabIndex = 41;
+            this.TxtCodigoImportado.TabStop = false;
+            this.TxtCodigoImportado.Text = "Dados gerais";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(118, 20);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(90, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Código Importado";
+            // 
+            // TxtCodProdutoImportado
+            // 
+            this.TxtCodProdutoImportado.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.TxtCodProdutoImportado.Cursor = System.Windows.Forms.Cursors.No;
+            this.TxtCodProdutoImportado.Enabled = false;
+            this.TxtCodProdutoImportado.Location = new System.Drawing.Point(121, 36);
+            this.TxtCodProdutoImportado.Name = "TxtCodProdutoImportado";
+            this.TxtCodProdutoImportado.Size = new System.Drawing.Size(106, 20);
+            this.TxtCodProdutoImportado.TabIndex = 18;
             // 
             // label8
             // 
@@ -360,6 +383,7 @@
             this.BtnCancelar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.BtnCancelar.TabIndex = 51;
             this.BtnCancelar.TabStop = false;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // BtnSalvar
             // 
@@ -382,7 +406,7 @@
             this.ClientSize = new System.Drawing.Size(900, 700);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnSalvar);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.TxtCodigoImportado);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.rodape1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -401,8 +425,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnFuncionario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnProduto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClienteFornecedor)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.TxtCodigoImportado.ResumeLayout(false);
+            this.TxtCodigoImportado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCancelar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnSalvar)).EndInit();
             this.ResumeLayout(false);
@@ -423,7 +447,7 @@
         private System.Windows.Forms.PictureBox BtnProduto;
         private System.Windows.Forms.PictureBox BtnClienteFornecedor;
         private System.Windows.Forms.Label LblTitulo;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox TxtCodigoImportado;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox TxtDescricao;
         private System.Windows.Forms.TextBox TxtValor;
@@ -441,5 +465,7 @@
         private System.Windows.Forms.TextBox TxtCodigo;
         private System.Windows.Forms.PictureBox BtnCancelar;
         private System.Windows.Forms.PictureBox BtnSalvar;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox TxtCodProdutoImportado;
     }
 }

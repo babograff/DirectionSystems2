@@ -1,24 +1,101 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using DirectionSystems2.Properties;
 using DirectionSystems2.Classes;
+using System.Data.SqlClient;
+using System.Data;
+using System.Text.RegularExpressions;
 
 namespace DirectionSystems2
 {
     public partial class FrmCadastroClienteFornecedor : Form
     {
+        ClassConexao Conexao = new ClassConexao();
+        SqlDataReader reader;
         public FrmCadastroClienteFornecedor(int Codigo)
         {
             InitializeComponent();
             LblTitulo.Text = ClassUtilidades.VersaoSistema;
+
+            TxtCPFCNPJ.Focus();
+
+            SqlConnection conn = Conexao.AbreConexao();
+            SqlCommand cmd = new SqlCommand("spUF", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            try
+            {
+                DataTable dtResultado = new DataTable();
+                reader = cmd.ExecuteReader();
+                dtResultado.Clear();//o ponto mais importante (limpa a table antes de preenche-la)
+                dtResultado.Load(reader);
+                CboUF.DataSource = null;
+                CboUF.DataSource = dtResultado;
+                CboUF.ValueMember = "CodUF";
+                CboUF.DisplayMember = "UF";
+                CboUF.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.ToString());
+            }
+            finally
+            {
+                Conexao.FechaConexao(conn);
+            }
+
+            if (Codigo == 0)
+            {
+                TxtCodigo.Text = "Novo";
+                CboStatus.SelectedIndex = 1;
+            }
+            else
+            {
+                TxtCodigo.Text = Codigo.ToString();
+                conn = Conexao.AbreConexao();
+                cmd = new SqlCommand("spClienteFornecedorInterna", conn);
+                cmd.Parameters.AddWithValue("@CodClienteFornecedor", Codigo);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                try
+                {
+                    reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        TxtCodigoImportado.Text = reader[0].ToString();
+                        CboUF.SelectedIndex = Convert.ToInt32(reader[1]);
+                        TxtNome.Text = reader[2].ToString();
+                        TxtTelefone.Text = reader[3].ToString();
+                        TxtEmail.Text = reader[4].ToString();
+                        TxtCidade.Text = reader[5].ToString();
+                        TxtBairro.Text = reader[6].ToString();
+                        TxtFantasia.Text = reader[7].ToString();
+                        TxtFax.Text = reader[8].ToString();
+                        TxtSite.Text = reader[9].ToString();
+                        // TxtNascimento.Text = reader[10].ToString();
+                        Cliente.Checked = Convert.ToBoolean(reader[11]);
+                        Fornecedor.Checked = Convert.ToBoolean(reader[12]);
+                        TxtEndereco.Text = reader[13].ToString();
+                        TxtCPFCNPJ.Text = reader[14].ToString();
+                        TxtRG.Text = reader[15].ToString();
+                        CboStatus.SelectedIndex = CboStatus.Items.IndexOf(reader[16].ToString());
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuário inexistente");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro: " + ex.ToString());
+                }
+                finally
+                {
+                    Conexao.FechaConexao(conn);
+                }
+            }
         }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -137,6 +214,45 @@ namespace DirectionSystems2
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void TxtCPFCNPJ_Leave(object sender, EventArgs e)
+        {
+            TxtCPFCNPJ.Text = MascaraCnpjCpf(TxtCPFCNPJ.Text);
+        }
+
+        public static string MascaraCnpjCpf(string pCnpjCpf)
+        {
+            string result = "";
+            if (pCnpjCpf.Length == 14)
+            {
+                result = pCnpjCpf.Insert(2, ".").Insert(6, ".").Insert(10, "/").Insert(15, "-");
+            }
+            if (pCnpjCpf.Length == 11)
+            {
+                result = pCnpjCpf.Insert(3, ".").Insert(7, ".").Insert(11, "-");
+            }
+            if ((pCnpjCpf.Length != 11) && (pCnpjCpf.Length != 14))
+            {
+                result = pCnpjCpf;
+            }
+            return result;
+        }
+
+        private void TxtCPFCNPJ_Enter(object sender, EventArgs e)
+        {
+            Regex rgx = new Regex("[^0-9a-zA-Z]+");
+            TxtCPFCNPJ.Text = rgx.Replace(TxtCPFCNPJ.Text, "");
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja realmente cancelar?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                FrmSelecaoUsuario Usuario = new FrmSelecaoUsuario();
+                Usuario.Show();
+                this.Close();
+            }
         }
     }
 }

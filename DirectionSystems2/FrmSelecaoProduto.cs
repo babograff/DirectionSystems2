@@ -84,7 +84,7 @@ namespace DirectionSystems2
 
         private void BtnPesquisar_Click(object sender, EventArgs e)
         {
-            Pesquisar();
+            Pesquisar(); 
         }
 
         private void Pesquisar()
@@ -157,7 +157,8 @@ namespace DirectionSystems2
 
         private void FrmSelecaoProduto_Load(object sender, EventArgs e)
         {
-
+            GridProduto.AutoGenerateColumns = false;
+            Pesquisar();
         }
     }
 }

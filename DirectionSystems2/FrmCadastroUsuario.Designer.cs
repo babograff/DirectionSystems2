@@ -57,7 +57,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TxtSenha = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.TxtUsuario = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.TxtNome = new System.Windows.Forms.TextBox();
@@ -67,6 +66,9 @@
             this.TxtCodigo = new System.Windows.Forms.TextBox();
             this.BtnCancelar = new System.Windows.Forms.PictureBox();
             this.BtnSalvar = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnAjuda)).BeginInit();
@@ -234,6 +236,7 @@
             this.ChbSelecionarTodos.TabIndex = 37;
             this.ChbSelecionarTodos.Text = "Selecionar todos";
             this.ChbSelecionarTodos.UseVisualStyleBackColor = true;
+            this.ChbSelecionarTodos.CheckedChanged += new System.EventHandler(this.ChbSelecionarTodos_CheckedChanged);
             // 
             // groupBox9
             // 
@@ -250,7 +253,8 @@
             this.checkedListBox6.FormattingEnabled = true;
             this.checkedListBox6.Items.AddRange(new object[] {
             "Backup / Restore",
-            "Log de eventos"});
+            "Auditoria",
+            "Importação"});
             this.checkedListBox6.Location = new System.Drawing.Point(6, 19);
             this.checkedListBox6.Name = "checkedListBox6";
             this.checkedListBox6.Size = new System.Drawing.Size(365, 45);
@@ -269,6 +273,7 @@
             // checkedListBox5
             // 
             this.checkedListBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListBox5.Enabled = false;
             this.checkedListBox5.FormattingEnabled = true;
             this.checkedListBox5.Items.AddRange(new object[] {
             "Encomenda "});
@@ -290,6 +295,7 @@
             // checkedListBox4
             // 
             this.checkedListBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListBox4.Enabled = false;
             this.checkedListBox4.FormattingEnabled = true;
             this.checkedListBox4.Items.AddRange(new object[] {
             "Produção"});
@@ -311,6 +317,7 @@
             // checkedListBox3
             // 
             this.checkedListBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListBox3.Enabled = false;
             this.checkedListBox3.FormattingEnabled = true;
             this.checkedListBox3.Items.AddRange(new object[] {
             "Estoque",
@@ -334,13 +341,14 @@
             // checkedListBox2
             // 
             this.checkedListBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListBox2.Enabled = false;
             this.checkedListBox2.FormattingEnabled = true;
             this.checkedListBox2.Items.AddRange(new object[] {
             "Venda",
             "Venda por item",
             "Produção",
             "Sugestão de compra"});
-            this.checkedListBox2.Location = new System.Drawing.Point(75, 19);
+            this.checkedListBox2.Location = new System.Drawing.Point(6, 24);
             this.checkedListBox2.MultiColumn = true;
             this.checkedListBox2.Name = "checkedListBox2";
             this.checkedListBox2.Size = new System.Drawing.Size(317, 45);
@@ -373,9 +381,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.TxtSenha);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.TxtUsuario);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.TxtNome);
@@ -407,13 +417,6 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Senha";
             // 
-            // TxtUsuario
-            // 
-            this.TxtUsuario.Location = new System.Drawing.Point(9, 130);
-            this.TxtUsuario.Name = "TxtUsuario";
-            this.TxtUsuario.Size = new System.Drawing.Size(422, 20);
-            this.TxtUsuario.TabIndex = 9;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -428,16 +431,16 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 67);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
+            this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Nome Completo";
+            this.label1.Text = "Nome";
             // 
             // TxtNome
             // 
             this.TxtNome.BackColor = System.Drawing.Color.White;
             this.TxtNome.Location = new System.Drawing.Point(9, 83);
             this.TxtNome.Name = "TxtNome";
-            this.TxtNome.Size = new System.Drawing.Size(806, 20);
+            this.TxtNome.Size = new System.Drawing.Size(422, 20);
             this.TxtNome.TabIndex = 6;
             // 
             // label3
@@ -504,6 +507,33 @@
             this.BtnSalvar.TabIndex = 50;
             this.BtnSalvar.TabStop = false;
             this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(437, 83);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(377, 20);
+            this.textBox1.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(437, 67);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(61, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Sobrenome";
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox2.Cursor = System.Windows.Forms.Cursors.No;
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(9, 130);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(422, 20);
+            this.textBox2.TabIndex = 14;
             // 
             // FrmCadastroUsuario
             // 
@@ -579,7 +609,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox TxtSenha;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox TxtUsuario;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TxtNome;
@@ -589,5 +618,8 @@
         private System.Windows.Forms.TextBox TxtCodigo;
         private System.Windows.Forms.PictureBox BtnCancelar;
         private System.Windows.Forms.PictureBox BtnSalvar;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
