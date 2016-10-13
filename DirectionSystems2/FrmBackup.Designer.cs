@@ -1,6 +1,6 @@
 ﻿namespace DirectionSystems2
 {
-    partial class FrmImportacao
+    partial class FrmBackup
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmImportacao));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.BtnImportar = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.CboTabela = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TxtNomeArquivo = new System.Windows.Forms.TextBox();
-            this.BtnPesquisar = new System.Windows.Forms.PictureBox();
-            this.GridDados = new System.Windows.Forms.DataGridView();
-            this.rodape1 = new DirectionSystems2.Componentes.Rodape();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBackup));
+            this.TxtCaminhoRestore = new System.Windows.Forms.GroupBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.BtnBackup = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TxtCaminho = new System.Windows.Forms.TextBox();
+            this.TxtBanco = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -48,10 +49,12 @@
             this.BtnFexar = new System.Windows.Forms.PictureBox();
             this.BtnUsuario = new System.Windows.Forms.PictureBox();
             this.LblTitulo = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnImportar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnPesquisar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridDados)).BeginInit();
+            this.rodape1 = new DirectionSystems2.Componentes.Rodape();
+            this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.TxtCaminhoRestore.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnBackup)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -62,113 +65,125 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnUsuario)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // TxtCaminhoRestore
             // 
-            this.groupBox1.Controls.Add(this.BtnImportar);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.CboTabela);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.TxtNomeArquivo);
-            this.groupBox1.Controls.Add(this.BtnPesquisar);
-            this.groupBox1.Location = new System.Drawing.Point(45, 135);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(821, 83);
-            this.groupBox1.TabIndex = 40;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Arquivo";
+            this.TxtCaminhoRestore.Controls.Add(this.progressBar1);
+            this.TxtCaminhoRestore.Controls.Add(this.BtnBackup);
+            this.TxtCaminhoRestore.Controls.Add(this.label4);
+            this.TxtCaminhoRestore.Controls.Add(this.TxtCaminho);
+            this.TxtCaminhoRestore.Controls.Add(this.TxtBanco);
+            this.TxtCaminhoRestore.Controls.Add(this.label2);
+            this.TxtCaminhoRestore.Location = new System.Drawing.Point(45, 140);
+            this.TxtCaminhoRestore.Name = "TxtCaminhoRestore";
+            this.TxtCaminhoRestore.Size = new System.Drawing.Size(821, 154);
+            this.TxtCaminhoRestore.TabIndex = 40;
+            this.TxtCaminhoRestore.TabStop = false;
+            this.TxtCaminhoRestore.Text = "Backup";
             // 
-            // BtnImportar
+            // progressBar1
             // 
-            this.BtnImportar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnImportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BtnImportar.Image = global::DirectionSystems2.Properties.Resources.Salvar;
-            this.BtnImportar.Location = new System.Drawing.Point(695, 31);
-            this.BtnImportar.Name = "BtnImportar";
-            this.BtnImportar.Size = new System.Drawing.Size(120, 30);
-            this.BtnImportar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.BtnImportar.TabIndex = 45;
-            this.BtnImportar.TabStop = false;
-            this.BtnImportar.Click += new System.EventHandler(this.BtnImportar_Click);
+            this.progressBar1.Location = new System.Drawing.Point(9, 121);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(788, 23);
+            this.progressBar1.TabIndex = 47;
             // 
-            // label3
+            // BtnBackup
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 44;
-            this.label3.Text = "Tabela";
-            // 
-            // CboTabela
-            // 
-            this.CboTabela.FormattingEnabled = true;
-            this.CboTabela.Items.AddRange(new object[] {
-            "Vendas",
-            "Produtos",
-            "Clientes",
-            "Fornecedor"});
-            this.CboTabela.Location = new System.Drawing.Point(6, 41);
-            this.CboTabela.Name = "CboTabela";
-            this.CboTabela.Size = new System.Drawing.Size(182, 21);
-            this.CboTabela.TabIndex = 43;
+            this.BtnBackup.BackColor = System.Drawing.Color.Transparent;
+            this.BtnBackup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnBackup.Image = global::DirectionSystems2.Properties.Resources.Salvar;
+            this.BtnBackup.Location = new System.Drawing.Point(679, 73);
+            this.BtnBackup.Name = "BtnBackup";
+            this.BtnBackup.Size = new System.Drawing.Size(120, 30);
+            this.BtnBackup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.BtnBackup.TabIndex = 46;
+            this.BtnBackup.TabStop = false;
+            this.BtnBackup.Click += new System.EventHandler(this.BtnBackup_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(191, 26);
+            this.label4.Location = new System.Drawing.Point(8, 67);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 13);
-            this.label4.TabIndex = 42;
+            this.label4.TabIndex = 45;
             this.label4.Text = "Caminho Arquivo";
             // 
-            // TxtNomeArquivo
+            // TxtCaminho
             // 
-            this.TxtNomeArquivo.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.TxtNomeArquivo.Cursor = System.Windows.Forms.Cursors.No;
-            this.TxtNomeArquivo.Enabled = false;
-            this.TxtNomeArquivo.Location = new System.Drawing.Point(194, 42);
-            this.TxtNomeArquivo.Name = "TxtNomeArquivo";
-            this.TxtNomeArquivo.Size = new System.Drawing.Size(361, 20);
-            this.TxtNomeArquivo.TabIndex = 41;
+            this.TxtCaminho.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.TxtCaminho.Cursor = System.Windows.Forms.Cursors.No;
+            this.TxtCaminho.Enabled = false;
+            this.TxtCaminho.Location = new System.Drawing.Point(11, 83);
+            this.TxtCaminho.Name = "TxtCaminho";
+            this.TxtCaminho.Size = new System.Drawing.Size(662, 20);
+            this.TxtCaminho.TabIndex = 44;
+            this.TxtCaminho.Text = "C:\\DirectionSystems2\\Backup BD";
             // 
-            // BtnPesquisar
+            // TxtBanco
             // 
-            this.BtnPesquisar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BtnPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("BtnPesquisar.Image")));
-            this.BtnPesquisar.Location = new System.Drawing.Point(561, 31);
-            this.BtnPesquisar.Name = "BtnPesquisar";
-            this.BtnPesquisar.Size = new System.Drawing.Size(120, 30);
-            this.BtnPesquisar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.BtnPesquisar.TabIndex = 20;
-            this.BtnPesquisar.TabStop = false;
-            this.BtnPesquisar.Click += new System.EventHandler(this.BtnPesquisar_Click);
+            this.TxtBanco.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.TxtBanco.Cursor = System.Windows.Forms.Cursors.No;
+            this.TxtBanco.Enabled = false;
+            this.TxtBanco.Location = new System.Drawing.Point(9, 36);
+            this.TxtBanco.Name = "TxtBanco";
+            this.TxtBanco.Size = new System.Drawing.Size(790, 20);
+            this.TxtBanco.TabIndex = 15;
             // 
-            // GridDados
+            // label2
             // 
-            this.GridDados.AllowUserToAddRows = false;
-            this.GridDados.AllowUserToDeleteRows = false;
-            this.GridDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridDados.Location = new System.Drawing.Point(45, 253);
-            this.GridDados.Name = "GridDados";
-            this.GridDados.ReadOnly = true;
-            this.GridDados.Size = new System.Drawing.Size(821, 408);
-            this.GridDados.TabIndex = 41;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Banco de dados";
             // 
-            // rodape1
+            // groupBox2
             // 
-            this.rodape1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rodape1.Location = new System.Drawing.Point(-2, 678);
-            this.rodape1.Name = "rodape1";
-            this.rodape1.Size = new System.Drawing.Size(900, 22);
-            this.rodape1.TabIndex = 23;
+            this.groupBox2.Controls.Add(this.progressBar2);
+            this.groupBox2.Controls.Add(this.pictureBox2);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Location = new System.Drawing.Point(45, 300);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(821, 113);
+            this.groupBox2.TabIndex = 47;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Restore";
             // 
-            // progressBar1
+            // pictureBox2
             // 
-            this.progressBar1.Location = new System.Drawing.Point(45, 224);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(821, 23);
-            this.progressBar1.TabIndex = 42;
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox2.Image = global::DirectionSystems2.Properties.Resources.Salvar;
+            this.pictureBox2.Location = new System.Drawing.Point(679, 33);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(120, 30);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 46;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 13);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "Caminho Arquivo";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.No;
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(11, 43);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(662, 20);
+            this.textBox1.TabIndex = 44;
+            this.textBox1.Text = "C:\\DirectionSystems2\\Backup BD";
             // 
             // panel2
             // 
@@ -186,7 +201,7 @@
             this.panel2.Location = new System.Drawing.Point(-2, -2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(900, 118);
-            this.panel2.TabIndex = 48;
+            this.panel2.TabIndex = 47;
             // 
             // pictureBox1
             // 
@@ -196,7 +211,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(91, 64);
             this.pictureBox1.TabIndex = 29;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox4
             // 
@@ -236,7 +251,7 @@
             this.BtnMaximizar.Size = new System.Drawing.Size(16, 16);
             this.BtnMaximizar.TabIndex = 25;
             this.BtnMaximizar.TabStop = false;
-            this.BtnMaximizar.Click += new System.EventHandler(this.BtnMaximizar_Click_1);
+            this.BtnMaximizar.Click += new System.EventHandler(this.BtnMaximizar_Click);
             // 
             // BtnFexar
             // 
@@ -256,7 +271,7 @@
             this.BtnUsuario.Size = new System.Drawing.Size(91, 64);
             this.BtnUsuario.TabIndex = 19;
             this.BtnUsuario.TabStop = false;
-            this.BtnUsuario.Click += new System.EventHandler(this.BtnUsuario_Click_1);
+            this.BtnUsuario.Click += new System.EventHandler(this.BtnUsuario_Click);
             // 
             // LblTitulo
             // 
@@ -268,28 +283,43 @@
             this.LblTitulo.TabIndex = 15;
             this.LblTitulo.Text = "DirectionSystems - versão";
             // 
-            // FrmImportacao
+            // rodape1
+            // 
+            this.rodape1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rodape1.Location = new System.Drawing.Point(-2, 678);
+            this.rodape1.Name = "rodape1";
+            this.rodape1.Size = new System.Drawing.Size(903, 22);
+            this.rodape1.TabIndex = 25;
+            // 
+            // progressBar2
+            // 
+            this.progressBar2.Location = new System.Drawing.Point(11, 84);
+            this.progressBar2.Name = "progressBar2";
+            this.progressBar2.Size = new System.Drawing.Size(788, 23);
+            this.progressBar2.TabIndex = 48;
+            // 
+            // FrmBackup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(900, 700);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.GridDados);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.TxtCaminhoRestore);
             this.Controls.Add(this.rodape1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FrmImportacao";
+            this.Name = "FrmBackup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmImportacao";
-            this.Load += new System.EventHandler(this.FrmImportacao_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnImportar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnPesquisar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridDados)).EndInit();
+            this.Text = "FrmBackup";
+            this.Load += new System.EventHandler(this.FrmBackup_Load);
+            this.TxtCaminhoRestore.ResumeLayout(false);
+            this.TxtCaminhoRestore.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnBackup)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -305,15 +335,16 @@
 
         #endregion
         private Componentes.Rodape rodape1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox TxtCaminhoRestore;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TxtBanco;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox TxtNomeArquivo;
-        private System.Windows.Forms.PictureBox BtnPesquisar;
-        private System.Windows.Forms.PictureBox BtnImportar;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox CboTabela;
-        private System.Windows.Forms.DataGridView GridDados;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.TextBox TxtCaminho;
+        private System.Windows.Forms.PictureBox BtnBackup;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox4;
@@ -323,5 +354,7 @@
         private System.Windows.Forms.PictureBox BtnFexar;
         private System.Windows.Forms.PictureBox BtnUsuario;
         private System.Windows.Forms.Label LblTitulo;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar progressBar2;
     }
 }

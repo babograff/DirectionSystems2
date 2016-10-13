@@ -50,10 +50,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.TxtNome = new System.Windows.Forms.TextBox();
             this.GridProduto = new System.Windows.Forms.DataGridView();
+            this.CboTipoProduto = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Excluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.CodProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodBarras = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
@@ -207,6 +210,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.CboTipoProduto);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtCodBarras);
             this.groupBox1.Controls.Add(this.BtnPesquisar);
@@ -224,7 +229,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(409, 20);
+            this.label1.Location = new System.Drawing.Point(245, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 22;
@@ -232,9 +237,9 @@
             // 
             // txtCodBarras
             // 
-            this.txtCodBarras.Location = new System.Drawing.Point(412, 36);
+            this.txtCodBarras.Location = new System.Drawing.Point(248, 36);
             this.txtCodBarras.Name = "txtCodBarras";
-            this.txtCodBarras.Size = new System.Drawing.Size(150, 20);
+            this.txtCodBarras.Size = new System.Drawing.Size(143, 20);
             this.txtCodBarras.TabIndex = 21;
             // 
             // BtnPesquisar
@@ -283,7 +288,7 @@
             // 
             this.TxtNome.Location = new System.Drawing.Point(9, 36);
             this.TxtNome.Name = "TxtNome";
-            this.TxtNome.Size = new System.Drawing.Size(397, 20);
+            this.TxtNome.Size = new System.Drawing.Size(233, 20);
             this.TxtNome.TabIndex = 2;
             // 
             // GridProduto
@@ -296,6 +301,7 @@
             this.Excluir,
             this.CodProduto,
             this.CodBarras,
+            this.Tipo,
             this.Nome,
             this.Status});
             this.GridProduto.Location = new System.Drawing.Point(45, 239);
@@ -304,6 +310,26 @@
             this.GridProduto.Size = new System.Drawing.Size(821, 421);
             this.GridProduto.TabIndex = 39;
             this.GridProduto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridProduto_CellClick);
+            // 
+            // CboTipoProduto
+            // 
+            this.CboTipoProduto.FormattingEnabled = true;
+            this.CboTipoProduto.Items.AddRange(new object[] {
+            "Matéria prima (insumo)",
+            "Produto acabado (Venda)"});
+            this.CboTipoProduto.Location = new System.Drawing.Point(397, 35);
+            this.CboTipoProduto.Name = "CboTipoProduto";
+            this.CboTipoProduto.Size = new System.Drawing.Size(165, 21);
+            this.CboTipoProduto.TabIndex = 23;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(394, 20);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(28, 13);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Tipo";
             // 
             // Editar
             // 
@@ -336,6 +362,13 @@
             this.CodBarras.HeaderText = "Código de Barras";
             this.CodBarras.Name = "CodBarras";
             this.CodBarras.ReadOnly = true;
+            // 
+            // Tipo
+            // 
+            this.Tipo.DataPropertyName = "Tipo";
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
             // 
             // Nome
             // 
@@ -413,10 +446,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TxtNome;
         private System.Windows.Forms.DataGridView GridProduto;
+        private System.Windows.Forms.ComboBox CboTipoProduto;
+        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Excluir;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodBarras;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
     }

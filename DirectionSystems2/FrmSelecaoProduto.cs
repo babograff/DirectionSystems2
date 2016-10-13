@@ -15,6 +15,7 @@ namespace DirectionSystems2
             InitializeComponent();
             LblTitulo.Text = ClassUtilidades.VersaoSistema;
             CboStatus.SelectedIndex = 1;
+            CboTipoProduto.SelectedIndex = 1;
         }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -94,6 +95,7 @@ namespace DirectionSystems2
             cmd.Parameters.AddWithValue("@Nome", TxtNome.Text);
             cmd.Parameters.AddWithValue("@CodBarras", txtCodBarras.Text);
             cmd.Parameters.AddWithValue("@Status", CboStatus.SelectedIndex);
+            cmd.Parameters.AddWithValue("@Tipo", CboTipoProduto.SelectedIndex);
             cmd.CommandType = CommandType.StoredProcedure;
 
             try

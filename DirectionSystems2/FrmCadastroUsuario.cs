@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using DirectionSystems2.Classes;
 using System.Data.SqlClient;
+using Microsoft.SqlServer.Management.Smo;
 
 namespace DirectionSystems2
 {
@@ -35,9 +36,10 @@ namespace DirectionSystems2
                     if (reader.Read())
                     {
                         TxtNome.Text = reader[1].ToString();
-                        CboStatus.SelectedIndex = CboStatus.Items.IndexOf(reader[2].ToString());
-                      //  TxtUsuario.Text = reader[3].ToString();
-                        TxtSenha.Text = reader[4].ToString();
+                        TxtSobrenome.Text = reader[2].ToString();
+                        CboStatus.SelectedIndex = CboStatus.Items.IndexOf(reader[3].ToString());
+                        TxtUsuario.Text = reader[4].ToString();
+                        TxtSenha.Text = reader[5].ToString();
                     }
                     else {
                         MessageBox.Show("Usuário inexistente");
@@ -129,9 +131,10 @@ namespace DirectionSystems2
                 SqlConnection conn = Conexao.AbreConexao();
                 SqlCommand cmd = new SqlCommand("spUsuarioNovo", conn);
                 cmd.Parameters.AddWithValue("@CodUsuario", Codigo);
-               // cmd.Parameters.AddWithValue("@Usuario ", TxtUsuario.Text);
+                cmd.Parameters.AddWithValue("@Usuario ", TxtUsuario.Text);
                 cmd.Parameters.AddWithValue("@Senha", TxtSenha.Text);
                 cmd.Parameters.AddWithValue("@Nome", TxtNome.Text);
+                cmd.Parameters.AddWithValue("@Sobrenome", TxtSobrenome.Text);
                 cmd.Parameters.AddWithValue("@Status", CboStatus.SelectedIndex);
                 cmd.Parameters.AddWithValue("@ID", ClassUtilidades.CodUsuario);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -154,6 +157,24 @@ namespace DirectionSystems2
                             TxtCodigo.Text = reader[0].ToString();
                             MessageBox.Show("Registro incuído com sucesso!");
 
+                            Server myServer = conexao.GetServer();
+                            try
+                            {
+                                Login login = new Login(myServer, TxtUsuario.Text);
+                                login.LoginType = LoginType.SqlLogin;
+                                login.Create(TxtSenha.Text);
+                                login.AddToRole("sysadmin");
+
+
+                                Database db = myServer.Databases["BomGosto"];
+                                User user = new User(db, TxtUsuario.Text);
+                                user.Login = TxtUsuario.Text;
+                                user.Create();
+                            }
+                            catch (Exception err)
+                            {
+                                Console.WriteLine(err.Message);
+                            }
                         }
                     }
                 }
@@ -176,12 +197,12 @@ namespace DirectionSystems2
                 TxtNome.Focus();
                 return false;
             }
-          //  else if (TxtUsuario.Text == string.Empty)
-          //  {
-           //     MessageBox.Show("Campo USUÁRIO vazio!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-          //      TxtUsuario.Focus();
-          //      return false;
-          //  }
+            else if (TxtUsuario.Text == string.Empty)
+            {
+                MessageBox.Show("Campo SOBRENOME vazio!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TxtUsuario.Focus();
+                return false;
+            }
             else if (TxtSenha.Text == string.Empty)
             {
                 MessageBox.Show("Campo SENHA vazio!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -203,18 +224,19 @@ namespace DirectionSystems2
 
         private void ChbSelecionarTodos_CheckedChanged(object sender, EventArgs e)
         {
-            for (int i = 1; i < checkedListBox1.Items.Count; i++)
-                checkedListBox1.SetItemChecked(i, ChbSelecionarTodos.Checked);
-            for (int i = 1; i < checkedListBox2.Items.Count; i++)
-                checkedListBox2.SetItemChecked(i, ChbSelecionarTodos.Checked);
-            for (int i = 1; i < checkedListBox3.Items.Count; i++)
-                checkedListBox3.SetItemChecked(i, ChbSelecionarTodos.Checked);
-            for (int i = 1; i < checkedListBox4.Items.Count; i++)
-                checkedListBox4.SetItemChecked(i, ChbSelecionarTodos.Checked);
-            for (int i = 1; i < checkedListBox5.Items.Count; i++)
-                checkedListBox5.SetItemChecked(i, ChbSelecionarTodos.Checked);
-            for (int i = 1; i < checkedListBox6.Items.Count; i++)
-                checkedListBox6.SetItemChecked(i, ChbSelecionarTodos.Checked);
+
+        }
+
+        ClassConexao conexao = new ClassConexao();
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            TxtUsuario.Text = TxtNome.Text + "." + TxtSobrenome.Text;
+        }
+
+        private void TxtNome_Leave(object sender, EventArgs e)
+        {
+            TxtUsuario.Text = TxtNome.Text + "." + TxtSobrenome.Text;
         }
     }
 }

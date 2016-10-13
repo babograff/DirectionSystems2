@@ -51,6 +51,7 @@
             this.TxtUsuario = new System.Windows.Forms.TextBox();
             this.GridAuditoria = new System.Windows.Forms.DataGridView();
             this.rodape1 = new DirectionSystems2.Componentes.Rodape();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMenu)).BeginInit();
@@ -61,12 +62,14 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnPesquisar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridAuditoria)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.BtnMenu);
             this.panel2.Controls.Add(this.BtnAjuda);
@@ -83,7 +86,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(364, 47);
+            this.pictureBox1.Location = new System.Drawing.Point(319, 42);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(91, 64);
             this.pictureBox1.TabIndex = 28;
@@ -133,7 +136,7 @@
             // BtnUsuario
             // 
             this.BtnUsuario.Image = ((System.Drawing.Image)(resources.GetObject("BtnUsuario.Image")));
-            this.BtnUsuario.Location = new System.Drawing.Point(461, 47);
+            this.BtnUsuario.Location = new System.Drawing.Point(416, 42);
             this.BtnUsuario.Name = "BtnUsuario";
             this.BtnUsuario.Size = new System.Drawing.Size(91, 64);
             this.BtnUsuario.TabIndex = 19;
@@ -294,6 +297,16 @@
             this.rodape1.Size = new System.Drawing.Size(903, 22);
             this.rodape1.TabIndex = 24;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(513, 42);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(91, 64);
+            this.pictureBox2.TabIndex = 30;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // FrmAuditoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,6 +335,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnPesquisar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridAuditoria)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -350,5 +364,6 @@
         private System.Windows.Forms.DataGridView GridAuditoria;
         private System.Windows.Forms.DateTimePicker TxtDataFinal;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

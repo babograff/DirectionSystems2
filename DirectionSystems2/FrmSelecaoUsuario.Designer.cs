@@ -52,6 +52,8 @@
             this.Excluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.CodUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sobrenome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Usuário = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMenu)).BeginInit();
@@ -275,6 +277,8 @@
             this.Excluir,
             this.CodUsuario,
             this.Nome,
+            this.Sobrenome,
+            this.Usuário,
             this.Status});
             this.GridUsuario.Location = new System.Drawing.Point(45, 239);
             this.GridUsuario.Name = "GridUsuario";
@@ -314,6 +318,20 @@
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
             this.Nome.ReadOnly = true;
+            // 
+            // Sobrenome
+            // 
+            this.Sobrenome.DataPropertyName = "Sobrenome";
+            this.Sobrenome.HeaderText = "Sobrenome";
+            this.Sobrenome.Name = "Sobrenome";
+            this.Sobrenome.ReadOnly = true;
+            // 
+            // Usuário
+            // 
+            this.Usuário.DataPropertyName = "Usuario";
+            this.Usuário.HeaderText = "Usuário";
+            this.Usuário.Name = "Usuário";
+            this.Usuário.ReadOnly = true;
             // 
             // Status
             // 
@@ -385,6 +403,8 @@
         private System.Windows.Forms.DataGridViewImageColumn Excluir;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sobrenome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Usuário;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
     }
 }

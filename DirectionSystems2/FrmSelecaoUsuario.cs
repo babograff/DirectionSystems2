@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using DirectionSystems2.Classes;
 using System.Data.SqlClient;
+using Microsoft.SqlServer.Management.Smo;
 
 namespace DirectionSystems2
 {
@@ -110,6 +111,7 @@ namespace DirectionSystems2
             }
         }
 
+        ClassConexao conexao = new ClassConexao();
         private void GridUsuario_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == GridUsuario.Columns["Editar"].Index)
@@ -133,6 +135,16 @@ namespace DirectionSystems2
                         if (cmd.ExecuteNonQuery() > 0)
                         {
                             MessageBox.Show("Registro excluído com sucesso!");
+
+                            Server myServer = conexao.GetServer();
+                            Database db = myServer.Databases["BomGosto"];
+
+                            User user1 = db.Users[GridUsuario["Usuário", e.RowIndex].Value.ToString()];
+                            user1.Drop();
+
+                            Login Login1 = myServer.Logins[GridUsuario["Usuário", e.RowIndex].Value.ToString()];
+                            Login1.Drop();
+
                             Pesquisar();
                         }
                         else

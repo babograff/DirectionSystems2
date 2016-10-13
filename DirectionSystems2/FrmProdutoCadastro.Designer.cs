@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastroProduto));
-            this.rodape1 = new DirectionSystems2.Componentes.Rodape();
             this.panel2 = new System.Windows.Forms.Panel();
             this.BtnMenu = new System.Windows.Forms.PictureBox();
             this.BtnAjuda = new System.Windows.Forms.PictureBox();
@@ -55,11 +54,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TxtNomeProduto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.CboStatus = new System.Windows.Forms.ComboBox();
+            this.CboTipo = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtCodigo = new System.Windows.Forms.TextBox();
             this.BtnCancelar = new System.Windows.Forms.PictureBox();
             this.BtnSalvar = new System.Windows.Forms.PictureBox();
+            this.CboTipoProduto = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.rodape1 = new DirectionSystems2.Componentes.Rodape();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnAjuda)).BeginInit();
@@ -73,14 +75,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnCancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnSalvar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // rodape1
-            // 
-            this.rodape1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rodape1.Location = new System.Drawing.Point(-2, 678);
-            this.rodape1.Name = "rodape1";
-            this.rodape1.Size = new System.Drawing.Size(900, 22);
-            this.rodape1.TabIndex = 23;
             // 
             // panel2
             // 
@@ -197,6 +191,8 @@
             // 
             // TxtCodigoImportado
             // 
+            this.TxtCodigoImportado.Controls.Add(this.label10);
+            this.TxtCodigoImportado.Controls.Add(this.CboTipoProduto);
             this.TxtCodigoImportado.Controls.Add(this.label9);
             this.TxtCodigoImportado.Controls.Add(this.TxtCodProdutoImportado);
             this.TxtCodigoImportado.Controls.Add(this.label8);
@@ -211,7 +207,7 @@
             this.TxtCodigoImportado.Controls.Add(this.label1);
             this.TxtCodigoImportado.Controls.Add(this.TxtNomeProduto);
             this.TxtCodigoImportado.Controls.Add(this.label3);
-            this.TxtCodigoImportado.Controls.Add(this.CboStatus);
+            this.TxtCodigoImportado.Controls.Add(this.CboTipo);
             this.TxtCodigoImportado.Controls.Add(this.label2);
             this.TxtCodigoImportado.Controls.Add(this.TxtCodigo);
             this.TxtCodigoImportado.Location = new System.Drawing.Point(45, 133);
@@ -342,16 +338,16 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Status";
             // 
-            // CboStatus
+            // CboTipo
             // 
-            this.CboStatus.FormattingEnabled = true;
-            this.CboStatus.Items.AddRange(new object[] {
+            this.CboTipo.FormattingEnabled = true;
+            this.CboTipo.Items.AddRange(new object[] {
             "Inativo",
             "Ativo"});
-            this.CboStatus.Location = new System.Drawing.Point(694, 35);
-            this.CboStatus.Name = "CboStatus";
-            this.CboStatus.Size = new System.Drawing.Size(121, 21);
-            this.CboStatus.TabIndex = 1;
+            this.CboTipo.Location = new System.Drawing.Point(694, 35);
+            this.CboTipo.Name = "CboTipo";
+            this.CboTipo.Size = new System.Drawing.Size(121, 21);
+            this.CboTipo.TabIndex = 1;
             // 
             // label2
             // 
@@ -397,6 +393,34 @@
             this.BtnSalvar.TabIndex = 50;
             this.BtnSalvar.TabStop = false;
             this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
+            // 
+            // CboTipoProduto
+            // 
+            this.CboTipoProduto.FormattingEnabled = true;
+            this.CboTipoProduto.Items.AddRange(new object[] {
+            "Matéria prima (insumo)",
+            "Produto acabado (Venda)"});
+            this.CboTipoProduto.Location = new System.Drawing.Point(523, 35);
+            this.CboTipoProduto.Name = "CboTipoProduto";
+            this.CboTipoProduto.Size = new System.Drawing.Size(165, 21);
+            this.CboTipoProduto.TabIndex = 20;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(523, 20);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(28, 13);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "Tipo";
+            // 
+            // rodape1
+            // 
+            this.rodape1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rodape1.Location = new System.Drawing.Point(-2, 678);
+            this.rodape1.Name = "rodape1";
+            this.rodape1.Size = new System.Drawing.Size(900, 22);
+            this.rodape1.TabIndex = 23;
             // 
             // FrmCadastroProduto
             // 
@@ -460,12 +484,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TxtNomeProduto;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox CboStatus;
+        private System.Windows.Forms.ComboBox CboTipo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TxtCodigo;
         private System.Windows.Forms.PictureBox BtnCancelar;
         private System.Windows.Forms.PictureBox BtnSalvar;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox TxtCodProdutoImportado;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox CboTipoProduto;
     }
 }

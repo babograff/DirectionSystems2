@@ -88,5 +88,12 @@ namespace DirectionSystems2
                 Conexao.FechaConexao(conn);
             }
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            FrmBackup Backup = new FrmBackup();
+            Backup.Visible = true;
+            this.Close();
+        }
     }
 }

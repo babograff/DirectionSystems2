@@ -20,23 +20,17 @@ namespace DirectionSystems2
 
         private void BtnMenu_Click(object sender, EventArgs e)
         {
-            FrmMenu Menu = new FrmMenu();
-            Menu.Visible = true;
-            this.Close();
+
         }
 
         private void BtnUsuario_Click(object sender, EventArgs e)
         {
-            FrmAuditoria Auditoria = new FrmAuditoria();
-            Auditoria.Visible = true;
-            this.Close();
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            FrmImportacao Importacao = new FrmImportacao();
-            Importacao.Visible = true;
-            this.Close();
+
         }
 
         private void FrmImportacao_Load(object sender, EventArgs e)
@@ -44,18 +38,7 @@ namespace DirectionSystems2
 
         }
 
-        private void BtnMaximizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
 
-        private void BtnFexar_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Deseja realmente sair?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
 
         ClassConexao Conexao = new ClassConexao();
         SqlDataReader reader;
@@ -336,6 +319,47 @@ namespace DirectionSystems2
                     catch { }
                 }
                 return dados;
+            }
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            FrmBackup Backup = new FrmBackup();
+            Backup.Visible = true;
+            this.Close();
+        }
+
+        private void BtnUsuario_Click_1(object sender, EventArgs e)
+        {
+            FrmAuditoria Auditoria = new FrmAuditoria();
+            Auditoria.Visible = true;
+            this.Close();
+        }
+
+        private void BtnMenu_Click_1(object sender, EventArgs e)
+        {
+            FrmMenu Menu = new FrmMenu();
+            Menu.Visible = true;
+            this.Close();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            FrmImportacao Importacao = new FrmImportacao();
+            Importacao.Visible = true;
+            this.Close();
+        }
+
+        private void BtnMaximizar_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void BtnFexar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja realmente sair?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
             }
         }
     }
