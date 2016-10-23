@@ -8,6 +8,7 @@ namespace DirectionSystems2.Classes
 {
     class ClassUtilidades
     {
+        ClassCriptoTexto CitptoTexto = new ClassCriptoTexto();
         public static string codUsuario;
         public static string CodUsuario
         {
@@ -26,6 +27,21 @@ namespace DirectionSystems2.Classes
         public static string VersaoSistema
         {
             get { return "DirectionSystems - 0.8.2"; }
+        }
+
+
+        public static string usuario;
+        public static string User
+        {
+            get { return usuario; }
+            set { usuario = value; }
+        }
+
+        public static string senha;
+        public static string Password
+        {
+            get { return  senha; }
+            set { senha = value; }
         }
     }
 }

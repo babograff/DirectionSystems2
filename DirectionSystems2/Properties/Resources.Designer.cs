@@ -183,6 +183,16 @@ namespace DirectionSystems2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MenuCurvaABC {
+            get {
+                object obj = ResourceManager.GetObject("MenuCurvaABC", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MenuFuncionario {
             get {
                 object obj = ResourceManager.GetObject("MenuFuncionario", resourceCulture);
@@ -196,6 +206,16 @@ namespace DirectionSystems2.Properties {
         internal static System.Drawing.Bitmap MenuFuncionarioAtivo {
             get {
                 object obj = ResourceManager.GetObject("MenuFuncionarioAtivo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MenuItemVenda {
+            get {
+                object obj = ResourceManager.GetObject("MenuItemVenda", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

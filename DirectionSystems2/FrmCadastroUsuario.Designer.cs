@@ -63,8 +63,8 @@
             this.TxtCodigo = new System.Windows.Forms.TextBox();
             this.BtnCancelar = new System.Windows.Forms.PictureBox();
             this.BtnSalvar = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rodape1 = new DirectionSystems2.Componentes.Rodape();
+            this.TxtAuxiliar = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnAjuda)).BeginInit();
@@ -78,7 +78,6 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnSalvar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -294,6 +293,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.TxtAuxiliar);
             this.groupBox1.Controls.Add(this.TxtUsuario);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.TxtSobrenome);
@@ -338,7 +338,7 @@
             this.TxtSobrenome.Location = new System.Drawing.Point(437, 83);
             this.TxtSobrenome.Name = "TxtSobrenome";
             this.TxtSobrenome.Size = new System.Drawing.Size(377, 20);
-            this.TxtSobrenome.TabIndex = 11;
+            this.TxtSobrenome.TabIndex = 12;
             this.TxtSobrenome.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // TxtSenha
@@ -347,7 +347,7 @@
             this.TxtSenha.Name = "TxtSenha";
             this.TxtSenha.PasswordChar = '*';
             this.TxtSenha.Size = new System.Drawing.Size(377, 20);
-            this.TxtSenha.TabIndex = 12;
+            this.TxtSenha.TabIndex = 11;
             // 
             // label5
             // 
@@ -450,14 +450,6 @@
             this.BtnSalvar.TabStop = false;
             this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // rodape1
             // 
             this.rodape1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -466,13 +458,21 @@
             this.rodape1.Size = new System.Drawing.Size(900, 22);
             this.rodape1.TabIndex = 22;
             // 
+            // TxtAuxiliar
+            // 
+            this.TxtAuxiliar.Location = new System.Drawing.Point(694, 57);
+            this.TxtAuxiliar.Name = "TxtAuxiliar";
+            this.TxtAuxiliar.PasswordChar = '*';
+            this.TxtAuxiliar.Size = new System.Drawing.Size(121, 20);
+            this.TxtAuxiliar.TabIndex = 15;
+            this.TxtAuxiliar.Visible = false;
+            // 
             // FrmCadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(900, 700);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnSalvar);
             this.Controls.Add(this.groupBox1);
@@ -500,7 +500,6 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCancelar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnSalvar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -543,6 +542,6 @@
         private System.Windows.Forms.CheckBox checkBox7;
         private System.Windows.Forms.CheckBox checkBox6;
         private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox TxtAuxiliar;
     }
 }

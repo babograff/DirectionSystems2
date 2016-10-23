@@ -11,6 +11,7 @@ namespace DirectionSystems2
         public FrmBackup()
         {
             InitializeComponent();
+            LblTitulo.Text = ClassUtilidades.VersaoSistema;
         }
 
         private void FrmBackup_Load(object sender, EventArgs e)

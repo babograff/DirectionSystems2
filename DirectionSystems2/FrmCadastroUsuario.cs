@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using DirectionSystems2.Classes;
 using System.Data.SqlClient;
 using Microsoft.SqlServer.Management.Smo;
+using System.Drawing;
 
 namespace DirectionSystems2
 {
@@ -32,6 +33,7 @@ namespace DirectionSystems2
 
                 try
                 {
+                    conn.Open();
                     reader = cmd.ExecuteReader();
                     if (reader.Read())
                     {
@@ -39,7 +41,19 @@ namespace DirectionSystems2
                         TxtSobrenome.Text = reader[2].ToString();
                         CboStatus.SelectedIndex = CboStatus.Items.IndexOf(reader[3].ToString());
                         TxtUsuario.Text = reader[4].ToString();
-                        TxtSenha.Text = reader[5].ToString();
+                        TxtAuxiliar.Text = reader[5].ToString();
+                        checkBox1.Checked = Convert.ToBoolean(reader[6]);
+                        checkBox2.Checked = Convert.ToBoolean(reader[7]);
+                        checkBox3.Checked = Convert.ToBoolean(reader[8]);
+                        checkBox4.Checked = Convert.ToBoolean(reader[9]);
+                        checkBox7.Checked = Convert.ToBoolean(reader[10]);
+                        checkBox5.Checked = Convert.ToBoolean(reader[11]);
+                        checkBox6.Checked = Convert.ToBoolean(reader[12]);
+                        
+                        TxtNome.Enabled = false;
+                        TxtSobrenome.Enabled = false;
+                        TxtNome.BackColor = Color.FromName("ScrollBar");
+                        TxtSobrenome.BackColor = Color.FromName("ScrollBar");
                     }
                     else {
                         MessageBox.Show("Usuário inexistente");
@@ -118,6 +132,7 @@ namespace DirectionSystems2
         {
             if (Valida())
             {
+                Server myServer = conexao.GetServer();
                 string Codigo;
                 if (TxtCodigo.Text == "Novo")
                 {
@@ -137,14 +152,42 @@ namespace DirectionSystems2
                 cmd.Parameters.AddWithValue("@Sobrenome", TxtSobrenome.Text);
                 cmd.Parameters.AddWithValue("@Status", CboStatus.SelectedIndex);
                 cmd.Parameters.AddWithValue("@ID", ClassUtilidades.CodUsuario);
+                cmd.Parameters.AddWithValue("@Encomendas", checkBox1.Checked);
+                cmd.Parameters.AddWithValue("@Configuracoes", checkBox2.Checked);
+                cmd.Parameters.AddWithValue("@Producao", checkBox3.Checked);
+                cmd.Parameters.AddWithValue("@Cadastros", checkBox4.Checked);
+                cmd.Parameters.AddWithValue("@CadastroUsuario", checkBox7.Checked);
+                cmd.Parameters.AddWithValue("@Estoque", checkBox5.Checked);
+                cmd.Parameters.AddWithValue("@Relatorios", checkBox6.Checked);
+
                 cmd.CommandType = CommandType.StoredProcedure;
                 try
                 {
+                    conn.Open();
                     if (TxtCodigo.Text != "Novo")
                     {
                         int i = cmd.ExecuteNonQuery();
                         if (i > 0)
+                        {
                             MessageBox.Show("Registro atualizado com sucesso!");
+
+                            Database db = myServer.Databases["BomGosto"];
+
+                            User user1 = db.Users[TxtUsuario.Text];
+                            user1.Drop();
+
+                            Login Login1 = myServer.Logins[TxtUsuario.Text];
+                            Login1.Drop();
+
+                            Login login = new Login(myServer, TxtUsuario.Text);
+                            login.LoginType = LoginType.SqlLogin;
+                            login.Create(TxtSenha.Text);
+                            login.AddToRole("sysadmin");
+
+                            User user = new User(db, TxtUsuario.Text);
+                            user.Login = TxtUsuario.Text;
+                            user.Create();
+                        }
                         else
                             MessageBox.Show("Registro não encontrado para atualização");
 
@@ -157,24 +200,16 @@ namespace DirectionSystems2
                             TxtCodigo.Text = reader[0].ToString();
                             MessageBox.Show("Registro incuído com sucesso!");
 
-                            Server myServer = conexao.GetServer();
-                            try
-                            {
-                                Login login = new Login(myServer, TxtUsuario.Text);
-                                login.LoginType = LoginType.SqlLogin;
-                                login.Create(TxtSenha.Text);
-                                login.AddToRole("sysadmin");
+                            Login login = new Login(myServer, TxtUsuario.Text);
+                            login.LoginType = LoginType.SqlLogin;
+                            login.Create(TxtSenha.Text);
+                            login.AddToRole("sysadmin");
 
+                            Database db = myServer.Databases["BomGosto"];
+                            User user = new User(db, TxtUsuario.Text);
+                            user.Login = TxtUsuario.Text;
+                            user.Create();
 
-                                Database db = myServer.Databases["BomGosto"];
-                                User user = new User(db, TxtUsuario.Text);
-                                user.Login = TxtUsuario.Text;
-                                user.Create();
-                            }
-                            catch (Exception err)
-                            {
-                                Console.WriteLine(err.Message);
-                            }
                         }
                     }
                 }
@@ -224,7 +259,13 @@ namespace DirectionSystems2
 
         private void ChbSelecionarTodos_CheckedChanged(object sender, EventArgs e)
         {
-
+            checkBox1.Checked = true;
+            checkBox2.Checked = true;
+            checkBox3.Checked = true;
+            checkBox4.Checked = true;
+            checkBox5.Checked = true;
+            checkBox6.Checked = true;
+            checkBox7.Checked = true;
         }
 
         ClassConexao conexao = new ClassConexao();

@@ -73,6 +73,7 @@ namespace DirectionSystems2
 
                             try
                             {
+                                conn.Open();
                                 int i = cmd.ExecuteNonQuery();
                                 if (i > 0)
                                     OK++;
@@ -114,6 +115,7 @@ namespace DirectionSystems2
 
                             try
                             {
+                                conn.Open();
                                 int i = cmd.ExecuteNonQuery();
                                 if (i > 0)
                                     OK++;
@@ -166,6 +168,7 @@ namespace DirectionSystems2
 
                             try
                             {
+                                conn.Open();
                                 int i = cmd.ExecuteNonQuery();
                                 if (i > 0)
                                     OK++;
@@ -218,6 +221,7 @@ namespace DirectionSystems2
 
                             try
                             {
+                                conn.Open();
                                 int i = cmd.ExecuteNonQuery();
                                 if (i > 0)
                                     OK++;

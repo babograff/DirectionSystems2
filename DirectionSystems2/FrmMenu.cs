@@ -1,8 +1,10 @@
-﻿using DirectionSystems2.Classes;
-using System;
-using System.Runtime.InteropServices;
+﻿using System;
+using System.Data;
 using System.Windows.Forms;
-
+using System.Runtime.InteropServices;
+using DirectionSystems2.Classes;
+using System.Data.SqlClient;
+using System.Drawing;
 namespace DirectionSystems2
 {
     public partial class FrmMenu : Form
@@ -61,19 +63,64 @@ namespace DirectionSystems2
         {
 
         }
-
+        SqlDataReader reader;
+        ClassConexao Conexao = new ClassConexao();
         private void BtnCadastro_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
-            FrmSelecaoClienteFornecedor ClienteFornecedor = new FrmSelecaoClienteFornecedor();
-            ClienteFornecedor.Visible = true;
+           // if (Permissao("Cadastros"))
+           // {
+                this.Visible = false;
+                FrmSelecaoClienteFornecedor ClienteFornecedor = new FrmSelecaoClienteFornecedor();
+                ClienteFornecedor.Visible = true;
+           // }
+           // else
+            //{
+            //    MessageBox.Show("Usuário sem permissão!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+           // }
+        }
+
+        private bool Permissao(string Pagina)
+        {
+            SqlConnection conn = Conexao.AbreConexao();
+            SqlCommand cmd = new SqlCommand("spPermissao", conn);
+            cmd.Parameters.AddWithValue("@CodUsuario", ClassUtilidades.CodUsuario);
+            cmd.Parameters.AddWithValue("@Pagina", "Cadastros");
+            cmd.CommandType = CommandType.StoredProcedure;
+            conn.Open();
+
+            reader = cmd.ExecuteReader();
+            string a = reader[0].ToString();
+            return reader[0].ToString() == "0" ? false : true;
+            Conexao.FechaConexao(conn);
+
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
-            FrmImportacao Importacao = new FrmImportacao();
-            Importacao.Visible = true;
+          //  if (Permissao("Configuracoes"))
+           // {
+                this.Visible = false;
+                FrmImportacao Importacao = new FrmImportacao();
+                Importacao.Visible = true;
+           // }
+          //  else
+           // {
+           //     MessageBox.Show("Usuário sem permissão!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+           // }
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+          //  if (Permissao("Relatorios"))
+           // {
+                this.Visible = false;
+                FrmRelatorioVendaItem Relatorios = new FrmRelatorioVendaItem();
+                Relatorios.Visible = true;
+          //  }
+           /// else
+          ///  {
+          //      MessageBox.Show("Usuário sem permissão!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+          //  }
         }
     }
 }

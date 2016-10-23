@@ -74,6 +74,7 @@ namespace DirectionSystems2
 
             try
             {
+                conn.Open();
                 DataTable data = new DataTable();
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(data);

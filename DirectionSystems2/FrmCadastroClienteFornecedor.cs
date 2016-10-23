@@ -26,6 +26,7 @@ namespace DirectionSystems2
 
             try
             {
+                conn.Open();
                 DataTable dtResultado = new DataTable();
                 reader = cmd.ExecuteReader();
                 dtResultado.Clear();//o ponto mais importante (limpa a table antes de preenche-la)
@@ -60,6 +61,7 @@ namespace DirectionSystems2
 
                 try
                 {
+                    conn.Open();
                     reader = cmd.ExecuteReader();
                     if (reader.Read())
                     {

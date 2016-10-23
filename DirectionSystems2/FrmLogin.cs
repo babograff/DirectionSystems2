@@ -41,10 +41,14 @@ namespace DirectionSystems2
         }
 
         ClassConexao Conexao = new ClassConexao();
+        ClassCriptoTexto CriptoTexto = new ClassCriptoTexto();
         SqlDataReader reader;
 
         private void Logar()
         {
+            ClassUtilidades.User = CriptoTexto.Encrypt(TxtUsuario.Text);
+            ClassUtilidades.Password = CriptoTexto.Encrypt(TxtSenha.Text);
+
             SqlConnection conn = Conexao.AbreConexao();
             SqlCommand cmd = new SqlCommand("spUsuario", conn);
             cmd.Parameters.AddWithValue("@Usuario", TxtUsuario.Text);
@@ -53,6 +57,7 @@ namespace DirectionSystems2
 
             try
             {
+                conn.Open();
                 reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
@@ -70,7 +75,9 @@ namespace DirectionSystems2
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro: " + ex.ToString());
+                this.Visible = false;
+                FrmLoginErro LoginErro = new FrmLoginErro();
+                LoginErro.Visible = true;
             }
             finally
             {

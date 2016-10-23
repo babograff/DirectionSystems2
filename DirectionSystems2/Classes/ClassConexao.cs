@@ -8,15 +8,16 @@ namespace DirectionSystems2.Classes
     {
         string Arquivo = (@"C:\DirectionSystems2\Configuracao.ini");
         ClassArquivoIni ini = new ClassArquivoIni();
+        ClassCriptoTexto CriptoTexto = new ClassCriptoTexto();
         public SqlConnection AbreConexao()
         {
+
             string Servidor = MontaServidor();
             string Banco = ini.PesquisaIni(Arquivo, "BancoDados");
             string Usuario = ini.PesquisaIni(Arquivo, "Usuario").ToLower();
             string Senha = ini.PesquisaIni(Arquivo, "Senha").ToLower();
-            string stringconexao = "Data Source=" + Servidor + ";Initial Catalog=" + Banco + ";User ID=" + Usuario + ";Password=" + Senha + ";Language=Portuguese";
+            string stringconexao = "Data Source=" + Servidor + ";Initial Catalog=" + Banco + ";User ID=" + CriptoTexto.Decrypt(ClassUtilidades.User) + ";Password=" + CriptoTexto.Decrypt(ClassUtilidades.Password) + ";Language=Portuguese";
             SqlConnection conn = new SqlConnection(stringconexao);
-            conn.Open();
             return conn;
         }
 
@@ -27,12 +28,12 @@ namespace DirectionSystems2.Classes
 
         private string MontaServidor()
         {
-            
+
             //string Servidor = string.Concat("192.168.0.102", "\\", ini.PesquisaIni(Arquivo, "Instancia"));
             return string.Concat(ini.PesquisaIni(Arquivo, "Servidor"), "\\", ini.PesquisaIni(Arquivo, "Instancia"));
         }
 
-        public  Server GetServer()
+        public Server GetServer()
         {
             string Servidor = MontaServidor();
             string Usuario = ini.PesquisaIni(Arquivo, "Usuario").ToLower();

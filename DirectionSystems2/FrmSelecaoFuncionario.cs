@@ -106,6 +106,7 @@ namespace DirectionSystems2
 
             try
             {
+                conn.Open();
                 DataTable data = new DataTable();
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(data);
@@ -141,6 +142,7 @@ namespace DirectionSystems2
 
                     try
                     {
+                        conn.Open();
                         if (cmd.ExecuteNonQuery() > 0)
                         {
                             MessageBox.Show("Registro excluído com sucesso!");
