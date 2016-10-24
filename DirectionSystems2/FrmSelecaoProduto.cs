@@ -139,7 +139,7 @@ namespace DirectionSystems2
                         conn.Open();
                         if (cmd.ExecuteNonQuery() > 0)
                         {
-                            MessageBox.Show("Registro excluído com sucesso!");
+                            MessageBox.Show("Registro excluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             Pesquisar();
                         }
                         else

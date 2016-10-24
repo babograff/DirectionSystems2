@@ -45,6 +45,12 @@
             this.label20 = new System.Windows.Forms.Label();
             this.TxtContato = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TxtFax = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TxtFantasia = new System.Windows.Forms.TextBox();
+            this.Fornecedor = new System.Windows.Forms.CheckBox();
+            this.Cliente = new System.Windows.Forms.CheckBox();
             this.label15 = new System.Windows.Forms.Label();
             this.TxtCodigoImportado = new System.Windows.Forms.TextBox();
             this.TxtTelefone = new System.Windows.Forms.TextBox();
@@ -73,13 +79,7 @@
             this.TxtCodigo = new System.Windows.Forms.TextBox();
             this.BtnCancelar = new System.Windows.Forms.PictureBox();
             this.BtnSalvar = new System.Windows.Forms.PictureBox();
-            this.Cliente = new System.Windows.Forms.CheckBox();
-            this.Fornecedor = new System.Windows.Forms.CheckBox();
             this.rodape1 = new DirectionSystems2.Componentes.Rodape();
-            this.label6 = new System.Windows.Forms.Label();
-            this.TxtFantasia = new System.Windows.Forms.TextBox();
-            this.TxtFax = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.TxtRG.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnAjuda)).BeginInit();
@@ -306,6 +306,59 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fax";
             // 
+            // TxtFax
+            // 
+            this.TxtFax.Location = new System.Drawing.Point(143, 257);
+            this.TxtFax.Name = "TxtFax";
+            this.TxtFax.Size = new System.Drawing.Size(128, 20);
+            this.TxtFax.TabIndex = 37;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(140, 241);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(24, 13);
+            this.label16.TabIndex = 36;
+            this.label16.Text = "Fax";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 115);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 13);
+            this.label6.TabIndex = 35;
+            this.label6.Text = "Fantasia";
+            // 
+            // TxtFantasia
+            // 
+            this.TxtFantasia.BackColor = System.Drawing.Color.White;
+            this.TxtFantasia.Location = new System.Drawing.Point(9, 131);
+            this.TxtFantasia.Name = "TxtFantasia";
+            this.TxtFantasia.Size = new System.Drawing.Size(806, 20);
+            this.TxtFantasia.TabIndex = 34;
+            // 
+            // Fornecedor
+            // 
+            this.Fornecedor.AutoSize = true;
+            this.Fornecedor.Location = new System.Drawing.Point(608, 35);
+            this.Fornecedor.Name = "Fornecedor";
+            this.Fornecedor.Size = new System.Drawing.Size(80, 17);
+            this.Fornecedor.TabIndex = 33;
+            this.Fornecedor.Text = "Fornecedor";
+            this.Fornecedor.UseVisualStyleBackColor = true;
+            // 
+            // Cliente
+            // 
+            this.Cliente.AutoSize = true;
+            this.Cliente.Location = new System.Drawing.Point(544, 35);
+            this.Cliente.Name = "Cliente";
+            this.Cliente.Size = new System.Drawing.Size(58, 17);
+            this.Cliente.TabIndex = 32;
+            this.Cliente.Text = "Cliente";
+            this.Cliente.UseVisualStyleBackColor = true;
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -479,18 +532,18 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 67);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 13);
+            this.label4.Size = new System.Drawing.Size(72, 13);
             this.label4.TabIndex = 8;
-            this.label4.Text = "CPF / CNPJ";
+            this.label4.Text = "CPF / CNPJ *";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(274, 67);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(42, 13);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Nome";
+            this.label1.Text = "Nome *";
             // 
             // TxtNome
             // 
@@ -565,26 +618,6 @@
             this.BtnSalvar.TabStop = false;
             this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
-            // Cliente
-            // 
-            this.Cliente.AutoSize = true;
-            this.Cliente.Location = new System.Drawing.Point(544, 35);
-            this.Cliente.Name = "Cliente";
-            this.Cliente.Size = new System.Drawing.Size(58, 17);
-            this.Cliente.TabIndex = 32;
-            this.Cliente.Text = "Cliente";
-            this.Cliente.UseVisualStyleBackColor = true;
-            // 
-            // Fornecedor
-            // 
-            this.Fornecedor.AutoSize = true;
-            this.Fornecedor.Location = new System.Drawing.Point(608, 35);
-            this.Fornecedor.Name = "Fornecedor";
-            this.Fornecedor.Size = new System.Drawing.Size(80, 17);
-            this.Fornecedor.TabIndex = 33;
-            this.Fornecedor.Text = "Fornecedor";
-            this.Fornecedor.UseVisualStyleBackColor = true;
-            // 
             // rodape1
             // 
             this.rodape1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -592,39 +625,6 @@
             this.rodape1.Name = "rodape1";
             this.rodape1.Size = new System.Drawing.Size(900, 22);
             this.rodape1.TabIndex = 20;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 115);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 13);
-            this.label6.TabIndex = 35;
-            this.label6.Text = "Fantasia";
-            // 
-            // TxtFantasia
-            // 
-            this.TxtFantasia.BackColor = System.Drawing.Color.White;
-            this.TxtFantasia.Location = new System.Drawing.Point(9, 131);
-            this.TxtFantasia.Name = "TxtFantasia";
-            this.TxtFantasia.Size = new System.Drawing.Size(806, 20);
-            this.TxtFantasia.TabIndex = 34;
-            // 
-            // TxtFax
-            // 
-            this.TxtFax.Location = new System.Drawing.Point(143, 257);
-            this.TxtFax.Name = "TxtFax";
-            this.TxtFax.Size = new System.Drawing.Size(128, 20);
-            this.TxtFax.TabIndex = 37;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(140, 241);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(24, 13);
-            this.label16.TabIndex = 36;
-            this.label16.Text = "Fax";
             // 
             // FrmCadastroClienteFornecedor
             // 

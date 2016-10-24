@@ -169,7 +169,7 @@ namespace DirectionSystems2
                         int i = cmd.ExecuteNonQuery();
                         if (i > 0)
                         {
-                            MessageBox.Show("Registro atualizado com sucesso!");
+                            MessageBox.Show("Registro atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             Database db = myServer.Databases["BomGosto"];
 
@@ -189,7 +189,7 @@ namespace DirectionSystems2
                             user.Create();
                         }
                         else
-                            MessageBox.Show("Registro não encontrado para atualização");
+                            MessageBox.Show("Registro não encontrado para atualização", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
                     else
@@ -198,7 +198,7 @@ namespace DirectionSystems2
                         if (reader.Read())
                         {
                             TxtCodigo.Text = reader[0].ToString();
-                            MessageBox.Show("Registro incuído com sucesso!");
+                            MessageBox.Show("Registro incuído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             Login login = new Login(myServer, TxtUsuario.Text);
                             login.LoginType = LoginType.SqlLogin;

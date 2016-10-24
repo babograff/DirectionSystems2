@@ -50,6 +50,7 @@ namespace DirectionSystems2
             {
                 TxtCodigo.Text = "Novo";
                 CboStatus.SelectedIndex = 1;
+                Fornecedor.Checked = true;
             }
             else
             {
@@ -66,7 +67,7 @@ namespace DirectionSystems2
                     if (reader.Read())
                     {
                         TxtCodigoImportado.Text = reader[0].ToString();
-                        CboUF.SelectedIndex = Convert.ToInt32(reader[1]);
+                        CboUF.SelectedValue = Convert.ToInt32(reader[1]);
                         TxtNome.Text = reader[2].ToString();
                         TxtTelefone.Text = reader[3].ToString();
                         TxtEmail.Text = reader[4].ToString();
@@ -215,7 +216,93 @@ namespace DirectionSystems2
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
+            if (Valida())
+            {
+                string Codigo;
+                if (TxtCodigo.Text == "Novo")
+                {
+                    Codigo = "0";
+                }
+                else
+                {
+                    Codigo = TxtCodigo.Text;
+                }
 
+
+
+                SqlConnection conn = Conexao.AbreConexao();
+                SqlCommand cmd = new SqlCommand("spClienteFornecedorNovo", conn);
+                cmd.Parameters.AddWithValue("@CodClienteFornecedor", Codigo);
+                cmd.Parameters.AddWithValue("@CodUF", CboUF.SelectedValue);
+                cmd.Parameters.AddWithValue("@Nome", TxtNome.Text);
+                cmd.Parameters.AddWithValue("@Email ", TxtEmail.Text);
+                cmd.Parameters.AddWithValue("@Cidade", TxtCidade.Text);
+                cmd.Parameters.AddWithValue("@Bairro", TxtBairro.Text); //verificar depois
+                cmd.Parameters.AddWithValue("@Status", CboStatus.SelectedIndex);
+                cmd.Parameters.AddWithValue("@CodImportado", TxtCodigoImportado.Text);
+                cmd.Parameters.AddWithValue("@Fantasia", TxtFantasia.Text);
+                cmd.Parameters.AddWithValue("@Fax", TxtFax.Text);
+                cmd.Parameters.AddWithValue("@Site", TxtSite.Text);
+                cmd.Parameters.AddWithValue("@Nascimento", "");
+                cmd.Parameters.AddWithValue("@Telefone", TxtTelefone.Text);
+                cmd.Parameters.AddWithValue("@TipoCliente", Cliente.Checked);
+                cmd.Parameters.AddWithValue("@TipoFornecedor", Fornecedor.Checked);
+                cmd.Parameters.AddWithValue("@Endereco", TxtEndereco.Text);
+                cmd.Parameters.AddWithValue("@CPFCNPJ", TxtCPFCNPJ.Text);
+                cmd.Parameters.AddWithValue("@RGINSC", TxtRG.Text);
+
+
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                try
+                {
+                    conn.Open();
+                    if (TxtCodigo.Text != "Novo")
+                    {
+                        int i = cmd.ExecuteNonQuery();
+                        if (i > 0)
+                            MessageBox.Show("Registro atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        else
+                            MessageBox.Show("Registro não encontrado para atualização", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                    else
+                    {
+                        reader = cmd.ExecuteReader();
+                        if (reader.Read())
+                        {
+                            TxtCodigo.Text = reader[0].ToString();
+                            MessageBox.Show("Registro incuído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro: " + ex.ToString());
+                }
+                finally
+                {
+                    Conexao.FechaConexao(conn);
+                }
+            }
+        }
+
+        private bool Valida()
+        {
+            if (TxtCPFCNPJ.Text == string.Empty)
+            {
+                MessageBox.Show("Campo CPF / CNPJ  vazio!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TxtCPFCNPJ.Focus();
+                return false;
+            }
+            else if (TxtNome.Text == string.Empty)
+            {
+                MessageBox.Show("Campo NOME vazio!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TxtNome.Focus();
+                return false;
+            }
+            return true;
         }
 
         private void TxtCPFCNPJ_Leave(object sender, EventArgs e)
@@ -251,8 +338,8 @@ namespace DirectionSystems2
         {
             if (MessageBox.Show("Deseja realmente cancelar?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                FrmSelecaoUsuario Usuario = new FrmSelecaoUsuario();
-                Usuario.Show();
+                FrmSelecaoClienteFornecedor ClienteFornecedor = new FrmSelecaoClienteFornecedor();
+                ClienteFornecedor.Show();
                 this.Close();
             }
         }
