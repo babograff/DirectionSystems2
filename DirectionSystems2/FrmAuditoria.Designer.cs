@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAuditoria));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BtnMenu = new System.Windows.Forms.PictureBox();
             this.BtnAjuda = new System.Windows.Forms.PictureBox();
@@ -51,8 +52,8 @@
             this.TxtUsuario = new System.Windows.Forms.TextBox();
             this.GridAuditoria = new System.Windows.Forms.DataGridView();
             this.rodape1 = new DirectionSystems2.Componentes.Rodape();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnAjuda)).BeginInit();
@@ -62,7 +63,6 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnPesquisar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridAuditoria)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -82,6 +82,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(900, 118);
             this.panel2.TabIndex = 23;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(513, 42);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(91, 64);
+            this.pictureBox2.TabIndex = 30;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
@@ -242,7 +252,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(630, 19);
+            this.label3.Location = new System.Drawing.Point(609, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 5;
@@ -257,9 +267,9 @@
             "Funcionário",
             "Usuário",
             "Vendas"});
-            this.CboTabela.Location = new System.Drawing.Point(633, 35);
+            this.CboTabela.Location = new System.Drawing.Point(612, 35);
             this.CboTabela.Name = "CboTabela";
-            this.CboTabela.Size = new System.Drawing.Size(182, 21);
+            this.CboTabela.Size = new System.Drawing.Size(203, 21);
             this.CboTabela.TabIndex = 4;
             // 
             // label2
@@ -297,16 +307,6 @@
             this.rodape1.Size = new System.Drawing.Size(903, 22);
             this.rodape1.TabIndex = 24;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(513, 42);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(91, 64);
-            this.pictureBox2.TabIndex = 30;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
             // FrmAuditoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,6 +325,7 @@
             this.Load += new System.EventHandler(this.FrmAuditoria_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnAjuda)).EndInit();
@@ -335,7 +336,6 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnPesquisar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridAuditoria)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
