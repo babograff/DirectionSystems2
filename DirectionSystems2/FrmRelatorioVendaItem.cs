@@ -17,24 +17,18 @@ namespace DirectionSystems2
             InitializeComponent();
         }
 
+        private void FrmRelatorioVendaItem_Load(object sender, EventArgs e)
+        {
+
+
+            this.reportViewer1.RefreshReport();
+        }
+
         private void BtnMenu_Click(object sender, EventArgs e)
         {
             FrmMenu Menu = new FrmMenu();
             Menu.Visible = true;
             this.Close();
-        }
-
-        private void BtnMaximizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void BtnFexar_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Deseja realmente sair?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                this.Close();
-            }
         }
     }
 }
