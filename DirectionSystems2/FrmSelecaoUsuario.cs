@@ -29,21 +29,21 @@ namespace DirectionSystems2
         public static extern bool ReleaseCapture();
 
         private void BtnClienteFornecedor_Click(object sender, EventArgs e)
-        {
+        {   
             FrmSelecaoClienteFornecedor ClienteFornecedor = new FrmSelecaoClienteFornecedor();
             ClienteFornecedor.Visible = true;
-            this.Close();
+            this.Close();  
         }
 
         private void BtnProduto_Click(object sender, EventArgs e)
-        {
+        {  
             FrmSelecaoProduto Produto = new FrmSelecaoProduto();
             Produto.Visible = true;
             this.Close();
         }
 
         private void BtnFuncionario_Click(object sender, EventArgs e)
-        {
+        {  
             FrmSelecaoFuncionario Funcionario = new FrmSelecaoFuncionario();
             Funcionario.Visible = true;
             this.Close();
