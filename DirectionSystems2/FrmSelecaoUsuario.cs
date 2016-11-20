@@ -65,7 +65,7 @@ namespace DirectionSystems2
         {
             if (MessageBox.Show("Deseja realmente sair?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                this.Close();
+                Application.Exit();
             }
         }
 

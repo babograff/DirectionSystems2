@@ -43,13 +43,14 @@
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.BtnFexar = new System.Windows.Forms.PictureBox();
-            this.BtnMinimizar = new System.Windows.Forms.PictureBox();
+            this.BtnNotificacoes = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.BtnEncomendas = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.BtnCadastro = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -58,13 +59,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnFexar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnNotificacoes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnEncomendas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCadastro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -185,14 +187,15 @@
             this.BtnFexar.TabStop = false;
             this.BtnFexar.Click += new System.EventHandler(this.BtnFexar_Click);
             // 
-            // BtnMinimizar
+            // BtnNotificacoes
             // 
-            this.BtnMinimizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnMinimizar.BackgroundImage")));
-            this.BtnMinimizar.Location = new System.Drawing.Point(663, 191);
-            this.BtnMinimizar.Name = "BtnMinimizar";
-            this.BtnMinimizar.Size = new System.Drawing.Size(200, 406);
-            this.BtnMinimizar.TabIndex = 8;
-            this.BtnMinimizar.TabStop = false;
+            this.BtnNotificacoes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnNotificacoes.BackgroundImage")));
+            this.BtnNotificacoes.Location = new System.Drawing.Point(663, 191);
+            this.BtnNotificacoes.Name = "BtnNotificacoes";
+            this.BtnNotificacoes.Size = new System.Drawing.Size(200, 406);
+            this.BtnNotificacoes.TabIndex = 8;
+            this.BtnNotificacoes.TabStop = false;
+            this.BtnNotificacoes.Click += new System.EventHandler(this.BtnNotificacoes_Click);
             // 
             // pictureBox7
             // 
@@ -232,6 +235,7 @@
             this.pictureBox4.Size = new System.Drawing.Size(200, 200);
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // pictureBox3
             // 
@@ -241,6 +245,7 @@
             this.pictureBox3.Size = new System.Drawing.Size(200, 200);
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // BtnCadastro
             // 
@@ -252,18 +257,29 @@
             this.BtnCadastro.TabStop = false;
             this.BtnCadastro.Click += new System.EventHandler(this.BtnCadastro_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::DirectionSystems2.Properties.Resources._052;
+            this.pictureBox2.Location = new System.Drawing.Point(730, 471);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(64, 54);
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
+            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(900, 700);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox12);
             this.Controls.Add(this.rodape1);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.BtnFexar);
-            this.Controls.Add(this.BtnMinimizar);
+            this.Controls.Add(this.BtnNotificacoes);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.BtnEncomendas);
             this.Controls.Add(this.pictureBox5);
@@ -276,6 +292,7 @@
             this.Name = "FrmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMenu";
+            this.Load += new System.EventHandler(this.FrmMenu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -286,13 +303,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnFexar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnNotificacoes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnEncomendas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCadastro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -306,7 +324,7 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox BtnEncomendas;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox BtnMinimizar;
+        private System.Windows.Forms.PictureBox BtnNotificacoes;
         private System.Windows.Forms.PictureBox BtnFexar;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox10;
@@ -319,5 +337,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label LblTitulo;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

@@ -304,7 +304,7 @@
             this.groupBox1.Size = new System.Drawing.Size(821, 341);
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Fax";
+            this.groupBox1.Text = "Dados gerais";
             // 
             // TxtFax
             // 

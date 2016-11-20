@@ -126,6 +126,16 @@
     <Compile Include="Componentes\Rodape.Designer.cs">
       <DependentUpon>Rodape.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSet\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FrmAuditoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,11 +160,41 @@
     <Compile Include="FrmCadastroClienteFornecedor.Designer.cs">
       <DependentUpon>FrmCadastroClienteFornecedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCadastroEncomenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCadastroEncomenda.Designer.cs">
+      <DependentUpon>FrmCadastroEncomenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCadastroEncomendaSelecaoProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCadastroEncomendaSelecaoProduto.Designer.cs">
+      <DependentUpon>FrmCadastroEncomendaSelecaoProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCadastroEncomendaSelecaoProdutoQuantidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCadastroEncomendaSelecaoProdutoQuantidade.Designer.cs">
+      <DependentUpon>FrmCadastroEncomendaSelecaoProdutoQuantidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCadastroEncomendaSelecaoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCadastroEncomendaSelecaoCliente.Designer.cs">
+      <DependentUpon>FrmCadastroEncomendaSelecaoCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCadastroFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmCadastroFuncionario.Designer.cs">
       <DependentUpon>FrmCadastroFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCadastroProducao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCadastroProducao.Designer.cs">
+      <DependentUpon>FrmCadastroProducao.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmCadastroUsuario.cs">
       <SubType>Form</SubType>
@@ -168,11 +208,29 @@
     <Compile Include="FrmConfiguracaoBanco.Designer.cs">
       <DependentUpon>FrmConfiguracaoBanco.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmEncomenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEncomenda.Designer.cs">
+      <DependentUpon>FrmEncomenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmImportacao.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmImportacao.Designer.cs">
       <DependentUpon>FrmImportacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInventario.Designer.cs">
+      <DependentUpon>FrmInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInventarioEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInventarioEditar.Designer.cs">
+      <DependentUpon>FrmInventarioEditar.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
@@ -198,17 +256,59 @@
     <Compile Include="FrmMenu.Designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmNotificacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNotificacao.Designer.cs">
+      <DependentUpon>FrmNotificacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrducaoSelecaoProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrducaoSelecaoProduto.Designer.cs">
+      <DependentUpon>FrmPrducaoSelecaoProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPreco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPreco.Designer.cs">
+      <DependentUpon>FrmPreco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProducao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProducao.Designer.cs">
+      <DependentUpon>FrmProducao.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmProdutoCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmProdutoCadastro.Designer.cs">
       <DependentUpon>FrmProdutoCadastro.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRelatorioCurvaABC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRelatorioCurvaABC.Designer.cs">
+      <DependentUpon>FrmRelatorioCurvaABC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRelatorioCurvaABCAjuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRelatorioCurvaABCAjuda.Designer.cs">
+      <DependentUpon>FrmRelatorioCurvaABCAjuda.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRelatorioVendaItem.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmRelatorioVendaItem.Designer.cs">
       <DependentUpon>FrmRelatorioVendaItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRelatorioVendaItemAjuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRelatorioVendaItemAjuda.Designer.cs">
+      <DependentUpon>FrmRelatorioVendaItemAjuda.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmSelecaoClienteFornecedor.cs">
       <SubType>Form</SubType>
@@ -259,8 +359,23 @@
     <EmbeddedResource Include="FrmCadastroClienteFornecedor.resx">
       <DependentUpon>FrmCadastroClienteFornecedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmCadastroEncomenda.resx">
+      <DependentUpon>FrmCadastroEncomenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCadastroEncomendaSelecaoProduto.resx">
+      <DependentUpon>FrmCadastroEncomendaSelecaoProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCadastroEncomendaSelecaoProdutoQuantidade.resx">
+      <DependentUpon>FrmCadastroEncomendaSelecaoProdutoQuantidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCadastroEncomendaSelecaoCliente.resx">
+      <DependentUpon>FrmCadastroEncomendaSelecaoCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCadastroFuncionario.resx">
       <DependentUpon>FrmCadastroFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCadastroProducao.resx">
+      <DependentUpon>FrmCadastroProducao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCadastroUsuario.resx">
       <DependentUpon>FrmCadastroUsuario.cs</DependentUpon>
@@ -268,8 +383,17 @@
     <EmbeddedResource Include="FrmConfiguracaoBanco.resx">
       <DependentUpon>FrmConfiguracaoBanco.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmEncomenda.resx">
+      <DependentUpon>FrmEncomenda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmImportacao.resx">
       <DependentUpon>FrmImportacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInventario.resx">
+      <DependentUpon>FrmInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInventarioEditar.resx">
+      <DependentUpon>FrmInventarioEditar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
@@ -283,11 +407,32 @@
     <EmbeddedResource Include="FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmNotificacao.resx">
+      <DependentUpon>FrmNotificacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrducaoSelecaoProduto.resx">
+      <DependentUpon>FrmPrducaoSelecaoProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPreco.resx">
+      <DependentUpon>FrmPreco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProducao.resx">
+      <DependentUpon>FrmProducao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmProdutoCadastro.resx">
       <DependentUpon>FrmProdutoCadastro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmRelatorioCurvaABC.resx">
+      <DependentUpon>FrmRelatorioCurvaABC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRelatorioCurvaABCAjuda.resx">
+      <DependentUpon>FrmRelatorioCurvaABCAjuda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmRelatorioVendaItem.resx">
       <DependentUpon>FrmRelatorioVendaItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRelatorioVendaItemAjuda.resx">
+      <DependentUpon>FrmRelatorioVendaItemAjuda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSelecaoClienteFornecedor.resx">
       <DependentUpon>FrmSelecaoClienteFornecedor.cs</DependentUpon>
@@ -312,7 +457,30 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Relatorios\ReportItemVenda.rdlc" />
+    <EmbeddedResource Include="Relatorios\RelatorioCurvaABC.rdlc" />
+    <EmbeddedResource Include="Relatorios\RelatorioItemVenda.rdlc" />
+    <None Include="DataSet\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -404,6 +572,18 @@
     <Content Include="lOGO64SemNome.ico" />
     <None Include="Resources\MenuItemVenda.png" />
     <None Include="Resources\MenuCurvaABC.png" />
+    <None Include="Resources\MenuEncomenda.png" />
+    <None Include="Resources\+05.png" />
+    <None Include="Resources\+051.png" />
+    <None Include="Resources\+052.png" />
+    <None Include="Resources\Selecionar.png" />
+    <None Include="Resources\MenuInventário.png" />
+    <None Include="Resources\MenuNotificacao.png" />
+    <None Include="Resources\lido.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\MenuProducao2.png" />
+    <None Include="Resources\MenuPreco.png" />
     <Content Include="SqlServerTypes\readme.htm" />
   </ItemGroup>
   <ItemGroup>
@@ -418,9 +598,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataSet\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

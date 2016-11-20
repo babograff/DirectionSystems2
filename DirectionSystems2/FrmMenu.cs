@@ -13,6 +13,7 @@ namespace DirectionSystems2
         {
             InitializeComponent();
             LblTitulo.Text = ClassUtilidades.VersaoSistema;
+            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
         }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -39,7 +40,7 @@ namespace DirectionSystems2
         {
             if (MessageBox.Show("Deseja realmente sair?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                this.Close();
+                Application.Exit();
             }
         }
 
@@ -56,7 +57,9 @@ namespace DirectionSystems2
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-
+            this.Visible = false;
+            FrmEncomenda Encomenda = new FrmEncomenda();
+            Encomenda.Visible = true;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -121,6 +124,32 @@ namespace DirectionSystems2
           ///  {
           //      MessageBox.Show("Usuário sem permissão!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
           //  }
+        }
+
+        private void FrmMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            FrmInventario Inventario = new FrmInventario();
+            Inventario.Visible = true;
+        }
+
+        private void BtnNotificacoes_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            FrmNotificacao Notificacao = new FrmNotificacao();
+            Notificacao.Visible = true;
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            FrmProducao Producao = new FrmProducao();
+            Producao.Visible = true;
         }
     }
 }

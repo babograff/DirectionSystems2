@@ -92,6 +92,7 @@
             this.BtnAjuda.Size = new System.Drawing.Size(16, 16);
             this.BtnAjuda.TabIndex = 26;
             this.BtnAjuda.TabStop = false;
+            this.BtnAjuda.Click += new System.EventHandler(this.BtnAjuda_Click);
             // 
             // BtnMaximizar
             // 
@@ -101,6 +102,7 @@
             this.BtnMaximizar.Size = new System.Drawing.Size(16, 16);
             this.BtnMaximizar.TabIndex = 25;
             this.BtnMaximizar.TabStop = false;
+            this.BtnMaximizar.Click += new System.EventHandler(this.BtnMaximizar_Click);
             // 
             // BtnFexar
             // 
@@ -110,6 +112,7 @@
             this.BtnFexar.Size = new System.Drawing.Size(16, 16);
             this.BtnFexar.TabIndex = 24;
             this.BtnFexar.TabStop = false;
+            this.BtnFexar.Click += new System.EventHandler(this.BtnFexar_Click);
             // 
             // BtnFuncionario
             // 
@@ -119,6 +122,7 @@
             this.BtnFuncionario.Size = new System.Drawing.Size(91, 64);
             this.BtnFuncionario.TabIndex = 18;
             this.BtnFuncionario.TabStop = false;
+            this.BtnFuncionario.Click += new System.EventHandler(this.BtnFuncionario_Click);
             // 
             // BtnProduto
             // 
@@ -128,6 +132,7 @@
             this.BtnProduto.Size = new System.Drawing.Size(92, 64);
             this.BtnProduto.TabIndex = 17;
             this.BtnProduto.TabStop = false;
+            this.BtnProduto.Click += new System.EventHandler(this.BtnProduto_Click);
             // 
             // LblTitulo
             // 
@@ -141,7 +146,7 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "DirectionSystems2.Relatorios.ReportItemVenda.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "DirectionSystems2.Relatorios.RelatorioItemVenda.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(45, 218);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(821, 454);
@@ -209,6 +214,7 @@
             this.BtnPesquisar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.BtnPesquisar.TabIndex = 20;
             this.BtnPesquisar.TabStop = false;
+            this.BtnPesquisar.Click += new System.EventHandler(this.BtnPesquisar_Click);
             // 
             // rodape1
             // 
@@ -229,6 +235,7 @@
             this.Controls.Add(this.rodape1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmRelatorioVendaItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmRelatorioVendaItem";
