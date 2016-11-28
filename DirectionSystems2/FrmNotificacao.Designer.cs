@@ -30,28 +30,29 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNotificacao));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.LblTitulo = new System.Windows.Forms.Label();
-            this.rodape1 = new DirectionSystems2.Componentes.Rodape();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.BtnMenu = new System.Windows.Forms.PictureBox();
             this.BtnAjuda = new System.Windows.Forms.PictureBox();
             this.BtnMaximizar = new System.Windows.Forms.PictureBox();
             this.BtnFexar = new System.Windows.Forms.PictureBox();
             this.BtnClienteFornecedor = new System.Windows.Forms.PictureBox();
+            this.LblTitulo = new System.Windows.Forms.Label();
+            this.GridNotificacao = new System.Windows.Forms.DataGridView();
             this.Lido = new System.Windows.Forms.DataGridViewImageColumn();
             this.Detalhe = new System.Windows.Forms.DataGridViewImageColumn();
+            this.CodNotificacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.rodape1 = new DirectionSystems2.Componentes.Rodape();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnAjuda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnFexar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClienteFornecedor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridNotificacao)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -69,53 +70,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(900, 118);
             this.panel2.TabIndex = 27;
-            // 
-            // LblTitulo
-            // 
-            this.LblTitulo.AutoSize = true;
-            this.LblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTitulo.Location = new System.Drawing.Point(333, 10);
-            this.LblTitulo.Name = "LblTitulo";
-            this.LblTitulo.Size = new System.Drawing.Size(263, 25);
-            this.LblTitulo.TabIndex = 15;
-            this.LblTitulo.Text = "DirectionSystems - versão";
-            // 
-            // rodape1
-            // 
-            this.rodape1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rodape1.Location = new System.Drawing.Point(-2, 678);
-            this.rodape1.Name = "rodape1";
-            this.rodape1.Size = new System.Drawing.Size(900, 22);
-            this.rodape1.TabIndex = 28;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Lido,
-            this.Detalhe,
-            this.Data,
-            this.Titulo,
-            this.Descricao});
-            this.dataGridView1.Location = new System.Drawing.Point(45, 122);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(821, 550);
-            this.dataGridView1.TabIndex = 29;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "Lido";
-            this.dataGridViewImageColumn1.Image = global::DirectionSystems2.Properties.Resources.lido;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.HeaderText = "Detalhe";
-            this.dataGridViewImageColumn2.Image = global::DirectionSystems2.Properties.Resources.plus;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             // 
             // BtnMenu
             // 
@@ -166,6 +120,36 @@
             this.BtnClienteFornecedor.TabIndex = 16;
             this.BtnClienteFornecedor.TabStop = false;
             // 
+            // LblTitulo
+            // 
+            this.LblTitulo.AutoSize = true;
+            this.LblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTitulo.Location = new System.Drawing.Point(333, 10);
+            this.LblTitulo.Name = "LblTitulo";
+            this.LblTitulo.Size = new System.Drawing.Size(263, 25);
+            this.LblTitulo.TabIndex = 15;
+            this.LblTitulo.Text = "DirectionSystems - versão";
+            // 
+            // GridNotificacao
+            // 
+            this.GridNotificacao.AllowUserToAddRows = false;
+            this.GridNotificacao.AllowUserToDeleteRows = false;
+            this.GridNotificacao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridNotificacao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Lido,
+            this.Detalhe,
+            this.CodNotificacao,
+            this.Data,
+            this.Titulo,
+            this.Descricao});
+            this.GridNotificacao.Location = new System.Drawing.Point(45, 122);
+            this.GridNotificacao.Name = "GridNotificacao";
+            this.GridNotificacao.ReadOnly = true;
+            this.GridNotificacao.Size = new System.Drawing.Size(821, 550);
+            this.GridNotificacao.TabIndex = 29;
+            this.GridNotificacao.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridNotificacao_CellClick);
+            this.GridNotificacao.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridNotificacao_CellContentClick);
+            // 
             // Lido
             // 
             this.Lido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -182,9 +166,17 @@
             this.Detalhe.Name = "Detalhe";
             this.Detalhe.ReadOnly = true;
             // 
+            // CodNotificacao
+            // 
+            this.CodNotificacao.DataPropertyName = "CodNotificacao";
+            this.CodNotificacao.HeaderText = "Código";
+            this.CodNotificacao.Name = "CodNotificacao";
+            this.CodNotificacao.ReadOnly = true;
+            // 
             // Data
             // 
             this.Data.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Data.DataPropertyName = "Data";
             this.Data.HeaderText = "Data";
             this.Data.Name = "Data";
             this.Data.ReadOnly = true;
@@ -192,6 +184,7 @@
             // Titulo
             // 
             this.Titulo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Titulo.DataPropertyName = "Titulo";
             this.Titulo.HeaderText = "Titudo";
             this.Titulo.Name = "Titulo";
             this.Titulo.ReadOnly = true;
@@ -199,9 +192,30 @@
             // Descricao
             // 
             this.Descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Descricao.DataPropertyName = "Descricao";
             this.Descricao.HeaderText = "Descrição";
             this.Descricao.Name = "Descricao";
             this.Descricao.ReadOnly = true;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Lido";
+            this.dataGridViewImageColumn1.Image = global::DirectionSystems2.Properties.Resources.lido;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "Detalhe";
+            this.dataGridViewImageColumn2.Image = global::DirectionSystems2.Properties.Resources.plus;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            // 
+            // rodape1
+            // 
+            this.rodape1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rodape1.Location = new System.Drawing.Point(-2, 678);
+            this.rodape1.Name = "rodape1";
+            this.rodape1.Size = new System.Drawing.Size(900, 22);
+            this.rodape1.TabIndex = 28;
             // 
             // FrmNotificacao
             // 
@@ -209,7 +223,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(900, 700);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.GridNotificacao);
             this.Controls.Add(this.rodape1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -220,12 +234,12 @@
             this.Load += new System.EventHandler(this.FrmNotificacao_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnAjuda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnFexar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClienteFornecedor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridNotificacao)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -240,13 +254,14 @@
         private System.Windows.Forms.PictureBox BtnClienteFornecedor;
         private System.Windows.Forms.Label LblTitulo;
         private Componentes.Rodape rodape1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView GridNotificacao;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewImageColumn Lido;
         private System.Windows.Forms.DataGridViewImageColumn Detalhe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodNotificacao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data;
         private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
     }
 }

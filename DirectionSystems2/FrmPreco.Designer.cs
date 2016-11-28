@@ -40,9 +40,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.GridProduto = new System.Windows.Forms.DataGridView();
-            this.TxtNome = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Excluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +48,9 @@
             this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Medida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TxtNome = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -113,6 +113,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(91, 64);
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // BtnMenu
             // 
@@ -123,6 +124,7 @@
             this.BtnMenu.Size = new System.Drawing.Size(32, 32);
             this.BtnMenu.TabIndex = 27;
             this.BtnMenu.TabStop = false;
+            this.BtnMenu.Click += new System.EventHandler(this.BtnMenu_Click);
             // 
             // BtnAjuda
             // 
@@ -141,6 +143,7 @@
             this.BtnMaximizar.Size = new System.Drawing.Size(16, 16);
             this.BtnMaximizar.TabIndex = 25;
             this.BtnMaximizar.TabStop = false;
+            this.BtnMaximizar.Click += new System.EventHandler(this.BtnMaximizar_Click);
             // 
             // BtnFexar
             // 
@@ -150,6 +153,7 @@
             this.BtnFexar.Size = new System.Drawing.Size(16, 16);
             this.BtnFexar.TabIndex = 24;
             this.BtnFexar.TabStop = false;
+            this.BtnFexar.Click += new System.EventHandler(this.BtnFexar_Click);
             // 
             // BtnClienteFornecedor
             // 
@@ -159,6 +163,7 @@
             this.BtnClienteFornecedor.Size = new System.Drawing.Size(91, 64);
             this.BtnClienteFornecedor.TabIndex = 16;
             this.BtnClienteFornecedor.TabStop = false;
+            this.BtnClienteFornecedor.Click += new System.EventHandler(this.BtnClienteFornecedor_Click);
             // 
             // LblTitulo
             // 
@@ -192,6 +197,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox2.TabIndex = 48;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // GridProduto
             // 
@@ -212,35 +218,6 @@
             this.GridProduto.ReadOnly = true;
             this.GridProduto.Size = new System.Drawing.Size(806, 140);
             this.GridProduto.TabIndex = 47;
-            // 
-            // TxtNome
-            // 
-            this.TxtNome.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.TxtNome.Enabled = false;
-            this.TxtNome.Location = new System.Drawing.Point(11, 32);
-            this.TxtNome.Name = "TxtNome";
-            this.TxtNome.Size = new System.Drawing.Size(804, 20);
-            this.TxtNome.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Nome ";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.TxtNome);
-            this.groupBox1.Location = new System.Drawing.Point(45, 122);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(821, 71);
-            this.groupBox1.TabIndex = 41;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Produto";
             // 
             // Editar
             // 
@@ -303,6 +280,35 @@
             this.Valor.HeaderText = "R$";
             this.Valor.Name = "Valor";
             this.Valor.ReadOnly = true;
+            // 
+            // TxtNome
+            // 
+            this.TxtNome.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.TxtNome.Enabled = false;
+            this.TxtNome.Location = new System.Drawing.Point(11, 32);
+            this.TxtNome.Name = "TxtNome";
+            this.TxtNome.Size = new System.Drawing.Size(804, 20);
+            this.TxtNome.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Nome ";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.TxtNome);
+            this.groupBox1.Location = new System.Drawing.Point(45, 122);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(821, 71);
+            this.groupBox1.TabIndex = 41;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Produto";
             // 
             // groupBox3
             // 
@@ -388,6 +394,7 @@
             this.BtnCancelar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.BtnCancelar.TabIndex = 57;
             this.BtnCancelar.TabStop = false;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // BtnSalvar
             // 
@@ -524,6 +531,7 @@
             this.Name = "FrmPreco";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPreco";
+            this.Load += new System.EventHandler(this.FrmPreco_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

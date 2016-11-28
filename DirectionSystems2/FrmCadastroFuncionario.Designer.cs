@@ -66,23 +66,23 @@
             this.BtnCancelar = new System.Windows.Forms.PictureBox();
             this.BtnSalvar = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.TxtDataInicial = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.TxtProximoExame = new System.Windows.Forms.DateTimePicker();
+            this.TxtUltimoExame = new System.Windows.Forms.DateTimePicker();
+            this.CboPeriodicidade = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.TxtFuncao = new System.Windows.Forms.TextBox();
+            this.TxtSetor = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.TxtDoencas = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.TxtTipoSangue = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.TxtConvenioMedico = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnAjuda)).BeginInit();
@@ -470,16 +470,16 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
-            this.groupBox2.Controls.Add(this.TxtDataInicial);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.TxtProximoExame);
+            this.groupBox2.Controls.Add(this.TxtUltimoExame);
+            this.groupBox2.Controls.Add(this.CboPeriodicidade);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.TxtFuncao);
+            this.groupBox2.Controls.Add(this.TxtSetor);
             this.groupBox2.Location = new System.Drawing.Point(45, 392);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(821, 119);
@@ -487,42 +487,41 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Outros dados";
             // 
-            // dateTimePicker1
+            // TxtProximoExame
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(105, 90);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(93, 20);
-            this.dateTimePicker1.TabIndex = 42;
-            this.dateTimePicker1.Value = new System.DateTime(2016, 9, 11, 18, 49, 29, 0);
+            this.TxtProximoExame.CustomFormat = "dd/MM/yyyy";
+            this.TxtProximoExame.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.TxtProximoExame.Location = new System.Drawing.Point(216, 90);
+            this.TxtProximoExame.Name = "TxtProximoExame";
+            this.TxtProximoExame.Size = new System.Drawing.Size(93, 20);
+            this.TxtProximoExame.TabIndex = 42;
+            this.TxtProximoExame.Value = new System.DateTime(2016, 9, 11, 18, 49, 29, 0);
             // 
-            // TxtDataInicial
+            // TxtUltimoExame
             // 
-            this.TxtDataInicial.CustomFormat = "dd/MM/yyyy";
-            this.TxtDataInicial.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.TxtDataInicial.Location = new System.Drawing.Point(6, 90);
-            this.TxtDataInicial.Name = "TxtDataInicial";
-            this.TxtDataInicial.Size = new System.Drawing.Size(93, 20);
-            this.TxtDataInicial.TabIndex = 41;
-            this.TxtDataInicial.Value = new System.DateTime(2016, 9, 11, 18, 49, 29, 0);
+            this.TxtUltimoExame.CustomFormat = "dd/MM/yyyy";
+            this.TxtUltimoExame.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.TxtUltimoExame.Location = new System.Drawing.Point(6, 90);
+            this.TxtUltimoExame.Name = "TxtUltimoExame";
+            this.TxtUltimoExame.Size = new System.Drawing.Size(93, 20);
+            this.TxtUltimoExame.TabIndex = 41;
+            this.TxtUltimoExame.Value = new System.DateTime(2016, 9, 11, 18, 49, 29, 0);
             // 
-            // comboBox1
+            // CboPeriodicidade
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.CboPeriodicidade.FormattingEnabled = true;
+            this.CboPeriodicidade.Items.AddRange(new object[] {
             "6",
-            "12",
-            "24"});
-            this.comboBox1.Location = new System.Drawing.Point(204, 90);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(105, 21);
-            this.comboBox1.TabIndex = 29;
+            "12"});
+            this.CboPeriodicidade.Location = new System.Drawing.Point(105, 90);
+            this.CboPeriodicidade.Name = "CboPeriodicidade";
+            this.CboPeriodicidade.Size = new System.Drawing.Size(105, 21);
+            this.CboPeriodicidade.TabIndex = 29;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(201, 74);
+            this.label17.Location = new System.Drawing.Point(102, 74);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(110, 13);
             this.label17.TabIndex = 32;
@@ -531,7 +530,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(105, 74);
+            this.label6.Location = new System.Drawing.Point(216, 74);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 13);
             this.label6.TabIndex = 30;
@@ -564,30 +563,30 @@
             this.label15.TabIndex = 21;
             this.label15.Text = "Setor";
             // 
-            // textBox3
+            // TxtFuncao
             // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(423, 40);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(392, 20);
-            this.textBox3.TabIndex = 7;
+            this.TxtFuncao.BackColor = System.Drawing.Color.White;
+            this.TxtFuncao.Location = new System.Drawing.Point(423, 40);
+            this.TxtFuncao.Name = "TxtFuncao";
+            this.TxtFuncao.Size = new System.Drawing.Size(392, 20);
+            this.TxtFuncao.TabIndex = 7;
             // 
-            // textBox5
+            // TxtSetor
             // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
-            this.textBox5.Location = new System.Drawing.Point(6, 40);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(411, 20);
-            this.textBox5.TabIndex = 5;
+            this.TxtSetor.BackColor = System.Drawing.Color.White;
+            this.TxtSetor.Location = new System.Drawing.Point(6, 40);
+            this.TxtSetor.Name = "TxtSetor";
+            this.TxtSetor.Size = new System.Drawing.Size(411, 20);
+            this.TxtSetor.TabIndex = 5;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox4);
+            this.groupBox3.Controls.Add(this.TxtDoencas);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label18);
-            this.groupBox3.Controls.Add(this.textBox6);
+            this.groupBox3.Controls.Add(this.TxtTipoSangue);
             this.groupBox3.Controls.Add(this.label19);
-            this.groupBox3.Controls.Add(this.textBox8);
+            this.groupBox3.Controls.Add(this.TxtConvenioMedico);
             this.groupBox3.Location = new System.Drawing.Point(45, 517);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(821, 119);
@@ -595,13 +594,13 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dados médicos";
             // 
-            // textBox4
+            // TxtDoencas
             // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(6, 89);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(809, 20);
-            this.textBox4.TabIndex = 27;
+            this.TxtDoencas.BackColor = System.Drawing.Color.White;
+            this.TxtDoencas.Location = new System.Drawing.Point(6, 89);
+            this.TxtDoencas.Name = "TxtDoencas";
+            this.TxtDoencas.Size = new System.Drawing.Size(809, 20);
+            this.TxtDoencas.TabIndex = 27;
             // 
             // label14
             // 
@@ -621,13 +620,13 @@
             this.label18.TabIndex = 25;
             this.label18.Text = "Tipo sangue";
             // 
-            // textBox6
+            // TxtTipoSangue
             // 
-            this.textBox6.BackColor = System.Drawing.Color.White;
-            this.textBox6.Location = new System.Drawing.Point(694, 40);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(121, 20);
-            this.textBox6.TabIndex = 10;
+            this.TxtTipoSangue.BackColor = System.Drawing.Color.White;
+            this.TxtTipoSangue.Location = new System.Drawing.Point(694, 40);
+            this.TxtTipoSangue.Name = "TxtTipoSangue";
+            this.TxtTipoSangue.Size = new System.Drawing.Size(121, 20);
+            this.TxtTipoSangue.TabIndex = 10;
             // 
             // label19
             // 
@@ -638,13 +637,13 @@
             this.label19.TabIndex = 21;
             this.label19.Text = "Convenio médico";
             // 
-            // textBox8
+            // TxtConvenioMedico
             // 
-            this.textBox8.BackColor = System.Drawing.Color.White;
-            this.textBox8.Location = new System.Drawing.Point(6, 40);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(682, 20);
-            this.textBox8.TabIndex = 5;
+            this.TxtConvenioMedico.BackColor = System.Drawing.Color.White;
+            this.TxtConvenioMedico.Location = new System.Drawing.Point(6, 40);
+            this.TxtConvenioMedico.Name = "TxtConvenioMedico";
+            this.TxtConvenioMedico.Size = new System.Drawing.Size(682, 20);
+            this.TxtConvenioMedico.TabIndex = 5;
             // 
             // FrmCadastroFuncionario
             // 
@@ -731,18 +730,18 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox TxtFuncao;
+        private System.Windows.Forms.TextBox TxtSetor;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox TxtDoencas;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox TxtTipoSangue;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox TxtConvenioMedico;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker TxtDataInicial;
+        private System.Windows.Forms.ComboBox CboPeriodicidade;
+        private System.Windows.Forms.DateTimePicker TxtProximoExame;
+        private System.Windows.Forms.DateTimePicker TxtUltimoExame;
     }
 }

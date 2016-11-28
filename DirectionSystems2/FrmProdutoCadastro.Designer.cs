@@ -40,6 +40,14 @@
             this.BtnClienteFornecedor = new System.Windows.Forms.PictureBox();
             this.LblTitulo = new System.Windows.Forms.Label();
             this.TxtCodigoImportado = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.CboCategoria = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.TxtEstoqueMaximo = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.TxtEstoqueMinimo = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.TxtQuantidade = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.CboTipoProduto = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -62,14 +70,6 @@
             this.BtnCancelar = new System.Windows.Forms.PictureBox();
             this.BtnSalvar = new System.Windows.Forms.PictureBox();
             this.rodape1 = new DirectionSystems2.Componentes.Rodape();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnAjuda)).BeginInit();
@@ -200,13 +200,13 @@
             // TxtCodigoImportado
             // 
             this.TxtCodigoImportado.Controls.Add(this.label14);
-            this.TxtCodigoImportado.Controls.Add(this.comboBox1);
+            this.TxtCodigoImportado.Controls.Add(this.CboCategoria);
             this.TxtCodigoImportado.Controls.Add(this.label13);
-            this.TxtCodigoImportado.Controls.Add(this.textBox3);
+            this.TxtCodigoImportado.Controls.Add(this.TxtEstoqueMaximo);
             this.TxtCodigoImportado.Controls.Add(this.label12);
-            this.TxtCodigoImportado.Controls.Add(this.textBox2);
+            this.TxtCodigoImportado.Controls.Add(this.TxtEstoqueMinimo);
             this.TxtCodigoImportado.Controls.Add(this.label11);
-            this.TxtCodigoImportado.Controls.Add(this.textBox1);
+            this.TxtCodigoImportado.Controls.Add(this.TxtQuantidade);
             this.TxtCodigoImportado.Controls.Add(this.label10);
             this.TxtCodigoImportado.Controls.Add(this.CboTipoProduto);
             this.TxtCodigoImportado.Controls.Add(this.label9);
@@ -232,6 +232,75 @@
             this.TxtCodigoImportado.TabIndex = 41;
             this.TxtCodigoImportado.TabStop = false;
             this.TxtCodigoImportado.Text = "Dados gerais";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(499, 292);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(59, 13);
+            this.label14.TabIndex = 29;
+            this.label14.Text = "Categoria *";
+            // 
+            // CboCategoria
+            // 
+            this.CboCategoria.FormattingEnabled = true;
+            this.CboCategoria.Items.AddRange(new object[] {
+            "Sorvete",
+            "Pastel",
+            "Outros"});
+            this.CboCategoria.Location = new System.Drawing.Point(502, 309);
+            this.CboCategoria.Name = "CboCategoria";
+            this.CboCategoria.Size = new System.Drawing.Size(313, 21);
+            this.CboCategoria.TabIndex = 28;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(391, 292);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(84, 13);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Estoque máximo";
+            // 
+            // TxtEstoqueMaximo
+            // 
+            this.TxtEstoqueMaximo.Location = new System.Drawing.Point(390, 309);
+            this.TxtEstoqueMaximo.Name = "TxtEstoqueMaximo";
+            this.TxtEstoqueMaximo.Size = new System.Drawing.Size(106, 20);
+            this.TxtEstoqueMaximo.TabIndex = 26;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(275, 292);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(81, 13);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "Estoque minimo";
+            // 
+            // TxtEstoqueMinimo
+            // 
+            this.TxtEstoqueMinimo.Location = new System.Drawing.Point(278, 309);
+            this.TxtEstoqueMinimo.Name = "TxtEstoqueMinimo";
+            this.TxtEstoqueMinimo.Size = new System.Drawing.Size(106, 20);
+            this.TxtEstoqueMinimo.TabIndex = 24;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 292);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(141, 13);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "Quantidade por embalagem*";
+            // 
+            // TxtQuantidade
+            // 
+            this.TxtQuantidade.Location = new System.Drawing.Point(9, 309);
+            this.TxtQuantidade.Name = "TxtQuantidade";
+            this.TxtQuantidade.Size = new System.Drawing.Size(136, 20);
+            this.TxtQuantidade.TabIndex = 22;
             // 
             // label10
             // 
@@ -309,7 +378,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(118, 292);
+            this.label6.Location = new System.Drawing.Point(148, 292);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 13);
             this.label6.TabIndex = 13;
@@ -318,7 +387,7 @@
             // CbMedida
             // 
             this.CbMedida.FormattingEnabled = true;
-            this.CbMedida.Location = new System.Drawing.Point(121, 309);
+            this.CbMedida.Location = new System.Drawing.Point(151, 309);
             this.CbMedida.Name = "CbMedida";
             this.CbMedida.Size = new System.Drawing.Size(121, 21);
             this.CbMedida.TabIndex = 6;
@@ -438,71 +507,6 @@
             this.rodape1.Size = new System.Drawing.Size(900, 22);
             this.rodape1.TabIndex = 23;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(9, 309);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(106, 20);
-            this.textBox1.TabIndex = 22;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 292);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(69, 13);
-            this.label11.TabIndex = 23;
-            this.label11.Text = "Quantidade *";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(245, 292);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(81, 13);
-            this.label12.TabIndex = 25;
-            this.label12.Text = "Estoque minimo";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(248, 310);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(106, 20);
-            this.textBox2.TabIndex = 24;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(360, 294);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(84, 13);
-            this.label13.TabIndex = 27;
-            this.label13.Text = "Estoque máximo";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(360, 310);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(106, 20);
-            this.textBox3.TabIndex = 26;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(469, 294);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(59, 13);
-            this.label14.TabIndex = 29;
-            this.label14.Text = "Categoria *";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(472, 310);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 28;
-            // 
             // FrmCadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -575,12 +579,12 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox CboTipoProduto;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CboCategoria;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox TxtEstoqueMaximo;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TxtEstoqueMinimo;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtQuantidade;
     }
 }

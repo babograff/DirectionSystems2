@@ -66,7 +66,8 @@ namespace DirectionSystems2
                             SqlCommand cmd = new SqlCommand("spVendaNovo", conn);
                             cmd.Parameters.AddWithValue("@CodImportado ", row["N_DOCTO"]);
                             cmd.Parameters.AddWithValue("@CodProdutoImportado ", row["COD_PRO"]);
-                            cmd.Parameters.AddWithValue("@DataVenda ", row["DATA_VEND"]);
+                            string a = row["DATA_VEND"].ToString().Insert(2, "/").Insert(4, "/");
+                            cmd.Parameters.AddWithValue("@DataVenda ", Convert.ToDateTime(row["DATA_VEND"].ToString().Insert(2, "/").Insert(5, "/")).ToShortDateString());
                             cmd.Parameters.AddWithValue("@Quantidade", row["QTE"]);
                             cmd.Parameters.AddWithValue("@Valor", row["P_VENDA"]);
                             cmd.CommandType = CommandType.StoredProcedure;

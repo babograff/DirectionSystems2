@@ -14,6 +14,8 @@ namespace DirectionSystems2
         {
             InitializeComponent();
             LblTitulo.Text = ClassUtilidades.VersaoSistema;
+            CboStatus.SelectedIndex = 1;
+            Pesquisar();
         }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;

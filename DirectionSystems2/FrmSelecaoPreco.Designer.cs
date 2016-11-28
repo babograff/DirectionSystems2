@@ -1,6 +1,6 @@
 ﻿namespace DirectionSystems2
 {
-    partial class FrmProducao
+    partial class FrmSelecaoPreco
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProducao));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSelecaoPreco));
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BtnMenu = new System.Windows.Forms.PictureBox();
@@ -37,19 +37,13 @@
             this.BtnFexar = new System.Windows.Forms.PictureBox();
             this.BtnClienteFornecedor = new System.Windows.Forms.PictureBox();
             this.LblTitulo = new System.Windows.Forms.Label();
-            this.GridProducao = new System.Windows.Forms.DataGridView();
-            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GridProduto = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.CodProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CodImportado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BtnCadastro = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.BtnPesquisar = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.TxtNome = new System.Windows.Forms.TextBox();
+            this.CodBarras = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rodape1 = new DirectionSystems2.Componentes.Rodape();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -58,10 +52,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnFexar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClienteFornecedor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridProducao)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnCadastro)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnPesquisar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridProduto)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -79,7 +70,7 @@
             this.panel2.Location = new System.Drawing.Point(-2, -2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(900, 118);
-            this.panel2.TabIndex = 28;
+            this.panel2.TabIndex = 30;
             // 
             // pictureBox1
             // 
@@ -151,134 +142,71 @@
             this.LblTitulo.TabIndex = 15;
             this.LblTitulo.Text = "DirectionSystems - versão";
             // 
-            // GridProducao
+            // GridProduto
             // 
-            this.GridProducao.AllowUserToAddRows = false;
-            this.GridProducao.AllowUserToDeleteRows = false;
-            this.GridProducao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridProducao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Data,
+            this.GridProduto.AllowUserToAddRows = false;
+            this.GridProduto.AllowUserToDeleteRows = false;
+            this.GridProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Editar,
             this.CodProduto,
-            this.CodImportado,
-            this.Produto,
-            this.Quantidade,
-            this.Unidade,
-            this.Nota});
-            this.GridProducao.Location = new System.Drawing.Point(45, 230);
-            this.GridProducao.Name = "GridProducao";
-            this.GridProducao.ReadOnly = true;
-            this.GridProducao.Size = new System.Drawing.Size(821, 442);
-            this.GridProducao.TabIndex = 30;
+            this.CodBarras,
+            this.Tipo,
+            this.Nome,
+            this.Status});
+            this.GridProduto.Location = new System.Drawing.Point(40, 140);
+            this.GridProduto.Name = "GridProduto";
+            this.GridProduto.ReadOnly = true;
+            this.GridProduto.Size = new System.Drawing.Size(821, 532);
+            this.GridProduto.TabIndex = 40;
+            this.GridProduto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridProduto_CellClick);
             // 
-            // Data
+            // Editar
             // 
-            this.Data.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Data.DataPropertyName = "Data";
-            this.Data.HeaderText = "Data";
-            this.Data.Name = "Data";
-            this.Data.ReadOnly = true;
+            this.Editar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::DirectionSystems2.Properties.Resources.Editar;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
             // 
             // CodProduto
             // 
             this.CodProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.CodProduto.DataPropertyName = "CodProduto";
-            this.CodProduto.HeaderText = "Código Produto";
+            this.CodProduto.HeaderText = "Código";
             this.CodProduto.Name = "CodProduto";
             this.CodProduto.ReadOnly = true;
             // 
-            // CodImportado
+            // CodBarras
             // 
-            this.CodImportado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CodImportado.DataPropertyName = "CodImportado";
-            this.CodImportado.HeaderText = "Código Importado";
-            this.CodImportado.Name = "CodImportado";
-            this.CodImportado.ReadOnly = true;
+            this.CodBarras.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CodBarras.DataPropertyName = "CodBarras";
+            this.CodBarras.HeaderText = "Código de Barras";
+            this.CodBarras.Name = "CodBarras";
+            this.CodBarras.ReadOnly = true;
             // 
-            // Produto
+            // Tipo
             // 
-            this.Produto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Produto.DataPropertyName = "Nome";
-            this.Produto.HeaderText = "Produto";
-            this.Produto.Name = "Produto";
-            this.Produto.ReadOnly = true;
+            this.Tipo.DataPropertyName = "Tipo";
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
             // 
-            // Quantidade
+            // Nome
             // 
-            this.Quantidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Quantidade.DataPropertyName = "Quantidade";
-            this.Quantidade.HeaderText = "Quantidade";
-            this.Quantidade.Name = "Quantidade";
-            this.Quantidade.ReadOnly = true;
+            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
             // 
-            // Unidade
+            // Status
             // 
-            this.Unidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Unidade.DataPropertyName = "Unidade";
-            this.Unidade.HeaderText = "Unidade";
-            this.Unidade.Name = "Unidade";
-            this.Unidade.ReadOnly = true;
-            // 
-            // Nota
-            // 
-            this.Nota.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nota.DataPropertyName = "Nota";
-            this.Nota.HeaderText = "Nota";
-            this.Nota.Name = "Nota";
-            this.Nota.ReadOnly = true;
-            // 
-            // BtnCadastro
-            // 
-            this.BtnCadastro.BackColor = System.Drawing.Color.Transparent;
-            this.BtnCadastro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BtnCadastro.Image = ((System.Drawing.Image)(resources.GetObject("BtnCadastro.Image")));
-            this.BtnCadastro.Location = new System.Drawing.Point(45, 122);
-            this.BtnCadastro.Name = "BtnCadastro";
-            this.BtnCadastro.Size = new System.Drawing.Size(120, 30);
-            this.BtnCadastro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.BtnCadastro.TabIndex = 39;
-            this.BtnCadastro.TabStop = false;
-            this.BtnCadastro.Click += new System.EventHandler(this.BtnCadastro_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.BtnPesquisar);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.TxtNome);
-            this.groupBox1.Location = new System.Drawing.Point(45, 158);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(821, 66);
-            this.groupBox1.TabIndex = 40;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtro";
-            // 
-            // BtnPesquisar
-            // 
-            this.BtnPesquisar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BtnPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("BtnPesquisar.Image")));
-            this.BtnPesquisar.Location = new System.Drawing.Point(695, 26);
-            this.BtnPesquisar.Name = "BtnPesquisar";
-            this.BtnPesquisar.Size = new System.Drawing.Size(120, 30);
-            this.BtnPesquisar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.BtnPesquisar.TabIndex = 20;
-            this.BtnPesquisar.TabStop = false;
-            this.BtnPesquisar.Click += new System.EventHandler(this.BtnPesquisar_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Nome";
-            // 
-            // TxtNome
-            // 
-            this.TxtNome.Location = new System.Drawing.Point(9, 36);
-            this.TxtNome.Name = "TxtNome";
-            this.TxtNome.Size = new System.Drawing.Size(680, 20);
-            this.TxtNome.TabIndex = 2;
+            this.Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
             // 
             // rodape1
             // 
@@ -286,24 +214,23 @@
             this.rodape1.Location = new System.Drawing.Point(-2, 678);
             this.rodape1.Name = "rodape1";
             this.rodape1.Size = new System.Drawing.Size(900, 22);
-            this.rodape1.TabIndex = 29;
+            this.rodape1.TabIndex = 41;
             // 
-            // FrmProducao
+            // FrmSelecaoPreco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(900, 700);
-            this.Controls.Add(this.BtnCadastro);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.GridProducao);
             this.Controls.Add(this.rodape1);
+            this.Controls.Add(this.GridProduto);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FrmProducao";
+            this.Name = "FrmSelecaoPreco";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmProducao";
+            this.Text = "FrmSelecaoPreco";
+            this.Load += new System.EventHandler(this.FrmSelecaoPreco_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -312,39 +239,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnFexar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClienteFornecedor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridProducao)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnCadastro)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnPesquisar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridProduto)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox BtnMenu;
         private System.Windows.Forms.PictureBox BtnAjuda;
         private System.Windows.Forms.PictureBox BtnMaximizar;
         private System.Windows.Forms.PictureBox BtnFexar;
         private System.Windows.Forms.PictureBox BtnClienteFornecedor;
         private System.Windows.Forms.Label LblTitulo;
+        private System.Windows.Forms.DataGridView GridProduto;
         private Componentes.Rodape rodape1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView GridProducao;
-        private System.Windows.Forms.PictureBox BtnCadastro;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox BtnPesquisar;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TxtNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CodImportado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Produto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Unidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nota;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodBarras;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
     }
 }

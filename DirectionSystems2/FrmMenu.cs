@@ -2,9 +2,10 @@
 using System.Data;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using DirectionSystems2.Properties;
 using DirectionSystems2.Classes;
 using System.Data.SqlClient;
-using System.Drawing;
+using System.Threading;
 namespace DirectionSystems2
 {
     public partial class FrmMenu : Form
@@ -12,8 +13,125 @@ namespace DirectionSystems2
         public FrmMenu()
         {
             InitializeComponent();
+            new Thread(NovaThread).Start();
+            NovaThread();
+
+            new Thread(NovaThread2).Start();
+            NovaThread2();
+
+            new Thread(NovaThread3).Start();
+            NovaThread3();
+
             LblTitulo.Text = ClassUtilidades.VersaoSistema;
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+
+            SqlConnection conn = Conexao.AbreConexao();
+            SqlCommand cmd = new SqlCommand("spNotificacao", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            try
+            {
+                conn.Open();
+                DataTable data = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(data);
+                if (data.Rows.Count == 0)
+                {
+                    pictureBox2.Visible = false;
+                }
+                else if (data.Rows.Count == 1)
+                {
+                    pictureBox2.Image = Resources._01;
+                }
+                else if (data.Rows.Count == 2)
+                {
+                    pictureBox2.Image = Resources._02;
+                }
+                else if (data.Rows.Count == 3)
+                {
+                    pictureBox2.Image = Resources._03;
+                }
+                else if (data.Rows.Count == 4)
+                {
+                    pictureBox2.Image = Resources._04;
+                }
+                else if (data.Rows.Count == 5)
+                {
+                    pictureBox2.Image = Resources._051;
+                }
+                else if (data.Rows.Count > 5)
+                {
+                    pictureBox2.Image = Resources._052;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.ToString());
+            }
+            finally
+            {
+                Conexao.FechaConexao(conn);
+            }
+        }
+
+    private void NovaThread()
+    {
+            SqlConnection conn = Conexao.AbreConexao();
+            SqlCommand cmd = new SqlCommand("spSugestaoProducao", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.ToString());
+            }
+            finally
+            {
+                Conexao.FechaConexao(conn);
+            }
+        }
+
+        private void NovaThread2()
+        {
+            SqlConnection conn = Conexao.AbreConexao();
+            SqlCommand cmd = new SqlCommand("spSugestaoExameFuncionario", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.ToString());
+            }
+            finally
+            {
+                Conexao.FechaConexao(conn);
+            }
+        }
+
+        private void NovaThread3()
+        {
+            SqlConnection conn = Conexao.AbreConexao();
+            SqlCommand cmd = new SqlCommand("spSugestaoCompra", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.ToString());
+            }
+            finally
+            {
+                Conexao.FechaConexao(conn);
+            }
         }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -150,6 +268,13 @@ namespace DirectionSystems2
             this.Visible = false;
             FrmProducao Producao = new FrmProducao();
             Producao.Visible = true;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            FrmNotificacao Notificacao = new FrmNotificacao();
+            Notificacao.Visible = true;
         }
     }
 }

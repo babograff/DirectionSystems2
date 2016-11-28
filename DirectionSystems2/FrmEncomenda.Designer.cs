@@ -41,12 +41,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.TxtDataInicial = new System.Windows.Forms.DateTimePicker();
-            this.txtNomeFuncionario = new System.Windows.Forms.TextBox();
+            this.TxtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.BtnPesquisar = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.GridEncomenda = new System.Windows.Forms.DataGridView();
             this.BtnCadastrar = new System.Windows.Forms.PictureBox();
             this.rodape1 = new DirectionSystems2.Componentes.Rodape();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Excluir = new System.Windows.Forms.DataGridViewImageColumn();
+            this.CodEncomenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnAjuda)).BeginInit();
@@ -55,7 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnClienteFornecedor)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnPesquisar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridEncomenda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCadastrar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,7 +147,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.TxtDataInicial);
-            this.groupBox1.Controls.Add(this.txtNomeFuncionario);
+            this.groupBox1.Controls.Add(this.TxtNome);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.BtnPesquisar);
             this.groupBox1.Location = new System.Drawing.Point(45, 167);
@@ -187,12 +194,12 @@
             this.TxtDataInicial.TabIndex = 49;
             this.TxtDataInicial.Value = new System.DateTime(2016, 9, 11, 18, 49, 29, 0);
             // 
-            // txtNomeFuncionario
+            // TxtNome
             // 
-            this.txtNomeFuncionario.Location = new System.Drawing.Point(9, 36);
-            this.txtNomeFuncionario.Name = "txtNomeFuncionario";
-            this.txtNomeFuncionario.Size = new System.Drawing.Size(482, 20);
-            this.txtNomeFuncionario.TabIndex = 21;
+            this.TxtNome.Location = new System.Drawing.Point(9, 36);
+            this.TxtNome.Name = "TxtNome";
+            this.TxtNome.Size = new System.Drawing.Size(482, 20);
+            this.TxtNome.TabIndex = 21;
             // 
             // label2
             // 
@@ -214,14 +221,27 @@
             this.BtnPesquisar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.BtnPesquisar.TabIndex = 20;
             this.BtnPesquisar.TabStop = false;
+            this.BtnPesquisar.Click += new System.EventHandler(this.BtnPesquisar_Click);
             // 
-            // dataGridView1
+            // GridEncomenda
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(45, 239);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(821, 433);
-            this.dataGridView1.TabIndex = 47;
+            this.GridEncomenda.AllowUserToAddRows = false;
+            this.GridEncomenda.AllowUserToDeleteRows = false;
+            this.GridEncomenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridEncomenda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Editar,
+            this.Excluir,
+            this.CodEncomenda,
+            this.Nome,
+            this.Valor,
+            this.Data,
+            this.Hora});
+            this.GridEncomenda.Location = new System.Drawing.Point(45, 239);
+            this.GridEncomenda.Name = "GridEncomenda";
+            this.GridEncomenda.ReadOnly = true;
+            this.GridEncomenda.Size = new System.Drawing.Size(821, 433);
+            this.GridEncomenda.TabIndex = 47;
+            this.GridEncomenda.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridEncomenda_CellClick);
             // 
             // BtnCadastrar
             // 
@@ -244,13 +264,73 @@
             this.rodape1.Size = new System.Drawing.Size(900, 22);
             this.rodape1.TabIndex = 26;
             // 
+            // Editar
+            // 
+            this.Editar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::DirectionSystems2.Properties.Resources.Editar;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Editar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Excluir
+            // 
+            this.Excluir.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Excluir.HeaderText = "Excluir";
+            this.Excluir.Image = global::DirectionSystems2.Properties.Resources.Excluir;
+            this.Excluir.Name = "Excluir";
+            this.Excluir.ReadOnly = true;
+            this.Excluir.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Excluir.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // CodEncomenda
+            // 
+            this.CodEncomenda.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CodEncomenda.DataPropertyName = "CodEncomenda";
+            this.CodEncomenda.HeaderText = "Código";
+            this.CodEncomenda.Name = "CodEncomenda";
+            this.CodEncomenda.ReadOnly = true;
+            // 
+            // Nome
+            // 
+            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Nome.DataPropertyName = "NomeCliente";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // Valor
+            // 
+            this.Valor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Valor.DataPropertyName = "Valor";
+            this.Valor.HeaderText = "Valor";
+            this.Valor.Name = "Valor";
+            this.Valor.ReadOnly = true;
+            // 
+            // Data
+            // 
+            this.Data.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Data.DataPropertyName = "Data";
+            this.Data.HeaderText = "Data";
+            this.Data.Name = "Data";
+            this.Data.ReadOnly = true;
+            // 
+            // Hora
+            // 
+            this.Hora.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Hora.DataPropertyName = "Hora";
+            this.Hora.HeaderText = "Hora";
+            this.Hora.Name = "Hora";
+            this.Hora.ReadOnly = true;
+            // 
             // FrmEncomenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(900, 700);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.GridEncomenda);
             this.Controls.Add(this.BtnCadastrar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.rodape1);
@@ -270,7 +350,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnPesquisar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridEncomenda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCadastrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -289,13 +369,20 @@
         private Componentes.Rodape rodape1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtNomeFuncionario;
+        private System.Windows.Forms.TextBox TxtNome;
         private System.Windows.Forms.PictureBox BtnPesquisar;
         private System.Windows.Forms.PictureBox BtnCadastrar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView GridEncomenda;
         private System.Windows.Forms.DateTimePicker TxtDataFinal;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker TxtDataInicial;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.DataGridViewImageColumn Excluir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodEncomenda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Hora;
     }
 }

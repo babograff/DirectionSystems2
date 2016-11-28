@@ -26,7 +26,7 @@ namespace DirectionSystems2.Classes
         public static string versao;
         public static string VersaoSistema
         {
-            get { return "DirectionSystems - 0.8.2"; }
+            get { return "DirectionSystems - 1.0.0"; }
         }
 
 

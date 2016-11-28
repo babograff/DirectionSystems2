@@ -50,7 +50,7 @@
             this.GridFuncionario = new System.Windows.Forms.DataGridView();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Excluir = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodFuncionario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -275,7 +275,7 @@
             this.GridFuncionario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar,
             this.Excluir,
-            this.Código,
+            this.CodFuncionario,
             this.CPF,
             this.Nome,
             this.Status});
@@ -300,15 +300,15 @@
             this.Excluir.Name = "Excluir";
             this.Excluir.ReadOnly = true;
             // 
-            // Código
+            // CodFuncionario
             // 
-            this.Código.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Código.DataPropertyName = "CodFuncionario";
-            this.Código.HeaderText = "Código";
-            this.Código.Name = "Código";
-            this.Código.ReadOnly = true;
-            this.Código.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Código.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.CodFuncionario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CodFuncionario.DataPropertyName = "CodFuncionario";
+            this.CodFuncionario.HeaderText = "Código";
+            this.CodFuncionario.Name = "CodFuncionario";
+            this.CodFuncionario.ReadOnly = true;
+            this.CodFuncionario.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.CodFuncionario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // CPF
             // 
@@ -398,7 +398,7 @@
         private System.Windows.Forms.DataGridView GridFuncionario;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Excluir;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Código;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodFuncionario;
         private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;

@@ -262,6 +262,12 @@
     <Compile Include="FrmNotificacao.Designer.cs">
       <DependentUpon>FrmNotificacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmNotificacaoDetalhe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNotificacaoDetalhe.Designer.cs">
+      <DependentUpon>FrmNotificacaoDetalhe.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPrducaoSelecaoProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -321,6 +327,18 @@
     </Compile>
     <Compile Include="FrmSelecaoFuncionario.Designer.cs">
       <DependentUpon>FrmSelecaoFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSelecaoPreco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSelecaoPreco.Designer.cs">
+      <DependentUpon>FrmSelecaoPreco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSelecaoPrecoProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSelecaoPrecoProduto.Designer.cs">
+      <DependentUpon>FrmSelecaoPrecoProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmSelecaoProduto.cs">
       <SubType>Form</SubType>
@@ -410,6 +428,9 @@
     <EmbeddedResource Include="FrmNotificacao.resx">
       <DependentUpon>FrmNotificacao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmNotificacaoDetalhe.resx">
+      <DependentUpon>FrmNotificacaoDetalhe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPrducaoSelecaoProduto.resx">
       <DependentUpon>FrmPrducaoSelecaoProduto.cs</DependentUpon>
     </EmbeddedResource>
@@ -439,6 +460,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSelecaoFuncionario.resx">
       <DependentUpon>FrmSelecaoFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSelecaoPreco.resx">
+      <DependentUpon>FrmSelecaoPreco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSelecaoPrecoProduto.resx">
+      <DependentUpon>FrmSelecaoPrecoProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSelecaoProduto.resx">
       <DependentUpon>FrmSelecaoProduto.cs</DependentUpon>
@@ -584,6 +611,12 @@
     <None Include="Resources\plus.png" />
     <None Include="Resources\MenuProducao2.png" />
     <None Include="Resources\MenuPreco.png" />
+    <None Include="Resources\+053.png" />
+    <None Include="Resources\01.png" />
+    <None Include="Resources\02.png" />
+    <None Include="Resources\03.png" />
+    <None Include="Resources\04.png" />
+    <None Include="Resources\05.png" />
     <Content Include="SqlServerTypes\readme.htm" />
   </ItemGroup>
   <ItemGroup>
