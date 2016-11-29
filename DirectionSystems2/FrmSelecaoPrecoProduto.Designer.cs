@@ -30,11 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSelecaoPrecoProduto));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.TxtImportado = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.TxtCodigo = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.TxtNome = new System.Windows.Forms.TextBox();
             this.GridProduto = new System.Windows.Forms.DataGridView();
@@ -42,8 +38,9 @@
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodigoImportado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnidadeMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.BtnCancelar = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
@@ -54,11 +51,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.TxtImportado);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.TxtCodigo);
             this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.TxtNome);
             this.groupBox1.Controls.Add(this.GridProduto);
@@ -68,31 +61,6 @@
             this.groupBox1.TabIndex = 58;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados produto";
-            // 
-            // TxtImportado
-            // 
-            this.TxtImportado.BackColor = System.Drawing.Color.White;
-            this.TxtImportado.Location = new System.Drawing.Point(147, 43);
-            this.TxtImportado.Name = "TxtImportado";
-            this.TxtImportado.Size = new System.Drawing.Size(135, 20);
-            this.TxtImportado.TabIndex = 63;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(144, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 13);
-            this.label1.TabIndex = 62;
-            this.label1.Text = "Código importado";
-            // 
-            // TxtCodigo
-            // 
-            this.TxtCodigo.BackColor = System.Drawing.Color.White;
-            this.TxtCodigo.Location = new System.Drawing.Point(6, 43);
-            this.TxtCodigo.Name = "TxtCodigo";
-            this.TxtCodigo.Size = new System.Drawing.Size(135, 20);
-            this.TxtCodigo.TabIndex = 61;
             // 
             // pictureBox1
             // 
@@ -107,19 +75,10 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 59;
-            this.label2.Text = "Código";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(285, 27);
+            this.label3.Location = new System.Drawing.Point(6, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 58;
@@ -128,9 +87,9 @@
             // TxtNome
             // 
             this.TxtNome.BackColor = System.Drawing.Color.White;
-            this.TxtNome.Location = new System.Drawing.Point(288, 43);
+            this.TxtNome.Location = new System.Drawing.Point(6, 43);
             this.TxtNome.Name = "TxtNome";
-            this.TxtNome.Size = new System.Drawing.Size(397, 20);
+            this.TxtNome.Size = new System.Drawing.Size(679, 20);
             this.TxtNome.TabIndex = 57;
             // 
             // GridProduto
@@ -143,13 +102,15 @@
             this.Codigo,
             this.CodigoImportado,
             this.Nome,
-            this.Valor,
-            this.UnidadeMedida});
+            this.Quantidade,
+            this.UnidadeMedida,
+            this.Valor});
             this.GridProduto.Location = new System.Drawing.Point(6, 69);
             this.GridProduto.Name = "GridProduto";
             this.GridProduto.ReadOnly = true;
             this.GridProduto.Size = new System.Drawing.Size(809, 261);
             this.GridProduto.TabIndex = 48;
+            this.GridProduto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridProduto_CellClick);
             // 
             // Selecionar
             // 
@@ -182,13 +143,12 @@
             this.Nome.Name = "Nome";
             this.Nome.ReadOnly = true;
             // 
-            // Valor
+            // Quantidade
             // 
-            this.Valor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Valor.DataPropertyName = "Valor";
-            this.Valor.HeaderText = "Valor";
-            this.Valor.Name = "Valor";
-            this.Valor.ReadOnly = true;
+            this.Quantidade.DataPropertyName = "Quantidade";
+            this.Quantidade.HeaderText = "Quantidade";
+            this.Quantidade.Name = "Quantidade";
+            this.Quantidade.ReadOnly = true;
             // 
             // UnidadeMedida
             // 
@@ -197,6 +157,14 @@
             this.UnidadeMedida.HeaderText = "Unidade Medida";
             this.UnidadeMedida.Name = "UnidadeMedida";
             this.UnidadeMedida.ReadOnly = true;
+            // 
+            // Valor
+            // 
+            this.Valor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Valor.DataPropertyName = "Valor";
+            this.Valor.HeaderText = "Valor";
+            this.Valor.Name = "Valor";
+            this.Valor.ReadOnly = true;
             // 
             // dataGridViewImageColumn1
             // 
@@ -242,21 +210,18 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox TxtImportado;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TxtCodigo;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TxtNome;
         private System.Windows.Forms.DataGridView GridProduto;
+        private System.Windows.Forms.PictureBox BtnCancelar;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn Selecionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodigoImportado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn UnidadeMedida;
-        private System.Windows.Forms.PictureBox BtnCancelar;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
     }
 }

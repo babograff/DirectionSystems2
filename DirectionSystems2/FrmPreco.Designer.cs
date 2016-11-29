@@ -46,29 +46,29 @@
             this.CodigoImportado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Medida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UnidameMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TxtNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GridOutros = new System.Windows.Forms.DataGridView();
             this.BtnCancelar = new System.Windows.Forms.PictureBox();
             this.BtnSalvar = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.LblTotal = new System.Windows.Forms.Label();
             this.Pago = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.TxtCodigo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.LblSubtotal = new System.Windows.Forms.Label();
+            this.EditarOutros = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ExcluirOutros = new System.Windows.Forms.DataGridViewImageColumn();
+            this.CodigoOutros = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeOutros = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubtotalOutros = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rodape1 = new DirectionSystems2.Componentes.Rodape();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -82,8 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridProduto)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridOutros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnSalvar)).BeginInit();
             this.SuspendLayout();
@@ -181,7 +180,7 @@
             this.groupBox2.Controls.Add(this.GridProduto);
             this.groupBox2.Location = new System.Drawing.Point(45, 199);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(821, 212);
+            this.groupBox2.Size = new System.Drawing.Size(821, 236);
             this.groupBox2.TabIndex = 40;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Insumo";
@@ -211,13 +210,14 @@
             this.CodigoImportado,
             this.Nome,
             this.Quantidade,
-            this.Medida,
+            this.UnidameMedida,
             this.Valor});
             this.GridProduto.Location = new System.Drawing.Point(9, 56);
             this.GridProduto.Name = "GridProduto";
             this.GridProduto.ReadOnly = true;
             this.GridProduto.Size = new System.Drawing.Size(806, 140);
             this.GridProduto.TabIndex = 47;
+            this.GridProduto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridProduto_CellClick);
             // 
             // Editar
             // 
@@ -263,15 +263,18 @@
             // 
             // Quantidade
             // 
+            this.Quantidade.DataPropertyName = "Quantidade";
             this.Quantidade.HeaderText = "Quantidade";
             this.Quantidade.Name = "Quantidade";
             this.Quantidade.ReadOnly = true;
             // 
-            // Medida
+            // UnidameMedida
             // 
-            this.Medida.HeaderText = "Medida";
-            this.Medida.Name = "Medida";
-            this.Medida.ReadOnly = true;
+            this.UnidameMedida.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.UnidameMedida.DataPropertyName = "Unidade";
+            this.UnidameMedida.HeaderText = "Unidame Medida";
+            this.UnidameMedida.Name = "UnidameMedida";
+            this.UnidameMedida.ReadOnly = true;
             // 
             // Valor
             // 
@@ -312,76 +315,31 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.pictureBox3);
-            this.groupBox3.Controls.Add(this.dataGridView1);
-            this.groupBox3.Location = new System.Drawing.Point(45, 417);
+            this.groupBox3.Controls.Add(this.GridOutros);
+            this.groupBox3.Location = new System.Drawing.Point(45, 441);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(821, 212);
+            this.groupBox3.Size = new System.Drawing.Size(821, 188);
             this.groupBox3.TabIndex = 49;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Outros";
             // 
-            // pictureBox3
+            // GridOutros
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(9, 19);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(120, 30);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox3.TabIndex = 48;
-            this.pictureBox3.TabStop = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewImageColumn1,
-            this.dataGridViewImageColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn6});
-            this.dataGridView1.Location = new System.Drawing.Point(9, 56);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(806, 140);
-            this.dataGridView1.TabIndex = 47;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewImageColumn1.HeaderText = "Editar";
-            this.dataGridViewImageColumn1.Image = global::DirectionSystems2.Properties.Resources.Editar;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewImageColumn2.HeaderText = "Excluir";
-            this.dataGridViewImageColumn2.Image = global::DirectionSystems2.Properties.Resources.Excluir;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Nome";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Nome";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Subtotal";
-            this.dataGridViewTextBoxColumn6.HeaderText = "R$";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.GridOutros.AllowUserToAddRows = false;
+            this.GridOutros.AllowUserToDeleteRows = false;
+            this.GridOutros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridOutros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EditarOutros,
+            this.ExcluirOutros,
+            this.CodigoOutros,
+            this.NomeOutros,
+            this.SubtotalOutros});
+            this.GridOutros.Location = new System.Drawing.Point(9, 19);
+            this.GridOutros.Name = "GridOutros";
+            this.GridOutros.ReadOnly = true;
+            this.GridOutros.Size = new System.Drawing.Size(806, 163);
+            this.GridOutros.TabIndex = 47;
+            this.GridOutros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridOutros_CellClick);
             // 
             // BtnCancelar
             // 
@@ -428,16 +386,16 @@
             this.label3.Text = "Total";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // label4
+            // LblTotal
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(333, 645);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 25);
-            this.label4.TabIndex = 58;
-            this.label4.Text = "00,00";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.LblTotal.AutoSize = true;
+            this.LblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTotal.Location = new System.Drawing.Point(320, 647);
+            this.LblTotal.Name = "LblTotal";
+            this.LblTotal.Size = new System.Drawing.Size(66, 25);
+            this.LblTotal.TabIndex = 58;
+            this.LblTotal.Text = "00,00";
+            this.LblTotal.Click += new System.EventHandler(this.label4_Click);
             // 
             // Pago
             // 
@@ -486,15 +444,57 @@
             this.label7.TabIndex = 65;
             this.label7.Text = "Subtotal";
             // 
-            // label8
+            // LblSubtotal
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(86, 644);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 25);
-            this.label8.TabIndex = 64;
-            this.label8.Text = "00,00";
+            this.LblSubtotal.AutoSize = true;
+            this.LblSubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblSubtotal.Location = new System.Drawing.Point(73, 648);
+            this.LblSubtotal.Name = "LblSubtotal";
+            this.LblSubtotal.Size = new System.Drawing.Size(66, 25);
+            this.LblSubtotal.TabIndex = 64;
+            this.LblSubtotal.Text = "00,00";
+            // 
+            // EditarOutros
+            // 
+            this.EditarOutros.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.EditarOutros.HeaderText = "Editar";
+            this.EditarOutros.Image = global::DirectionSystems2.Properties.Resources.Editar;
+            this.EditarOutros.Name = "EditarOutros";
+            this.EditarOutros.ReadOnly = true;
+            this.EditarOutros.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EditarOutros.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // ExcluirOutros
+            // 
+            this.ExcluirOutros.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ExcluirOutros.HeaderText = "Excluir";
+            this.ExcluirOutros.Image = global::DirectionSystems2.Properties.Resources.Excluir;
+            this.ExcluirOutros.Name = "ExcluirOutros";
+            this.ExcluirOutros.ReadOnly = true;
+            // 
+            // CodigoOutros
+            // 
+            this.CodigoOutros.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CodigoOutros.DataPropertyName = "CodigoOutros";
+            this.CodigoOutros.HeaderText = "Código";
+            this.CodigoOutros.Name = "CodigoOutros";
+            this.CodigoOutros.ReadOnly = true;
+            // 
+            // NomeOutros
+            // 
+            this.NomeOutros.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NomeOutros.DataPropertyName = "Nome";
+            this.NomeOutros.HeaderText = "Nome";
+            this.NomeOutros.Name = "NomeOutros";
+            this.NomeOutros.ReadOnly = true;
+            // 
+            // SubtotalOutros
+            // 
+            this.SubtotalOutros.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SubtotalOutros.DataPropertyName = "Subtotal";
+            this.SubtotalOutros.HeaderText = "R$";
+            this.SubtotalOutros.Name = "SubtotalOutros";
+            this.SubtotalOutros.ReadOnly = true;
             // 
             // rodape1
             // 
@@ -512,13 +512,13 @@
             this.ClientSize = new System.Drawing.Size(900, 700);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.LblSubtotal);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.TxtCodigo);
             this.Controls.Add(this.Pago);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.LblTotal);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnSalvar);
             this.Controls.Add(this.groupBox3);
@@ -547,9 +547,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridOutros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCancelar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnSalvar)).EndInit();
             this.ResumeLayout(false);
@@ -571,34 +569,34 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.DataGridView GridProduto;
+        private System.Windows.Forms.TextBox TxtNome;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DataGridView GridOutros;
+        private System.Windows.Forms.PictureBox BtnCancelar;
+        private System.Windows.Forms.PictureBox BtnSalvar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label LblTotal;
+        private System.Windows.Forms.CheckBox Pago;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox TxtCodigo;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label LblSubtotal;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Excluir;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodigoImportado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Medida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UnidameMedida;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
-        private System.Windows.Forms.TextBox TxtNome;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.PictureBox BtnCancelar;
-        private System.Windows.Forms.PictureBox BtnSalvar;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox Pago;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox TxtCodigo;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridViewImageColumn EditarOutros;
+        private System.Windows.Forms.DataGridViewImageColumn ExcluirOutros;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoOutros;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeOutros;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubtotalOutros;
     }
 }

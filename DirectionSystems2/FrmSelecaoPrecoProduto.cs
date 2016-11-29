@@ -21,8 +21,6 @@ namespace DirectionSystems2
             SqlConnection conn = Conexao.AbreConexao();
             SqlCommand cmd = new SqlCommand("spPrecoProduto", conn);
             cmd.Parameters.AddWithValue("@Nome", TxtNome.Text);
-            cmd.Parameters.AddWithValue("@CodProduto", TxtCodigo.Text);
-            cmd.Parameters.AddWithValue("@CodImportado", TxtImportado.Text);
             cmd.CommandType = CommandType.StoredProcedure;
 
             try
@@ -47,5 +45,26 @@ namespace DirectionSystems2
         {
             this.Close();
         }
+
+        private void GridProduto_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == GridProduto.Columns["Selecionar"].Index)
+            {
+                CodProdutoPreco = Convert.ToString(GridProduto["Codigo", e.RowIndex].Value);
+                CodigoProdImportadoPreco = Convert.ToString(GridProduto["CodigoImportado", e.RowIndex].Value);
+                NomePreco = Convert.ToString(GridProduto["Nome", e.RowIndex].Value);
+                ValorPreco = Convert.ToString(GridProduto["Valor", e.RowIndex].Value);
+                MedidaPreco = Convert.ToString(GridProduto["UnidadeMedida", e.RowIndex].Value);
+                QuantidadePreco = Convert.ToString(GridProduto["Quantidade", e.RowIndex].Value);
+                this.Close();
+            }
+        }
+
+        public string CodProdutoPreco { get; set; }
+        public string CodigoProdImportadoPreco { get; set; }
+        public string NomePreco { get; set; }
+        public string ValorPreco { get; set; }
+        public string MedidaPreco { get; set; }
+        public string QuantidadePreco { get; set; }
     }
 }

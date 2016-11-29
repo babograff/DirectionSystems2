@@ -26,11 +26,7 @@ namespace DirectionSystems2
         private void Pesquisar()
         {
             SqlConnection conn = Conexao.AbreConexao();
-            SqlCommand cmd = new SqlCommand("spProdutoGrid", conn);
-            cmd.Parameters.AddWithValue("@Nome", "");
-            cmd.Parameters.AddWithValue("@CodBarras", "");
-            cmd.Parameters.AddWithValue("@Status",1);
-            cmd.Parameters.AddWithValue("@Tipo", 1);
+            SqlCommand cmd = new SqlCommand("spProdutoPrecoGrid", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             try

@@ -259,9 +259,9 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(391, 292);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(84, 13);
+            this.label13.Size = new System.Drawing.Size(88, 13);
             this.label13.TabIndex = 27;
-            this.label13.Text = "Estoque máximo";
+            this.label13.Text = "Estoque máximo*";
             // 
             // TxtEstoqueMaximo
             // 
@@ -275,9 +275,9 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(275, 292);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(81, 13);
+            this.label12.Size = new System.Drawing.Size(85, 13);
             this.label12.TabIndex = 25;
-            this.label12.Text = "Estoque minimo";
+            this.label12.Text = "Estoque minimo*";
             // 
             // TxtEstoqueMinimo
             // 

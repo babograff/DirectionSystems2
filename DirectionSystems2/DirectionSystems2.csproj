@@ -280,6 +280,12 @@
     <Compile Include="FrmPreco.Designer.cs">
       <DependentUpon>FrmPreco.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPrecoEditarInsumo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrecoEditarInsumo.Designer.cs">
+      <DependentUpon>FrmPrecoEditarInsumo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmProducao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -436,6 +442,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPreco.resx">
       <DependentUpon>FrmPreco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrecoEditarInsumo.resx">
+      <DependentUpon>FrmPrecoEditarInsumo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProducao.resx">
       <DependentUpon>FrmProducao.cs</DependentUpon>
