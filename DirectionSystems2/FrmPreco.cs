@@ -27,13 +27,13 @@ namespace DirectionSystems2
                 Outros.Columns.Add("Subtotal", typeof(string));
             }
 
-            Outros.Rows.Add("1","Água", "0");
-            Outros.Rows.Add("2", "Gás", "0");
-            Outros.Rows.Add("3", "Energia elétrica", "0");
-            Outros.Rows.Add("4", "Depreciação equipamento", "0");
-            Outros.Rows.Add("5", "Embalagem", "0");
-            Outros.Rows.Add("6", "Funcionários", "0");
-            Outros.Rows.Add("7", "Outros", "0");
+            Outros.Rows.Add("1", "Água", "3,00");
+          // Outros.Rows.Add("2", "Gás", "0");
+            Outros.Rows.Add("3", "Energia elétrica", "0,70");
+            Outros.Rows.Add("4", "Depreciação equipamento", "2,00");
+            Outros.Rows.Add("5", "Embalagem", "1,13");
+            Outros.Rows.Add("6", "Funcionários", "2,50");
+            Outros.Rows.Add("7", "Outros", "0,50");
             GridOutros.DataSource = Outros;
             Somatoria();
         }
@@ -153,19 +153,19 @@ namespace DirectionSystems2
             TotalProduto = 0;
             TotalOutros = 0;
             if (Produtos != null)
-            foreach (DataRow row in Produtos.Rows)
-            {
-                TotalProduto = TotalProduto + Convert.ToDouble(row["Subtotal"].ToString());
-            }
+                foreach (DataRow row in Produtos.Rows)
+                {
+                    TotalProduto = TotalProduto + Convert.ToDouble(row["Subtotal"].ToString());
+                }
 
             if (Outros != null)
-            foreach (DataRow row in Outros.Rows)
-            {
-                TotalOutros = TotalOutros + Convert.ToDouble(row["Subtotal"].ToString());
-            }
+                foreach (DataRow row in Outros.Rows)
+                {
+                    TotalOutros = TotalOutros + Convert.ToDouble(row["Subtotal"].ToString());
+                }
 
-            LblSubtotal.Text = string.Format("{0:C}", TotalProduto + TotalOutros);
-            LblTotal.Text = string.Format("{0:C}", TotalProduto + TotalOutros);
+            LblSubtotal.Text = string.Format("{0:C}", (TotalProduto + TotalOutros));
+            LblTotal.Text = string.Format("{0:C}", (Convert.ToDouble(TxtPorcentagem.Text) / 100) * (TotalProduto + TotalOutros) + (TotalProduto + TotalOutros));
         }
 
         private void GridProduto_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -187,9 +187,17 @@ namespace DirectionSystems2
             }
             else if (e.ColumnIndex == GridProduto.Columns["Editar"].Index)
             {
-                FrmPrecoEditarInsumo Insumo = new FrmPrecoEditarInsumo();
-                Insumo.ShowDialog();
+                FrmPrecoEditarInsumo Insumo = new FrmPrecoEditarInsumo(Convert.ToInt32(GridProduto["Codigo", e.RowIndex].Value));
+                Insumo.Visible = true;
             }
+        }
+
+        private void BtnSalvar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Registro atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            FrmSelecaoPreco SelecaoPreco = new FrmSelecaoPreco();
+            SelecaoPreco.Visible = true;
+            this.Visible = false;
         }
     }
 }

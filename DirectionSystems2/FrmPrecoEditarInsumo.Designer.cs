@@ -193,6 +193,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPrecoEditarInsumo";
             this.Text = "Preço - Edição insumo";
+            this.Load += new System.EventHandler(this.FrmPrecoEditarInsumo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BtnSalvar)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

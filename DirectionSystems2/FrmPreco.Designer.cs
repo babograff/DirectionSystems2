@@ -53,6 +53,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.GridOutros = new System.Windows.Forms.DataGridView();
+            this.EditarOutros = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ExcluirOutros = new System.Windows.Forms.DataGridViewImageColumn();
+            this.CodigoOutros = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeOutros = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubtotalOutros = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnCancelar = new System.Windows.Forms.PictureBox();
             this.BtnSalvar = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,15 +65,10 @@
             this.LblTotal = new System.Windows.Forms.Label();
             this.Pago = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.TxtCodigo = new System.Windows.Forms.TextBox();
+            this.TxtPorcentagem = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.LblSubtotal = new System.Windows.Forms.Label();
-            this.EditarOutros = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ExcluirOutros = new System.Windows.Forms.DataGridViewImageColumn();
-            this.CodigoOutros = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeOutros = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubtotalOutros = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rodape1 = new DirectionSystems2.Componentes.Rodape();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -341,6 +341,48 @@
             this.GridOutros.TabIndex = 47;
             this.GridOutros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridOutros_CellClick);
             // 
+            // EditarOutros
+            // 
+            this.EditarOutros.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.EditarOutros.HeaderText = "Editar";
+            this.EditarOutros.Image = global::DirectionSystems2.Properties.Resources.Editar;
+            this.EditarOutros.Name = "EditarOutros";
+            this.EditarOutros.ReadOnly = true;
+            this.EditarOutros.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EditarOutros.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // ExcluirOutros
+            // 
+            this.ExcluirOutros.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ExcluirOutros.HeaderText = "Excluir";
+            this.ExcluirOutros.Image = global::DirectionSystems2.Properties.Resources.Excluir;
+            this.ExcluirOutros.Name = "ExcluirOutros";
+            this.ExcluirOutros.ReadOnly = true;
+            // 
+            // CodigoOutros
+            // 
+            this.CodigoOutros.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CodigoOutros.DataPropertyName = "CodigoOutros";
+            this.CodigoOutros.HeaderText = "Código";
+            this.CodigoOutros.Name = "CodigoOutros";
+            this.CodigoOutros.ReadOnly = true;
+            // 
+            // NomeOutros
+            // 
+            this.NomeOutros.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NomeOutros.DataPropertyName = "Nome";
+            this.NomeOutros.HeaderText = "Nome";
+            this.NomeOutros.Name = "NomeOutros";
+            this.NomeOutros.ReadOnly = true;
+            // 
+            // SubtotalOutros
+            // 
+            this.SubtotalOutros.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SubtotalOutros.DataPropertyName = "Subtotal";
+            this.SubtotalOutros.HeaderText = "R$";
+            this.SubtotalOutros.Name = "SubtotalOutros";
+            this.SubtotalOutros.ReadOnly = true;
+            // 
             // BtnCancelar
             // 
             this.BtnCancelar.BackColor = System.Drawing.Color.Transparent;
@@ -365,6 +407,7 @@
             this.BtnSalvar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.BtnSalvar.TabIndex = 56;
             this.BtnSalvar.TabStop = false;
+            this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
             // label2
             // 
@@ -416,15 +459,15 @@
             this.label5.TabIndex = 63;
             this.label5.Text = "Lucro (%)";
             // 
-            // TxtCodigo
+            // TxtPorcentagem
             // 
-            this.TxtCodigo.BackColor = System.Drawing.Color.White;
-            this.TxtCodigo.Cursor = System.Windows.Forms.Cursors.No;
-            this.TxtCodigo.Enabled = false;
-            this.TxtCodigo.Location = new System.Drawing.Point(171, 650);
-            this.TxtCodigo.Name = "TxtCodigo";
-            this.TxtCodigo.Size = new System.Drawing.Size(106, 20);
-            this.TxtCodigo.TabIndex = 62;
+            this.TxtPorcentagem.BackColor = System.Drawing.Color.White;
+            this.TxtPorcentagem.Cursor = System.Windows.Forms.Cursors.No;
+            this.TxtPorcentagem.Location = new System.Drawing.Point(171, 650);
+            this.TxtPorcentagem.Name = "TxtPorcentagem";
+            this.TxtPorcentagem.Size = new System.Drawing.Size(106, 20);
+            this.TxtPorcentagem.TabIndex = 62;
+            this.TxtPorcentagem.Text = "15";
             // 
             // label6
             // 
@@ -454,48 +497,6 @@
             this.LblSubtotal.TabIndex = 64;
             this.LblSubtotal.Text = "00,00";
             // 
-            // EditarOutros
-            // 
-            this.EditarOutros.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.EditarOutros.HeaderText = "Editar";
-            this.EditarOutros.Image = global::DirectionSystems2.Properties.Resources.Editar;
-            this.EditarOutros.Name = "EditarOutros";
-            this.EditarOutros.ReadOnly = true;
-            this.EditarOutros.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.EditarOutros.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // ExcluirOutros
-            // 
-            this.ExcluirOutros.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ExcluirOutros.HeaderText = "Excluir";
-            this.ExcluirOutros.Image = global::DirectionSystems2.Properties.Resources.Excluir;
-            this.ExcluirOutros.Name = "ExcluirOutros";
-            this.ExcluirOutros.ReadOnly = true;
-            // 
-            // CodigoOutros
-            // 
-            this.CodigoOutros.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CodigoOutros.DataPropertyName = "CodigoOutros";
-            this.CodigoOutros.HeaderText = "Código";
-            this.CodigoOutros.Name = "CodigoOutros";
-            this.CodigoOutros.ReadOnly = true;
-            // 
-            // NomeOutros
-            // 
-            this.NomeOutros.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NomeOutros.DataPropertyName = "Nome";
-            this.NomeOutros.HeaderText = "Nome";
-            this.NomeOutros.Name = "NomeOutros";
-            this.NomeOutros.ReadOnly = true;
-            // 
-            // SubtotalOutros
-            // 
-            this.SubtotalOutros.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SubtotalOutros.DataPropertyName = "Subtotal";
-            this.SubtotalOutros.HeaderText = "R$";
-            this.SubtotalOutros.Name = "SubtotalOutros";
-            this.SubtotalOutros.ReadOnly = true;
-            // 
             // rodape1
             // 
             this.rodape1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -514,7 +515,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.LblSubtotal);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.TxtCodigo);
+            this.Controls.Add(this.TxtPorcentagem);
             this.Controls.Add(this.Pago);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
@@ -581,7 +582,7 @@
         private System.Windows.Forms.Label LblTotal;
         private System.Windows.Forms.CheckBox Pago;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox TxtCodigo;
+        private System.Windows.Forms.TextBox TxtPorcentagem;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label LblSubtotal;
